@@ -538,7 +538,7 @@ ensuring seamless integration with robust backend architectures.
 <div class="experience-card">
   <div class="experience-header">
     <span class="experience-year">2024</span>
-    <span class="experience-type">3rd Year</span>
+    <span class="experience-type">3rd Year Final Output</span>
   </div>
   <h4 class="experience-title">Gym Monitoring System Developer</h4>
   <p class="experience-desc">Built a comprehensive Monitoring System for Fettle Hut Fitness Gym using PHP. 3rd year Final Output.</p>
@@ -547,7 +547,7 @@ ensuring seamless integration with robust backend architectures.
 <div class="experience-card">
   <div class="experience-header">
     <span class="experience-year">2024</span>
-    <span class="experience-type">2nd Year</span>
+    <span class="experience-type">2nd Year Final Output</span>
   </div>
   <h4 class="experience-title">Gym Monitoring System Programmer</h4>
   <p class="experience-desc">Created a Monitoring System for Fettle Hut Fitness Gym using C# and .NET framework. 2nd year Final Output.</p>
