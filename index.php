@@ -236,7 +236,7 @@ ensuring seamless integration with robust backend architectures.
   <h4>BaltBep Ticketing System Developer</h4>
   <p>Developed a ship ticketing system with admin dashboard for our Capstone.</p>
   <p>4th year Final Output</p>
-  <a href="https://baltbep.net" target="_blank" rel="noopener noreferrer">baltbep.net</a>
+  <a href="https://baltbep.net" target="_blank" rel="noopener noreferrer" style="color: green;">baltbep.net</a>
 </div>
 
 <div class="item">
