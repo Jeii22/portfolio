@@ -158,7 +158,7 @@ body.loaded .section {
 
 .section h3{
 font-family:'Syne',sans-serif;
-margin-bottom:15px;
+margin-bottom:20px;
 color:#4f8ef7;
 font-size:1rem;
 letter-spacing:.1em;
@@ -171,24 +171,97 @@ margin-bottom:8px;
 color:#aaa;
 }
 
-/* SKILLS */
-.skill{
-margin-bottom:12px;
+/* CIRCULAR SKILLS WITH BATTERY COLORS */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.bar{
-height:6px;
-background:#111;
-border-radius:10px;
-overflow:hidden;
-margin-top:5px;
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  opacity:0;
+  transform:translateX(-20px);
+  transition:all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.bar span{
-display:block;
-height:100%;
-background:linear-gradient(90deg,#4f8ef7,#a78bfa);
+body.loaded .skill-item:nth-child(1) { transition-delay: 0.7s; }
+body.loaded .skill-item:nth-child(2) { transition-delay: 0.8s; }
+body.loaded .skill-item:nth-child(3) { transition-delay: 0.9s; }
+
+body.loaded .skill-item {
+  opacity:1;
+  transform:translateX(0);
 }
+
+.skill-circle {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skill-circle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--skill-color) calc(var(--percentage) * 3.6deg),
+    rgba(255,255,255,0.05) calc(var(--percentage) * 3.6deg)
+  );
+  transition: all 0.8s ease-out;
+}
+
+.skill-circle-inner {
+  position: absolute;
+  inset: 8px;
+  background: #0e0e1c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.skill-percentage {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--skill-color);
+  transition: color 0.5s ease;
+}
+
+.skill-info {
+  flex: 1;
+}
+
+.skill-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.skill-level-text {
+  font-size: 0.75rem;
+  color: var(--skill-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Color coding based on percentage */
+.skill-item[data-level="expert"] { --skill-color: #22c55e; }
+.skill-item[data-level="advanced"] { --skill-color: #84cc16; }
+.skill-item[data-level="intermediate"] { --skill-color: #eab308; }
+.skill-item[data-level="beginner"] { --skill-color: #ef4444; }
 
 /* RIGHT PANEL */
 .right{
@@ -588,18 +661,23 @@ padding:40px 25px;
   flex-direction: column;
   gap: 8px;
 }
+.skill-item {
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
 }
 
 /* Hover effects for other elements */
-.skill:hover .bar span {
-  filter: brightness(1.2);
-  transition: filter 0.3s ease;
-}
-
 .contact p:hover {
   color: #4f8ef7;
   transform: translateX(5px);
   transition: all 0.3s ease;
+}
+
+.skill-item:hover .skill-circle::before {
+  filter: brightness(1.2);
+  transform: scale(1.05);
 }
 
 </style>
@@ -633,9 +711,43 @@ padding:40px 25px;
 <div class="section">
 <h3>SKILLS</h3>
 
-<div class="skill">Laravel<div class="bar"><span style="width:69%"></span></div></div>
-<div class="skill">PHP<div class="bar"><span style="width:48%"></span></div></div>
-<div class="skill">C#<div class="bar"><span style="width:57%"></span></div></div>
+<div class="skills-container">
+  <div class="skill-item" data-level="advanced" style="--percentage: 69;">
+    <div class="skill-circle">
+      <div class="skill-circle-inner">
+        <span class="skill-percentage">69%</span>
+      </div>
+    </div>
+    <div class="skill-info">
+      <div class="skill-name">Laravel</div>
+      <div class="skill-level-text">Advanced</div>
+    </div>
+  </div>
+
+  <div class="skill-item" data-level="intermediate" style="--percentage: 48;">
+    <div class="skill-circle">
+      <div class="skill-circle-inner">
+        <span class="skill-percentage">48%</span>
+      </div>
+    </div>
+    <div class="skill-info">
+      <div class="skill-name">PHP</div>
+      <div class="skill-level-text">Intermediate</div>
+    </div>
+  </div>
+
+  <div class="skill-item" data-level="intermediate" style="--percentage: 57;">
+    <div class="skill-circle">
+      <div class="skill-circle-inner">
+        <span class="skill-percentage">57%</span>
+      </div>
+    </div>
+    <div class="skill-info">
+      <div class="skill-name">C#</div>
+      <div class="skill-level-text">Intermediate</div>
+    </div>
+  </div>
+</div>
 
 </div>
 
