@@ -118,13 +118,72 @@ margin-bottom:30px;
 }
 
 /* CARD */
-.card{
-background:#0e0e1c;
-padding:30px;
-border-radius:20px;
-border:1px solid rgba(79,142,247,0.15);
-margin-bottom:30px;
-}
+.card {
+            display: flex; flex-direction: row; align-items: center; gap: 60px;
+            max-width: 880px; width: 100%;
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 28px; padding: 56px 64px;
+            position: relative; overflow: hidden;
+            animation: fadeUp 1s 0.3s ease both;
+            transition: border-color 0.4s, box-shadow 0.4s;
+        }
+        .profile-card::before {
+            content:''; position:absolute; inset:0;
+            background:linear-gradient(135deg, rgba(79,142,247,0.04) 0%, transparent 55%);
+            pointer-events:none;
+        }
+        .profile-card:hover {
+            border-color: rgba(79,142,247,0.3);
+            box-shadow: 0 0 80px rgba(79,142,247,0.1), 0 40px 80px rgba(0,0,0,0.4);
+        }
+        .card-glow-tl {
+            position:absolute; top:0; left:0; width:200px; height:200px;
+            background:radial-gradient(circle at 0 0, rgba(79,142,247,0.15) 0%, transparent 70%);
+            pointer-events:none;
+        }
+        .card-glow-br {
+            position:absolute; bottom:0; right:0; width:180px; height:180px;
+            background:radial-gradient(circle at 100% 100%, rgba(139,77,247,0.10) 0%, transparent 70%);
+            pointer-events:none;
+        }
+
+        /* ─── Avatar ─── */
+        .avatar-wrap { position:relative; flex-shrink:0; width:200px; height:200px; }
+
+        .avatar-halo {
+            position:absolute; inset:-28px; border-radius:50%;
+            background:radial-gradient(circle, rgba(79,142,247,0.22) 0%, transparent 70%);
+            animation:haloPulse 3s ease-in-out infinite; z-index:0;
+        }
+        @keyframes haloPulse {
+            0%,100%{opacity:0.6; transform:scale(1);}
+            50%    {opacity:1;   transform:scale(1.06);}
+        }
+
+        .avatar-ring {
+            position:absolute; inset:0; border-radius:50%;
+            background:conic-gradient(var(--blue) 0deg, #a78bfa 130deg, transparent 200deg, transparent 360deg);
+            animation:spinRing 6s linear infinite; z-index:1;
+        }
+        @keyframes spinRing { to{transform:rotate(360deg);} }
+
+        .avatar-inner {
+            position:absolute; inset:4px; border-radius:50%;
+            background:var(--bg); z-index:2;
+        }
+        .avatar-img-wrap {
+            position:absolute; inset:8px; border-radius:50%;
+            overflow:hidden; z-index:3;
+            border:2px solid rgba(79,142,247,0.25);
+        }
+        .avatar-img-wrap img { width:100%; height:100%; object-fit:cover; }
+        .avatar-fallback {
+            width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+            background:linear-gradient(135deg, #1a3a8f, #4f8ef7);
+        }
+        .avatar-fallback span {
+            font-family:'Syne',sans-serif; font-size:2.6rem; font-weight:800; color:#fff;
+        }
 
 /* TIMELINE */
 .timeline{
@@ -180,7 +239,7 @@ padding:40px 25px;
 <!-- LEFT -->
 <div class="left">
 
-<div class="avatar">
+<div class="avatar-img-wrap">
 <img src="images/developers/jake.jpg">
 </div>
 
