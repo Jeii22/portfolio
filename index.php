@@ -171,19 +171,25 @@ margin-bottom:8px;
 color:#aaa;
 }
 
-/* CIRCULAR SKILLS WITH BATTERY COLORS */
+/* CIRCULAR SKILLS - SIDE BY SIDE LAYOUT */
 .skills-container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .skill-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+  flex: 1;
+  min-width: 80px;
   opacity:0;
-  transform:translateX(-20px);
+  transform:translateY(20px) scale(0.9);
   transition:all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -193,13 +199,13 @@ body.loaded .skill-item:nth-child(3) { transition-delay: 0.9s; }
 
 body.loaded .skill-item {
   opacity:1;
-  transform:translateX(0);
+  transform:translateY(0) scale(1);
 }
 
 .skill-circle {
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -214,14 +220,14 @@ body.loaded .skill-item {
   border-radius: 50%;
   background: conic-gradient(
     var(--skill-color) calc(var(--percentage) * 3.6deg),
-    rgba(255,255,255,0.05) calc(var(--percentage) * 3.6deg)
+    rgba(255,255,255,0.08) calc(var(--percentage) * 3.6deg)
   );
   transition: all 0.8s ease-out;
 }
 
 .skill-circle-inner {
   position: absolute;
-  inset: 8px;
+  inset: 7px;
   background: #0e0e1c;
   border-radius: 50%;
   display: flex;
@@ -232,28 +238,28 @@ body.loaded .skill-item {
 
 .skill-percentage {
   font-family: 'Syne', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--skill-color);
   transition: color 0.5s ease;
 }
 
 .skill-info {
-  flex: 1;
+  text-align: center;
 }
 
 .skill-name {
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: #fff;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .skill-level-text {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: var(--skill-color);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   font-weight: 500;
 }
 
@@ -661,10 +667,12 @@ padding:40px 25px;
   flex-direction: column;
   gap: 8px;
 }
+.skills-container {
+  justify-content: center;
+  gap: 20px;
+}
 .skill-item {
-  flex-direction: column;
-  text-align: center;
-  gap: 10px;
+  min-width: 70px;
 }
 }
 
@@ -744,18 +752,6 @@ padding:40px 25px;
     </div>
     <div class="skill-info">
       <div class="skill-name">C#</div>
-      <div class="skill-level-text">Intermediate</div>
-    </div>
-  </div>
-
-  <div class="skill-item" data-level="intermediate" style="--percentage: 62;">
-    <div class="skill-circle">
-      <div class="skill-circle-inner">
-        <span class="skill-percentage">62%</span>
-      </div>
-    </div>
-    <div class="skill-info">
-      <div class="skill-name">C</div>
       <div class="skill-level-text">Intermediate</div>
     </div>
   </div>
