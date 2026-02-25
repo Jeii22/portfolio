@@ -232,15 +232,24 @@ ensuring seamless integration with robust backend architectures.
 <div class="timeline">
 
 <div class="item">
-<div class="year">2024 – Present</div>
-<h4>Balt Bep System Developer</h4>
-<p>Developed a food ordering system with admin dashboard.</p>
+<div class="year">2025</div>
+<h4>BaltBep Ticketing System Developer</h4>
+<p>Developed a ship ticketing system with admin dashboard for our Capstone.</p>
+<p>4rd year Final Output</p>
 </div>
 
 <div class="item">
-<div class="year">2023 – 2024</div>
-<h4>Freelance Web Developer</h4>
-<p>Created responsive and modern client websites.</p>
+<div class="year">2024</div>
+<h4>Gym Monitoring System Developer</h4>
+<p>Built a Monitoring System for the Fettle Hut Fitness Gym specifically in PHP.</p>
+<p>3rd year Final Output</p>
+</div>
+
+<div class="item">
+<div class="year">2024</div>
+<h4>Gym Monitoring System Programmer</h4>
+<p>Created a Monitoring System for the Fettle Hut Fitness Gym using C#</p>
+<p>2rd year Final Output</p>
 </div>
 
 </div>
@@ -254,7 +263,7 @@ ensuring seamless integration with robust backend architectures.
 <div class="item">
 <div class="year">2022 – Present</div>
 <h4>Bachelor of Information Technology</h4>
-<p>Your University</p>
+<p>Madridejos Community College</p>
 </div>
 
 </div>
