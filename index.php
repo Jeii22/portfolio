@@ -747,6 +747,18 @@ padding:40px 25px;
       <div class="skill-level-text">Intermediate</div>
     </div>
   </div>
+
+  <div class="skill-item" data-level="intermediate" style="--percentage: 62;">
+    <div class="skill-circle">
+      <div class="skill-circle-inner">
+        <span class="skill-percentage">62%</span>
+      </div>
+    </div>
+    <div class="skill-info">
+      <div class="skill-name">C</div>
+      <div class="skill-level-text">Intermediate</div>
+    </div>
+  </div>
 </div>
 
 </div>
