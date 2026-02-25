@@ -64,15 +64,59 @@ body.loaded .left {
   filter:blur(0);
 }
 
-/* AVATAR */
+/* AVATAR WITH GLOWING SPINNING EFFECT */
+.avatar-wrapper {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #4f8ef7, #a78bfa, #4f8ef7);
+  animation: spin 3s linear infinite;
+  filter: blur(15px);
+  opacity: 0.6;
+}
+
+.avatar-glow::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg, #a78bfa, #4f8ef7, #a78bfa);
+  animation: spin 4s linear infinite reverse;
+  filter: blur(20px);
+  opacity: 0.4;
+}
+
+.avatar-ring {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #4f8ef7, #a78bfa) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin 8s linear infinite;
+}
+
 .avatar{
 width:150px;
 height:150px;
-margin:auto;
 border-radius:50%;
 padding:5px;
-background:conic-gradient(#4f8ef7,#a78bfa);
-animation:spin 8s linear infinite;
+background: linear-gradient(135deg, #4f8ef7, #a78bfa);
+position: relative;
+z-index: 10;
 opacity:0;
 transform:scale(0.8);
 transition:all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s;
@@ -89,6 +133,11 @@ height:100%;
 border-radius:50%;
 border:4px solid #05050d;
 object-fit:cover;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .section{
@@ -377,52 +426,150 @@ body.loaded .experience-link {
   transform: translateX(3px);
 }
 
-/* EDUCATION CARD */
-.education-card {
-  background: linear-gradient(135deg, rgba(79,142,247,0.05) 0%, rgba(167,139,250,0.03) 100%);
-  border: 1px solid rgba(79,142,247,0.15);
-  border-radius: 16px;
-  padding: 24px;
-  opacity:0;
-  transform:translateY(30px);
-  transition:all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+/* ENHANCED EDUCATION CARDS */
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
+
+.education-card {
+  background: linear-gradient(135deg, rgba(79,142,247,0.06) 0%, rgba(167,139,250,0.04) 100%);
+  border: 1px solid rgba(79,142,247,0.18);
+  border-radius: 16px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  opacity:0;
+  transform:translateY(30px) scale(0.98);
+  filter:blur(3px);
+  transition:all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body.loaded .education-card:nth-child(1) { transition-delay: 0.9s; }
+body.loaded .education-card:nth-child(2) { transition-delay: 1.05s; }
+body.loaded .education-card:nth-child(3) { transition-delay: 1.2s; }
 
 body.loaded .education-card {
   opacity:1;
-  transform:translateY(0);
+  transform:translateY(0) scale(1);
+  filter:blur(0);
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #a78bfa 0%, #4f8ef7 100%);
+  opacity: 0.5;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.education-card:hover::before {
+  width: 6px;
+  opacity: 0.8;
 }
 
 .education-card:hover {
-  border-color: rgba(79,142,247,0.3);
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(79,142,247,0.1);
+  transform: translateY(-4px);
+  border-color: rgba(79,142,247,0.35);
+  box-shadow: 0 15px 35px rgba(79,142,247,0.12), 0 0 0 1px rgba(79,142,247,0.08);
 }
 
 .education-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .education-year {
+  background: rgba(79,142,247,0.12);
   color: #4f8ef7;
-  font-size: 0.9rem;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
   font-weight: 500;
+  border: 1px solid rgba(79,142,247,0.25);
+  opacity:0;
+  transform:scale(0.8);
+  transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+body.loaded .education-card:nth-child(1) .education-year { transition-delay: 1.1s; }
+body.loaded .education-card:nth-child(2) .education-year { transition-delay: 1.25s; }
+body.loaded .education-card:nth-child(3) .education-year { transition-delay: 1.4s; }
+
+body.loaded .education-year {
+  opacity:1;
+  transform:scale(1);
+}
+
+.education-level {
+  background: rgba(167,139,250,0.12);
+  color: #a78bfa;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(167,139,250,0.18);
 }
 
 .education-title {
   font-family: 'Syne', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  line-height: 1.3;
+  opacity:0;
+  transform:translateY(10px);
+  transition:all 0.5s ease-out;
+}
+
+body.loaded .education-card:nth-child(1) .education-title { transition-delay: 1.15s; }
+body.loaded .education-card:nth-child(2) .education-title { transition-delay: 1.3s; }
+body.loaded .education-card:nth-child(3) .education-title { transition-delay: 1.45s; }
+
+body.loaded .education-title {
+  opacity:1;
+  transform:translateY(0);
 }
 
 .education-school {
   color: #888;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity:0;
+  transform:translateY(8px);
+  transition:all 0.5s ease-out;
+}
+
+body.loaded .education-card:nth-child(1) .education-school { transition-delay: 1.2s; }
+body.loaded .education-card:nth-child(2) .education-school { transition-delay: 1.35s; }
+body.loaded .education-card:nth-child(3) .education-school { transition-delay: 1.5s; }
+
+body.loaded .education-school {
+  opacity:1;
+  transform:translateY(0);
+}
+
+.education-school::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #4f8ef7;
 }
 
 @media(max-width:900px){
@@ -437,7 +584,7 @@ text-align:center;
 .right{
 padding:40px 25px;
 }
-.experience-header {
+.experience-header, .education-header {
   flex-direction: column;
   gap: 8px;
 }
@@ -467,8 +614,12 @@ padding:40px 25px;
 <!-- LEFT -->
 <div class="left">
 
-<div class="avatar">
-<img src="images/developers/jake.jpg">
+<div class="avatar-wrapper">
+  <div class="avatar-glow"></div>
+  <div class="avatar-ring"></div>
+  <div class="avatar">
+    <img src="images/developers/jake.jpg">
+  </div>
 </div>
 
 <div class="section contact">
@@ -524,7 +675,7 @@ ensuring seamless integration with robust backend architectures.
     <span class="experience-type">Capstone</span>
   </div>
   <h4 class="experience-title">BaltBep Ticketing System Developer</h4>
-  <p class="experience-desc">Developed a ship ticketing system with admin dashboard for our Capstone project. 4th year Final Output.</p>
+  <p class="experience-desc">Developed a ship ticketing system with admin dashboard for our Capstone project.</p>
   <a href="https://baltbep.net" target="_blank" rel="noopener noreferrer" class="experience-link">
     Visit baltbep.net
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -541,7 +692,7 @@ ensuring seamless integration with robust backend architectures.
     <span class="experience-type">3rd Year Final Output</span>
   </div>
   <h4 class="experience-title">Gym Monitoring System Developer</h4>
-  <p class="experience-desc">Built a comprehensive Monitoring System for Fettle Hut Fitness Gym using PHP. 3rd year Final Output.</p>
+  <p class="experience-desc">Built a comprehensive Monitoring System for Fettle Hut Fitness Gym using PHP.</p>
 </div>
 
 <div class="experience-card">
@@ -550,7 +701,7 @@ ensuring seamless integration with robust backend architectures.
     <span class="experience-type">2nd Year Final Output</span>
   </div>
   <h4 class="experience-title">Gym Monitoring System Programmer</h4>
-  <p class="experience-desc">Created a Monitoring System for Fettle Hut Fitness Gym using C# and .NET framework. 2nd year Final Output.</p>
+  <p class="experience-desc">Created a Monitoring System for Fettle Hut Fitness Gym using C# and .NET framework.</p>
 </div>
 
 </div>
@@ -559,14 +710,36 @@ ensuring seamless integration with robust backend architectures.
 <div class="card">
 <h3>EDUCATION</h3>
 
+<div class="education-container">
+
 <div class="education-card">
   <div class="education-header">
     <span class="education-year">2022 – Present</span>
+    <span class="education-level">College</span>
   </div>
-  <h4 class="education-title">Bachelor of Information Technology</h4>
+  <h4 class="education-title">Bachelor of Science in Information Technology</h4>
   <p class="education-school">Madridejos Community College</p>
 </div>
 
+<div class="education-card">
+  <div class="education-header">
+    <span class="education-year">2020 – 2022</span>
+    <span class="education-level">Senior High</span>
+  </div>
+  <h4 class="education-title">Humanities and Social Sciences</h4>
+  <p class="education-school">Madridejos National High School</p>
+</div>
+
+<div class="education-card">
+  <div class="education-header">
+    <span class="education-year">2016 – 2020</span>
+    <span class="education-level">Junior High</span>
+  </div>
+  <h4 class="education-title">Junior High School</h4>
+  <p class="education-school">Madridejos National High School</p>
+</div>
+
+</div>
 </div>
 
 </div>
