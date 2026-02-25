@@ -113,55 +113,18 @@ margin-bottom:15px;
 color:#4f8ef7;
 font-size:1rem;
 letter-spacing:.1em;
-opacity:0;
-transform:translateX(-10px);
-transition:all 0.5s ease-out;
 }
-
-body.loaded .section h3 {
-  opacity:1;
-  transform:translateX(0);
-}
-
-body.loaded .section:nth-of-type(1) h3 { transition-delay: 0.6s; }
-body.loaded .section:nth-of-type(2) h3 { transition-delay: 0.7s; }
-body.loaded .section:nth-of-type(3) h3 { transition-delay: 0.8s; }
 
 /* CONTACT */
 .contact p{
 font-size:.9rem;
 margin-bottom:8px;
 color:#aaa;
-opacity:0;
-transform:translateY(10px);
-transition:all 0.4s ease-out;
 }
-
-body.loaded .contact p {
-  opacity:1;
-  transform:translateY(0);
-}
-
-body.loaded .contact p:nth-child(2) { transition-delay: 0.7s; }
-body.loaded .contact p:nth-child(3) { transition-delay: 0.75s; }
-body.loaded .contact p:nth-child(4) { transition-delay: 0.8s; }
-body.loaded .contact p:nth-child(5) { transition-delay: 0.85s; }
 
 /* SKILLS */
 .skill{
 margin-bottom:12px;
-opacity:0;
-transform:translateX(-15px);
-transition:all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-body.loaded .skill:nth-child(2) { transition-delay: 0.7s; }
-body.loaded .skill:nth-child(3) { transition-delay: 0.8s; }
-body.loaded .skill:nth-child(4) { transition-delay: 0.9s; }
-
-body.loaded .skill {
-  opacity:1;
-  transform:translateX(0);
 }
 
 .bar{
@@ -176,13 +139,7 @@ margin-top:5px;
 display:block;
 height:100%;
 background:linear-gradient(90deg,#4f8ef7,#a78bfa);
-width:0;
-transition:width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
-body.loaded .skill:nth-child(2) .bar span { width:69%; transition-delay: 0.9s; }
-body.loaded .skill:nth-child(3) .bar span { width:48%; transition-delay: 1.0s; }
-body.loaded .skill:nth-child(4) .bar span { width:57%; transition-delay: 1.1s; }
 
 /* RIGHT PANEL */
 .right{
@@ -249,118 +206,224 @@ body.loaded .card {
   filter:blur(0);
 }
 
-.card h3 {
+/* REDESIGNED EXPERIENCE CARDS */
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.experience-card {
+  background: linear-gradient(135deg, rgba(79,142,247,0.08) 0%, rgba(167,139,250,0.05) 100%);
+  border: 1px solid rgba(79,142,247,0.2);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
   opacity:0;
-  transform:translateY(10px);
-  transition:all 0.5s ease-out;
+  transform:translateY(30px) scale(0.98);
+  filter:blur(3px);
+  transition:all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-body.loaded .card:nth-of-type(1) h3 { transition-delay: 0.8s; }
-body.loaded .card:nth-of-type(2) h3 { transition-delay: 0.95s; }
-body.loaded .card:nth-of-type(3) h3 { transition-delay: 1.1s; }
+body.loaded .experience-card:nth-child(1) { transition-delay: 0.7s; }
+body.loaded .experience-card:nth-child(2) { transition-delay: 0.85s; }
+body.loaded .experience-card:nth-child(3) { transition-delay: 1.0s; }
 
-body.loaded .card h3 {
+body.loaded .experience-card {
   opacity:1;
-  transform:translateY(0);
+  transform:translateY(0) scale(1);
+  filter:blur(0);
 }
 
-.card p {
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #4f8ef7 0%, #a78bfa 100%);
+  opacity: 0.6;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.experience-card:hover::before {
+  width: 6px;
+  opacity: 1;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(79,142,247,0.4);
+  box-shadow: 0 20px 40px rgba(79,142,247,0.15), 0 0 0 1px rgba(79,142,247,0.1);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.experience-year {
+  background: rgba(79,142,247,0.15);
+  color: #4f8ef7;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(79,142,247,0.3);
   opacity:0;
-  transform:translateY(15px);
-  transition:all 0.5s ease-out;
+  transform:scale(0.8);
+  transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-body.loaded .card:nth-of-type(1) p { transition-delay: 0.9s; }
-body.loaded .card:nth-of-type(2) p { transition-delay: 1.05s; }
-body.loaded .card:nth-of-type(3) p { transition-delay: 1.2s; }
+body.loaded .experience-card:nth-child(1) .experience-year { transition-delay: 0.9s; }
+body.loaded .experience-card:nth-child(2) .experience-year { transition-delay: 1.05s; }
+body.loaded .experience-card:nth-child(3) .experience-year { transition-delay: 1.2s; }
 
-body.loaded .card p {
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* TIMELINE */
-.timeline{
-border-left:2px solid rgba(79,142,247,0.3);
-padding-left:20px;
-}
-
-.item{
-margin-bottom:25px;
-position:relative;
-opacity:0;
-transform:translateX(-20px) scale(0.95);
-transition:all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-body.loaded .timeline:nth-of-type(1) .item:nth-child(1) { transition-delay: 0.9s; }
-body.loaded .timeline:nth-of-type(1) .item:nth-child(2) { transition-delay: 1.0s; }
-body.loaded .timeline:nth-of-type(1) .item:nth-child(3) { transition-delay: 1.1s; }
-body.loaded .timeline:nth-of-type(2) .item:nth-child(1) { transition-delay: 1.2s; }
-
-body.loaded .item {
-  opacity:1;
-  transform:translateX(0) scale(1);
-}
-
-.item::before{
-content:'';
-position:absolute;
-left:-28px;
-top:5px;
-width:12px;
-height:12px;
-background:#4f8ef7;
-border-radius:50%;
-opacity:0;
-transform:scale(0);
-transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-body.loaded .item::before {
+body.loaded .experience-year {
   opacity:1;
   transform:scale(1);
 }
 
-body.loaded .timeline:nth-of-type(1) .item:nth-child(1)::before { transition-delay: 1.0s; }
-body.loaded .timeline:nth-of-type(1) .item:nth-child(2)::before { transition-delay: 1.1s; }
-body.loaded .timeline:nth-of-type(1) .item:nth-child(3)::before { transition-delay: 1.2s; }
-body.loaded .timeline:nth-of-type(2) .item:nth-child(1)::before { transition-delay: 1.3s; }
-
-.year{
-color:#4f8ef7;
-font-size:.85rem;
-margin-bottom:5px;
-opacity:0;
-transform:translateY(-5px);
-transition:all 0.4s ease-out;
+.experience-type {
+  background: rgba(167,139,250,0.15);
+  color: #a78bfa;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(167,139,250,0.2);
 }
 
-body.loaded .item .year {
-  opacity:1;
-  transform:translateY(0);
-}
-
-body.loaded .timeline:nth-of-type(1) .item:nth-child(1) .year { transition-delay: 1.05s; }
-body.loaded .timeline:nth-of-type(1) .item:nth-child(2) .year { transition-delay: 1.15s; }
-body.loaded .timeline:nth-of-type(1) .item:nth-child(3) .year { transition-delay: 1.25s; }
-body.loaded .timeline:nth-of-type(2) .item:nth-child(1) .year { transition-delay: 1.35s; }
-
-.item h4 {
+.experience-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.3;
   opacity:0;
   transform:translateY(10px);
-  transition:all 0.4s ease-out;
+  transition:all 0.5s ease-out;
 }
 
-body.loaded .item h4 {
+body.loaded .experience-card:nth-child(1) .experience-title { transition-delay: 0.95s; }
+body.loaded .experience-card:nth-child(2) .experience-title { transition-delay: 1.1s; }
+body.loaded .experience-card:nth-child(3) .experience-title { transition-delay: 1.25s; }
+
+body.loaded .experience-title {
   opacity:1;
   transform:translateY(0);
 }
 
-body.loaded .timeline:nth-of-type(1) .item:nth-child(1) h4 { transition-delay: 1.1s; }
-body.loaded .timeline:nth-of-type(1) .item:nth-child(2) h4 { transition-delay: 1.2s; }
-body.loaded .timeline:nth-of-type(1) .item:nth-child(3) h4 { transition-delay: 1.3s; }
-body.loaded .timeline:nth-of-type(2) .item:nth-child(1) h4 { transition-delay: 1.4s; }
+.experience-desc {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  opacity:0;
+  transform:translateY(10px);
+  transition:all 0.5s ease-out;
+}
+
+body.loaded .experience-card:nth-child(1) .experience-desc { transition-delay: 1.0s; }
+body.loaded .experience-card:nth-child(2) .experience-desc { transition-delay: 1.15s; }
+body.loaded .experience-card:nth-child(3) .experience-desc { transition-delay: 1.3s; }
+
+body.loaded .experience-desc {
+  opacity:1;
+  transform:translateY(0);
+}
+
+.experience-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #4f8ef7;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  opacity:0;
+  transform:translateX(-10px);
+}
+
+body.loaded .experience-card:nth-child(1) .experience-link { transition-delay: 1.05s; }
+
+body.loaded .experience-link {
+  opacity:1;
+  transform:translateX(0);
+}
+
+.experience-link:hover {
+  color: #a78bfa;
+  transform: translateX(5px);
+}
+
+.experience-link svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.experience-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* EDUCATION CARD */
+.education-card {
+  background: linear-gradient(135deg, rgba(79,142,247,0.05) 0%, rgba(167,139,250,0.03) 100%);
+  border: 1px solid rgba(79,142,247,0.15);
+  border-radius: 16px;
+  padding: 24px;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+}
+
+body.loaded .education-card {
+  opacity:1;
+  transform:translateY(0);
+}
+
+.education-card:hover {
+  border-color: rgba(79,142,247,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(79,142,247,0.1);
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.education-year {
+  color: #4f8ef7;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.education-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.education-school {
+  color: #888;
+  font-size: 0.95rem;
+}
 
 @media(max-width:900px){
 .container{
@@ -374,16 +437,13 @@ text-align:center;
 .right{
 padding:40px 25px;
 }
+.experience-header {
+  flex-direction: column;
+  gap: 8px;
+}
 }
 
-/* Hover effects */
-.card:hover {
-  border-color: rgba(79,142,247,0.4);
-  transform: translateY(-5px) scale(1.01);
-  box-shadow: 0 20px 40px rgba(79,142,247,0.1);
-  transition: all 0.3s ease;
-}
-
+/* Hover effects for other elements */
 .skill:hover .bar span {
   filter: brightness(1.2);
   transition: filter 0.3s ease;
@@ -393,22 +453,6 @@ padding:40px 25px;
   color: #4f8ef7;
   transform: translateX(5px);
   transition: all 0.3s ease;
-}
-
-.item:hover::before {
-  transform: scale(1.3);
-  box-shadow: 0 0 20px rgba(79,142,247,0.6);
-  transition: all 0.3s ease;
-}
-
-a[href="https://baltbep.net"] {
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-a[href="https://baltbep.net"]:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 10px rgba(0,255,0,0.5);
 }
 
 </style>
@@ -472,28 +516,41 @@ ensuring seamless integration with robust backend architectures.
 <div class="card">
 <h3>EXPERIENCE</h3>
 
-<div class="timeline">
+<div class="experience-container">
 
-<div class="item">
-  <div class="year">2025</div>
-  <h4>BaltBep Ticketing System Developer</h4>
-  <p>Developed a ship ticketing system with admin dashboard for our Capstone.</p>
-  <p>4th year Final Output</p>
-  <a href="https://baltbep.net" target="_blank" rel="noopener noreferrer" style="color: lime;">baltbep.net</a>
+<div class="experience-card">
+  <div class="experience-header">
+    <span class="experience-year">2025</span>
+    <span class="experience-type">Capstone</span>
+  </div>
+  <h4 class="experience-title">BaltBep Ticketing System Developer</h4>
+  <p class="experience-desc">Developed a ship ticketing system with admin dashboard for our Capstone project. 4th year Final Output.</p>
+  <a href="https://baltbep.net" target="_blank" rel="noopener noreferrer" class="experience-link">
+    Visit baltbep.net
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+      <polyline points="15 3 21 3 21 9"></polyline>
+      <line x1="10" y1="14" x2="21" y2="3"></line>
+    </svg>
+  </a>
 </div>
 
-<div class="item">
-<div class="year">2024</div>
-<h4>Gym Monitoring System Developer</h4>
-<p>Built a Monitoring System for the Fettle Hut Fitness Gym specifically in PHP.</p>
-<p>3rd year Final Output</p>
+<div class="experience-card">
+  <div class="experience-header">
+    <span class="experience-year">2024</span>
+    <span class="experience-type">3rd Year</span>
+  </div>
+  <h4 class="experience-title">Gym Monitoring System Developer</h4>
+  <p class="experience-desc">Built a comprehensive Monitoring System for Fettle Hut Fitness Gym using PHP. 3rd year Final Output.</p>
 </div>
 
-<div class="item">
-<div class="year">2024</div>
-<h4>Gym Monitoring System Programmer</h4>
-<p>Created a Monitoring System for the Fettle Hut Fitness Gym using C#</p>
-<p>2nd year Final Output</p>
+<div class="experience-card">
+  <div class="experience-header">
+    <span class="experience-year">2024</span>
+    <span class="experience-type">2nd Year</span>
+  </div>
+  <h4 class="experience-title">Gym Monitoring System Programmer</h4>
+  <p class="experience-desc">Created a Monitoring System for Fettle Hut Fitness Gym using C# and .NET framework. 2nd year Final Output.</p>
 </div>
 
 </div>
@@ -502,15 +559,14 @@ ensuring seamless integration with robust backend architectures.
 <div class="card">
 <h3>EDUCATION</h3>
 
-<div class="timeline">
-
-<div class="item">
-<div class="year">2022 – Present</div>
-<h4>Bachelor of Information Technology</h4>
-<p>Madridejos Community College</p>
+<div class="education-card">
+  <div class="education-header">
+    <span class="education-year">2022 – Present</span>
+  </div>
+  <h4 class="education-title">Bachelor of Information Technology</h4>
+  <p class="education-school">Madridejos Community College</p>
 </div>
 
-</div>
 </div>
 
 </div>
