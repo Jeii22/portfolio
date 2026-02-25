@@ -8,7 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
 font-family:'DM Sans',sans-serif;
 background:#05050d;
@@ -16,33 +18,36 @@ color:#e6e6f5;
 }
 
 /* GRID BACKGROUND */
-.bg-grid{
+.bg{
 position:fixed;
 inset:0;
 background-image:
 linear-gradient(rgba(79,142,247,0.05) 1px, transparent 1px),
 linear-gradient(90deg, rgba(79,142,247,0.05) 1px, transparent 1px);
 background-size:50px 50px;
-mask-image:radial-gradient(circle, black 40%, transparent 90%);
 z-index:-1;
 }
 
 /* LAYOUT */
 .container{
-max-width:1000px;
+max-width:1200px;
 margin:auto;
-padding:80px 20px;
+display:grid;
+grid-template-columns:320px 1fr;
+min-height:100vh;
 }
 
-/* HEADER */
-.header{
-text-align:center;
-margin-bottom:60px;
+/* LEFT PANEL */
+.left{
+background:#0e0e1c;
+padding:40px 30px;
+border-right:1px solid rgba(79,142,247,0.15);
 }
 
+/* AVATAR */
 .avatar{
-width:140px;
-height:140px;
+width:150px;
+height:150px;
 margin:auto;
 border-radius:50%;
 padding:5px;
@@ -60,149 +65,200 @@ object-fit:cover;
 
 @keyframes spin{to{transform:rotate(360deg)}}
 
-h1{
+.section{
+margin-top:40px;
+}
+
+.section h3{
+font-family:'Syne',sans-serif;
+margin-bottom:15px;
+color:#4f8ef7;
+font-size:1rem;
+letter-spacing:.1em;
+}
+
+/* CONTACT */
+.contact p{
+font-size:.9rem;
+margin-bottom:8px;
+color:#aaa;
+}
+
+/* SKILLS */
+.skill{
+margin-bottom:12px;
+}
+
+.bar{
+height:6px;
+background:#111;
+border-radius:10px;
+overflow:hidden;
+margin-top:5px;
+}
+
+.bar span{
+display:block;
+height:100%;
+background:linear-gradient(90deg,#4f8ef7,#a78bfa);
+}
+
+/* RIGHT PANEL */
+.right{
+padding:60px;
+}
+
+/* HEADER */
+.name{
 font-family:'Syne',sans-serif;
 font-size:3rem;
-margin-top:20px;
 }
 
 .role{
 color:#4f8ef7;
-margin-top:5px;
+margin-bottom:30px;
 }
 
 /* CARD */
 .card{
 background:#0e0e1c;
-border:1px solid rgba(79,142,247,0.15);
 padding:30px;
 border-radius:20px;
+border:1px solid rgba(79,142,247,0.15);
 margin-bottom:30px;
 }
 
-/* TITLES */
-.section-title{
-font-family:'Syne',sans-serif;
-margin-bottom:20px;
-font-size:1.6rem;
-}
-
 /* TIMELINE */
+.timeline{
+border-left:2px solid rgba(79,142,247,0.3);
+padding-left:20px;
+}
+
 .item{
-margin-bottom:15px;
+margin-bottom:25px;
+position:relative;
 }
 
-.item h3{
-font-size:1.1rem;
+.item::before{
+content:'';
+position:absolute;
+left:-28px;
+top:5px;
+width:12px;
+height:12px;
+background:#4f8ef7;
+border-radius:50%;
 }
 
-.item span{
-color:#6868a0;
-font-size:.85rem;
-}
-
-/* SKILLS */
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
-
-.skill{
-border:1px solid rgba(255,255,255,0.1);
-padding:6px 14px;
-border-radius:999px;
-font-size:.75rem;
-}
-
-/* CONTACT */
-.contact a{
-display:block;
+.year{
 color:#4f8ef7;
-text-decoration:none;
-margin-top:6px;
+font-size:.85rem;
+margin-bottom:5px;
 }
+
+@media(max-width:900px){
+.container{
+grid-template-columns:1fr;
+}
+.left{
+border-right:none;
+border-bottom:1px solid rgba(79,142,247,0.15);
+text-align:center;
+}
+.right{
+padding:40px 25px;
+}
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="bg-grid"></div>
+<div class="bg"></div>
 
 <div class="container">
 
-<!-- HEADER -->
-<div class="header">
+<!-- LEFT -->
+<div class="left">
+
 <div class="avatar">
 <img src="images/developers/jake.jpg">
 </div>
-<h1>Jake Rodriguez</h1>
-<p class="role">Full-Stack Developer</p>
+
+<div class="section contact">
+<h3>CONTACT</h3>
+<p>+63 912 345 6789</p>
+<p>jake@email.com</p>
+<p>github.com/jeii22</p>
+<p>Quezon City</p>
 </div>
 
-<!-- PROFILE -->
+<div class="section">
+<h3>SKILLS</h3>
+
+<div class="skill">Laravel<div class="bar"><span style="width:90%"></span></div></div>
+<div class="skill">Vue JS<div class="bar"><span style="width:80%"></span></div></div>
+<div class="skill">PHP<div class="bar"><span style="width:85%"></span></div></div>
+
+</div>
+
+<div class="section">
+<h3>LANGUAGES</h3>
+<p>English</p>
+<p>Filipino</p>
+</div>
+
+</div>
+
+<!-- RIGHT -->
+<div class="right">
+
+<div class="name">Jake Rodriguez</div>
+<div class="role">Full-Stack Developer</div>
+
 <div class="card">
-<h2 class="section-title">Profile</h2>
+<h3>ABOUT ME</h3>
 <p>
-Passionate full-stack developer specializing in modern UI/UX and scalable backend systems.
-Focused on building high-performance and visually immersive web applications.
+Full-stack developer focused on building immersive and scalable web applications
+with modern UI/UX and robust backend architecture.
 </p>
 </div>
 
-<!-- EDUCATION -->
 <div class="card">
-<h2 class="section-title">Education</h2>
+<h3>EXPERIENCE</h3>
+
+<div class="timeline">
 
 <div class="item">
-<h3>Bachelor of Information Technology</h3>
-<span>2022 – Present</span>
-<p>University Name</p>
+<div class="year">2024 – Present</div>
+<h4>Balt Bep System Developer</h4>
+<p>Developed a food ordering system with admin dashboard.</p>
 </div>
-
-</div>
-
-<!-- EXPERIENCE -->
-<div class="card">
-<h2 class="section-title">Experience</h2>
 
 <div class="item">
-<h3>Full-Stack Developer – Balt Bep</h3>
-<span>2024 – Present</span>
-<p>Developed ordering system with admin dashboard.</p>
+<div class="year">2023 – 2024</div>
+<h4>Freelance Web Developer</h4>
+<p>Created responsive and modern client websites.</p>
 </div>
 
 </div>
+</div>
 
-<!-- SKILLS -->
 <div class="card">
-<h2 class="section-title">Skills</h2>
-<div class="skills">
-<span class="skill">Laravel</span>
-<span class="skill">Vue</span>
-<span class="skill">Tailwind</span>
-<span class="skill">PHP</span>
-<span class="skill">MySQL</span>
-<span class="skill">REST API</span>
-</div>
-</div>
+<h3>EDUCATION</h3>
 
-<!-- PROJECTS -->
-<div class="card">
-<h2 class="section-title">Projects</h2>
+<div class="timeline">
 
 <div class="item">
-<h3>Balt Bep Ordering System</h3>
-<p>Modern food ordering platform with role-based dashboard.</p>
+<div class="year">2022 – Present</div>
+<h4>Bachelor of Information Technology</h4>
+<p>Your University</p>
 </div>
 
 </div>
+</div>
 
-<!-- CONTACT -->
-<div class="card contact">
-<h2 class="section-title">Contact</h2>
-<a href="mailto:your@email.com">your@email.com</a>
-<a href="https://facebook.com" target="_blank">Facebook</a>
-<a href="#">GitHub</a>
 </div>
 
 </div>
