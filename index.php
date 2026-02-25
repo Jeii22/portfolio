@@ -232,11 +232,11 @@ ensuring seamless integration with robust backend architectures.
 <div class="timeline">
 
 <div class="item">
-<div class="year">2025</div>
-<h4>BaltBep Ticketing System Developer</h4>
-<p>Developed a ship ticketing system with admin dashboard for our Capstone.</p>
-<p>4th year Final Output</p>
-<href>baltbep.net</href>
+  <div class="year">2025</div>
+  <h4>BaltBep Ticketing System Developer</h4>
+  <p>Developed a ship ticketing system with admin dashboard for our Capstone.</p>
+  <p>4th year Final Output</p>
+  <a href="https://baltbep.net" target="_blank" rel="noopener noreferrer">baltbep.net</a>
 </div>
 
 <div class="item">
