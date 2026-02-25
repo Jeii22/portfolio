@@ -235,7 +235,7 @@ ensuring seamless integration with robust backend architectures.
 <div class="year">2025</div>
 <h4>BaltBep Ticketing System Developer</h4>
 <p>Developed a ship ticketing system with admin dashboard for our Capstone.</p>
-<p>4rd year Final Output</p>
+<p>4th year Final Output</p>
 </div>
 
 <div class="item">
@@ -249,7 +249,7 @@ ensuring seamless integration with robust backend architectures.
 <div class="year">2024</div>
 <h4>Gym Monitoring System Programmer</h4>
 <p>Created a Monitoring System for the Fettle Hut Fitness Gym using C#</p>
-<p>2rd year Final Output</p>
+<p>2nd year Final Output</p>
 </div>
 
 </div>
