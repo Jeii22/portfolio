@@ -186,18 +186,18 @@ padding:40px 25px;
 
 <div class="section contact">
 <h3>CONTACT</h3>
-<p>+63 912 345 6789</p>
-<p>jake@email.com</p>
-<p>github.com/jeii22</p>
-<p>Quezon City</p>
+<p>+63 930 246 7142</p>
+<p>jeikur42@gmail.com</p>
+<p>https://github.com/Jeii22</p>
+<p>Poblacion, Madridejos Cebu</p>
 </div>
 
 <div class="section">
 <h3>SKILLS</h3>
 
-<div class="skill">Laravel<div class="bar"><span style="width:90%"></span></div></div>
-<div class="skill">Vue JS<div class="bar"><span style="width:80%"></span></div></div>
-<div class="skill">PHP<div class="bar"><span style="width:85%"></span></div></div>
+<div class="skill">Laravel<div class="bar"><span style="width:69%"></span></div></div>
+<div class="skill">PHP<div class="bar"><span style="width:48%"></span></div></div>
+<div class="skill">C#<div class="bar"><span style="width:57%"></span></div></div>
 
 </div>
 
@@ -213,13 +213,16 @@ padding:40px 25px;
 <div class="right">
 
 <div class="name">Jake Rodriguez</div>
-<div class="role">Full-Stack Developer</div>
+<div class="role">Developer</div>
 
 <div class="card">
 <h3>ABOUT ME</h3>
 <p>
-Full-stack developer focused on building immersive and scalable web applications
-with modern UI/UX and robust backend architecture.
+I specialize in crafting immersive and scalable web applications with a
+strong emphasis on modern UI/UX design and front-end development. While I
+don’t code entirely from scratch, I leverage AI tools and prompts to
+efficiently build and refine interactive, user-friendly interfaces,
+ensuring seamless integration with robust backend architectures.
 </p>
 </div>
 
