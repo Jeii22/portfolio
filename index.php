@@ -63,8 +63,6 @@ border:4px solid #05050d;
 object-fit:cover;
 }
 
-@keyframes spin{to{transform:rotate(360deg)}}
-
 .section{
 margin-top:40px;
 }
