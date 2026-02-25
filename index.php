@@ -188,7 +188,7 @@ padding:40px 25px;
 <h3>CONTACT</h3>
 <p>+63 930 246 7142</p>
 <p>jeikur42@gmail.com</p>
-<p>https://github.com/Jeii22</p>
+<p>github.com/Jeii22</p>
 <p>Poblacion, Madridejos Cebu</p>
 </div>
 
@@ -236,6 +236,7 @@ ensuring seamless integration with robust backend architectures.
 <h4>BaltBep Ticketing System Developer</h4>
 <p>Developed a ship ticketing system with admin dashboard for our Capstone.</p>
 <p>4th year Final Output</p>
+<href>baltbep.net</href>
 </div>
 
 <div class="item">
