@@ -299,7 +299,7 @@
                 <div class="avatar-inner"></div>
                 <div class="avatar-img-wrap">
                     <img
-                        src="{{ asset('jake.png') }}"
+                        src="{{ asset('images/developers/jake.jpg') }}"
                         alt="Jake Rodriguez"
                         loading="eager"
                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
