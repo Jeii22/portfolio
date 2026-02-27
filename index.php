@@ -1291,7 +1291,7 @@ body.loaded .testimonial-card {
       </p>
       <div class="stats-grid">
         <div class="stat-item">
-          <span class="stat-number">4+</span>
+          <span class="stat-number">3+</span>
           <div class="stat-label">Years Learning</div>
         </div>
         <div class="stat-item">
@@ -1315,37 +1315,91 @@ body.loaded .testimonial-card {
     <p class="section-desc">Battery-level indicators showing my proficiency</p>
   </div>
   
+  
   <div class="skills-grid">
-    <div class="skill-item" data-level="advanced" style="--percentage: 69;">
+    <div class="skill-item" data-level="advanced" style="--percentage: 81;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
-          <span class="skill-percentage">69%</span>
+          <span class="skill-percentage">81%</span>
           <span class="skill-level">Advanced</span>
         </div>
       </div>
       <span class="skill-name">Laravel</span>
     </div>
     
-    <div class="skill-item" data-level="intermediate" style="--percentage: 48;">
+    <div class="skill-item" data-level="intermediate" style="--percentage: 53;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
-          <span class="skill-percentage">48%</span>
+          <span class="skill-percentage">53%</span>
           <span class="skill-level">Intermediate</span>
         </div>
       </div>
       <span class="skill-name">PHP</span>
     </div>
     
-    <div class="skill-item" data-level="intermediate" style="--percentage: 57;">
+    <div class="skill-item" data-level="intermediate" style="--percentage: 62;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
-          <span class="skill-percentage">57%</span>
+          <span class="skill-percentage">62%</span>
           <span class="skill-level">Intermediate</span>
         </div>
       </div>
       <span class="skill-name">C#</span>
     </div>
+    
+    <div class="skill-item" data-level="intermediate" style="--percentage: 45;">
+      <div class="skill-circle">
+        <div class="skill-circle-inner">
+          <span class="skill-percentage">45%</span>
+          <span class="skill-level">Intermediate</span>
+        </div>
+      </div>
+      <span class="skill-name">React Native</span>
+    </div>
+    
+    <div class="skill-item" data-level="intermediate" style="--percentage: 58;">
+      <div class="skill-circle">
+        <div class="skill-circle-inner">
+          <span class="skill-percentage">58%</span>
+          <span class="skill-level">Intermediate</span>
+        </div>
+      </div>
+      <span class="skill-name">MySQL</span>
+    </div>
+    
+    <div class="skill-item" data-level="beginner" style="--percentage: 38;">
+      <div class="skill-circle">
+        <div class="skill-circle-inner">
+          <span class="skill-percentage">38%</span>
+          <span class="skill-level">Beginner</span>
+        </div>
+      </div>
+      <span class="skill-name">JavaScript</span>
+    </div>
+    
+    <div class="skill-item" data-level="beginner" style="--percentage: 35;">
+      <div class="skill-circle">
+        <div class="skill-circle-inner">
+          <span class="skill-percentage">35%</span>
+          <span class="skill-level">Beginner</span>
+        </div>
+      </div>
+      <span class="skill-name">Firebase</span>
+    </div>
+    
+    <div class="skill-item" data-level="beginner" style="--percentage: 42;">
+      <div class="skill-circle">
+        <div class="skill-circle-inner">
+          <span class="skill-percentage">42%</span>
+          <span class="skill-level">Beginner</span>
+        </div>
+      </div>
+      <span class="skill-name">HTML/CSS</span>
+    </div>
   </div>
+
+
+
 </section>
 
 <!-- PROJECTS SECTION -->
