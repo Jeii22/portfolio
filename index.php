@@ -1227,7 +1227,7 @@ body.loaded .testimonial-card {
 
 <!-- NAVIGATION -->
 <nav class="nav">
-  <div class="nav-logo">JAKE.</div>
+  <div class="nav-logo">Jeiku</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -1246,14 +1246,14 @@ body.loaded .testimonial-card {
   </div>
   
   <div class="hero-content">
-    <div class="hero-badge">Available for Freelance Work</div>
+    <div class="hero-badge">Available for Development, IT & Office Work — Remote or On-Site</div>
     <h1 class="hero-title">
-      Creative<br>
-      <span>Developer</span>
+      Office Assistant<br>
+      <span>Digital Creator</span>
     </h1>
     <p class="hero-subtitle">
-      I craft immersive digital experiences with modern web technologies. 
-      Specializing in Laravel, PHP, and full-stack development.
+      I build websites, apps, and handle office work — remote or on-site. 
+      Coding, computers, and paperwork — whatever you need
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -1289,19 +1289,18 @@ body.loaded .testimonial-card {
         efficiently build and refine interactive, user-friendly interfaces, ensuring 
         seamless integration with robust backend architectures.
       </p>
-      
       <div class="stats-grid">
         <div class="stat-item">
-          <span class="stat-number">3+</span>
-          <div class="stat-label">Years Experience</div>
+          <span class="stat-number">4+</span>
+          <div class="stat-label">Years Learning</div>
         </div>
         <div class="stat-item">
           <span class="stat-number">10+</span>
-          <div class="stat-label">Projects Completed</div>
+          <div class="stat-label">Projects Built</div>
         </div>
         <div class="stat-item">
           <span class="stat-number">5+</span>
-          <div class="stat-label">Happy Clients</div>
+          <div class="stat-label">Technologies Mastered</div>
         </div>
       </div>
     </div>
