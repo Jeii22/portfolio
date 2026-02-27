@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+html_content = '''<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -524,6 +525,7 @@ body.loaded .experience-card:nth-child(1) { transition-delay: 0.1s; }
 body.loaded .experience-card:nth-child(2) { transition-delay: 0.2s; }
 body.loaded .experience-card:nth-child(3) { transition-delay: 0.3s; }
 body.loaded .experience-card:nth-child(4) { transition-delay: 0.4s; }
+body.loaded .experience-card:nth-child(5) { transition-delay: 0.5s; }
 
 .experience-card:hover {
   transform: translateY(-10px);
@@ -634,6 +636,46 @@ body.loaded .experience-card:nth-child(4) { transition-delay: 0.4s; }
   gap: 12px;
 }
 
+/* AI BADGE */
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(132,204,22,0.2));
+  border: 1px solid rgba(34,197,94,0.4);
+  color: #22c55e;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-left: 8px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+}
+
+/* MOBILE APP BADGE */
+.mobile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, rgba(79,142,247,0.2), rgba(167,139,250,0.2));
+  border: 1px solid rgba(79,142,247,0.4);
+  color: #4f8ef7;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-left: 8px;
+}
+
 /* MODAL STYLES */
 .modal-overlay {
   position: fixed;
@@ -707,6 +749,7 @@ body.loaded .experience-card:nth-child(4) { transition-delay: 0.4s; }
   display: inline-flex;
   gap: 10px;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .modal-year {
@@ -726,6 +769,40 @@ body.loaded .experience-card:nth-child(4) { transition-delay: 0.4s; }
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.modal-ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(132,204,22,0.15));
+  border: 1px solid rgba(34,197,94,0.4);
+  color: #22c55e;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.modal-ai-badge::before {
+  content: '✨';
+}
+
+.modal-mobile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(79,142,247,0.15), rgba(167,139,250,0.15));
+  border: 1px solid rgba(79,142,247,0.4);
+  color: #4f8ef7;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.modal-mobile-badge::before {
+  content: '📱';
 }
 
 .modal-title {
@@ -1281,6 +1358,26 @@ body.loaded .testimonial-card {
   </div>
   
   <div class="projects-grid">
+    <!-- Burn Bai Mobile App -->
+    <div class="experience-card" data-project="burnbai">
+      <div class="project-image">🔥</div>
+      <div class="project-content">
+        <div class="project-header">
+          <span class="project-year">2024</span>
+          <span class="project-type">Mobile App</span>
+        </div>
+        <h3 class="project-title">
+          Burn Bai
+          <span class="mobile-badge">📱 Mobile</span>
+        </h3>
+        <p class="project-desc">
+          A fat burner fitness app with easy, medium, and intense workouts. 
+          No fancy equipment needed—work out anywhere, even on Bantayan Island or any island paradise.
+        </p>
+        <span class="project-link">View Details →</span>
+      </div>
+    </div>
+    
     <!-- PSA Internship -->
     <div class="experience-card" data-project="psa">
       <div class="project-image">PSA</div>
@@ -1314,18 +1411,21 @@ body.loaded .testimonial-card {
       </div>
     </div>
     
-    <!-- Gym PHP -->
+    <!-- Gym PHP with AI -->
     <div class="experience-card" data-project="gym-php">
-      <div class="project-image">GM</div>
+      <div class="project-image">GM+AI</div>
       <div class="project-content">
         <div class="project-header">
           <span class="project-year">2024</span>
           <span class="project-type">3rd Year</span>
         </div>
-        <h3 class="project-title">Gym Monitoring System (PHP)</h3>
+        <h3 class="project-title">
+          Gym Monitoring System (PHP)
+          <span class="ai-badge">AI Powered</span>
+        </h3>
         <p class="project-desc">
-          Built a comprehensive monitoring system for Fettle Hut Fitness Gym with member 
-          management and attendance tracking.
+          Full-featured gym management with AI assistant for member support, workout 
+          recommendations, and smart scheduling.
         </p>
         <span class="project-link">View Details →</span>
       </div>
@@ -1369,11 +1469,11 @@ body.loaded .testimonial-card {
     </div>
     
     <div class="service-card">
-      <div class="service-icon">🎨</div>
-      <h3 class="service-title">UI/UX Design</h3>
+      <div class="service-icon">📱</div>
+      <h3 class="service-title">Mobile Development</h3>
       <p class="service-desc">
-        Creating intuitive and visually appealing interfaces that provide exceptional 
-        user experiences across all devices.
+        Cross-platform mobile applications that work seamlessly on both iOS and Android, 
+        designed for real-world usability.
       </p>
     </div>
     
@@ -1462,6 +1562,8 @@ body.loaded .testimonial-card {
       <div class="modal-badge">
         <span class="modal-year" id="modalYear">2025</span>
         <span class="modal-type" id="modalType">Capstone</span>
+        <span class="modal-ai-badge" id="modalAiBadge" style="display: none;">AI Powered</span>
+        <span class="modal-mobile-badge" id="modalMobileBadge" style="display: none;">Mobile App</span>
       </div>
       <h2 class="modal-title" id="modalTitle">Project Title</h2>
       <p class="modal-subtitle" id="modalSubtitle">Brief description</p>
@@ -1499,6 +1601,27 @@ body.loaded .testimonial-card {
 <script>
 // Project data for modals
 const projectData = {
+  burnbai: {
+    year: '2024',
+    type: 'Mobile Application',
+    title: 'Burn Bai',
+    subtitle: 'Island-Ready Fitness Companion',
+    overview: 'Burn Bai is a mobile fitness application designed specifically for people who want to stay fit without access to gym equipment or fancy facilities. Whether you\'re on Bantayan Island, Malapascua, or any remote island paradise, this app delivers effective fat-burning workouts that require zero equipment—just your body and determination. The app features three intensity levels (Easy, Medium, Intense) to accommodate beginners to advanced users, making fitness accessible to everyone, everywhere.',
+    tech: ['React Native', 'Firebase', 'Node.js', 'Expo', 'AsyncStorage', 'Push Notifications'],
+    features: [
+      'Three workout intensity levels: Easy, Medium, and Intense',
+      'Zero equipment required—bodyweight exercises only',
+      'Works offline—perfect for island locations with poor connectivity',
+      'Progress tracking and workout history',
+      'Customizable workout reminders and schedules',
+      'Calorie counter and fitness goal setting',
+      'Video demonstrations for all exercises',
+      'Bantayan Island-inspired tropical UI theme'
+    ],
+    link: null,
+    hasAI: false,
+    isMobile: true
+  },
   psa: {
     year: 'Jan - Apr 2026',
     type: 'On the Job Training',
@@ -1513,7 +1636,9 @@ const projectData = {
       'Participated in training sessions and workshops',
       'Learned government compliance and documentation standards'
     ],
-    link: null
+    link: null,
+    hasAI: false,
+    isMobile: false
   },
   baltbep: {
     year: '2025',
@@ -1524,33 +1649,39 @@ const projectData = {
     tech: ['Laravel', 'PHP', 'MySQL', 'JavaScript', 'Bootstrap', 'HTML/CSS'],
     features: [
       'Real-time seat availability and booking system',
-      'Automated ticket generation with QR codes',
+      'Automated ticket generation',
       'Admin dashboard with analytics and reporting',
-      'Passenger management and check-in system',
+      'Passenger management',
       'Payment integration and invoice generation',
-      'Mobile-responsive design for on-the-go booking'
+      'Mobile-responsive design for on-the-go booking',
+      'Mobile Application for easy booking'
+
     ],
-    link: 'https://baltbep.net'
+    link: 'https://baltbep.net',
+    hasAI: false,
+    isMobile: false
   },
   'gym-php': {
-    year: '2024',
+    year: 'OCt 2024 - Mar 2025',
     type: '3rd Year Final Project',
-    title: 'Gym Monitoring System (PHP)',
-    subtitle: 'Fitness Center Management Platform',
-    overview: 'A full-featured gym management system built specifically for Fettle Hut Fitness Gym. The web application handles member registrations, attendance tracking, payment processing, and workout plan assignments. Features an intuitive interface designed for gym staff with varying technical skills.',
-    tech: ['PHP', 'MySQL', 'JavaScript', 'jQuery', 'Bootstrap', 'HTML/CSS'],
+    title: 'Gym Management System (PHP)',
+    subtitle: 'AI-Powered Fitness Center Management Platform',
+    overview: 'A full-featured gym management system built specifically for Fettle Hut Fitness Gym, enhanced with an integrated AI assistant. The web application handles member registrations, attendance tracking, payment processing, and workout plan assignments. The AI assistant provides personalized workout recommendations, answers member queries, and assists with scheduling—making this a cutting-edge solution for modern fitness centers.',
+    tech: ['PHP', 'MySQL', 'JavaScript', 'jQuery', 'Bootstrap', 'HTML/CSS', 'OpenAI API', 'AJAX'],
     features: [
+      'Integrated AI assistant for member support and workout recommendations',
+      'Smart scheduling system with AI-optimized trainer appointments',
       'Member registration and profile management',
-      'RFID-based attendance tracking system',
       'Payment processing and invoice generation',
-      'Workout plan creation and assignment',
-      'Trainer scheduling and session booking',
+      'AI-generated personalized workout plans based on member goals',
       'Financial reporting and analytics dashboard'
     ],
-    link: null
+    link: null,
+    hasAI: true,
+    isMobile: false
   },
   'gym-csharp': {
-    year: '2024',
+    year: 'Mar - May 2024',
     type: '2nd Year Final Project',
     title: 'Gym Monitoring System (C#)',
     subtitle: 'Desktop Application for Gym Management',
@@ -1564,7 +1695,9 @@ const projectData = {
       'Backup and restore functionality',
       'Offline operation capability'
     ],
-    link: null
+    link: null,
+    hasAI: false,
+    isMobile: false
   }
 };
 
@@ -1579,6 +1712,22 @@ function openModal(projectId) {
   document.getElementById('modalTitle').textContent = project.title;
   document.getElementById('modalSubtitle').textContent = project.subtitle;
   document.getElementById('modalOverview').textContent = project.overview;
+  
+  // Show/hide AI badge
+  const aiBadge = document.getElementById('modalAiBadge');
+  if (project.hasAI) {
+    aiBadge.style.display = 'inline-flex';
+  } else {
+    aiBadge.style.display = 'none';
+  }
+  
+  // Show/hide Mobile badge
+  const mobileBadge = document.getElementById('modalMobileBadge');
+  if (project.isMobile) {
+    mobileBadge.style.display = 'inline-flex';
+  } else {
+    mobileBadge.style.display = 'none';
+  }
   
   // Populate tech stack
   const techContainer = document.getElementById('modalTech');
@@ -1661,4 +1810,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 </script>
 
 </body>
-</html>
+</html>'''
+
+print(html_content)
