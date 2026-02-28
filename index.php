@@ -1390,7 +1390,7 @@ body.loaded .testimonial-card {
       <div class="skill-circle">
         <div class="skill-circle-inner">
           <span class="skill-percentage">68%</span>
-          <span class="skill-level">Intermediate</span>
+          <span class="skill-level">advanced</span>
         </div>
       </div>
       <span class="skill-name">HTML/CSS</span>
