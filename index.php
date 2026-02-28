@@ -8,7 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <!-- FAVICON - Gradient J Monogram -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234f8ef7'/%3E%3Cstop offset='100%25' style='stop-color:%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%230e0e1c'/%3E%3Ctext x='50' y='75' font-family='Arial Black, sans-serif' font-size='70' font-weight='900' text-anchor='middle' fill='url(%23g)'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
 
 <style>
 
@@ -119,12 +120,14 @@ body.loaded .nav {
   position: relative;
   padding: 100px 40px;
   overflow: hidden;
+  padding: 100px 20px 60px;
 }
 
 .hero-content {
   text-align: center;
   max-width: 900px;
   z-index: 10;
+  width: 100%;
 }
 
 .hero-badge {
@@ -198,6 +201,8 @@ body.loaded .hero-subtitle {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
+  flex-direction: column;
+  width: 100%;
 }
 
 body.loaded .hero-cta {
@@ -216,6 +221,8 @@ body.loaded .hero-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  width: 100%;
+  justify-content: center;
 }
 
 .btn-primary {
