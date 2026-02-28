@@ -1320,7 +1320,7 @@ body.loaded .testimonial-card {
       <div class="skill-circle">
         <div class="skill-circle-inner">
           <span class="skill-percentage">81%</span>
-          <span class="skill-level">expert</span>
+          <span class="skill-level">advanced</span>
         </div>
       </div>
       <span class="skill-name">Laravel</span>
