@@ -1387,7 +1387,7 @@ body.loaded .testimonial-card {
       <span class="skill-name">Firebase</span>
     </div>
     
-    <div class="skill-item" data-level="beginner" style="--percentage: 68;">
+    <div class="skill-item" data-level="intermediate" style="--percentage: 68;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
           <span class="skill-percentage">68%</span>
