@@ -1,5 +1,4 @@
-
-html_content = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1317,7 +1316,7 @@ body.loaded .testimonial-card {
   
   
   <div class="skills-grid">
-    <div class="skill-item" data-level="advanced" style="--percentage: 81;">
+    <div class="skill-item" data-level="expert" style="--percentage: 81;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
           <span class="skill-percentage">81%</span>
@@ -1327,21 +1326,21 @@ body.loaded .testimonial-card {
       <span class="skill-name">Laravel</span>
     </div>
     
-    <div class="skill-item" data-level="intermediate" style="--percentage: 53;">
+    <div class="skill-item" data-level="intermediate" style="--percentage: 60;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
-          <span class="skill-percentage">53%</span>
+          <span class="skill-percentage">60%</span>
           <span class="skill-level">Intermediate</span>
         </div>
       </div>
       <span class="skill-name">PHP</span>
     </div>
     
-    <div class="skill-item" data-level="intermediate" style="--percentage: 62;">
+    <div class="skill-item" data-level="advanced" style="--percentage: 68;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
-          <span class="skill-percentage">62%</span>
-          <span class="skill-level">Intermediate</span>
+          <span class="skill-percentage">68%</span>
+          <span class="skill-level">advanced</span>
         </div>
       </div>
       <span class="skill-name">C#</span>
@@ -1863,6 +1862,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 </script>
 
 </body>
-</html>'''
-
-print(html_content)
+</html>
