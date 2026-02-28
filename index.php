@@ -1387,11 +1387,11 @@ body.loaded .testimonial-card {
       <span class="skill-name">Firebase</span>
     </div>
     
-    <div class="skill-item" data-level="beginner" style="--percentage: 42;">
+    <div class="skill-item" data-level="beginner" style="--percentage: 68;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
-          <span class="skill-percentage">42%</span>
-          <span class="skill-level">Beginner</span>
+          <span class="skill-percentage">68%</span>
+          <span class="skill-level">Intermediate</span>
         </div>
       </div>
       <span class="skill-name">HTML/CSS</span>
@@ -1595,8 +1595,8 @@ body.loaded .testimonial-card {
     
     <div class="social-links">
       <a href="https://github.com/Jeii22" target="_blank" class="social-link" title="GitHub">GH</a>
-      <a href="#" class="social-link" title="LinkedIn">LI</a>
-      <a href="#" class="social-link" title="Twitter">TW</a>
+      <a href="https://web.facebook.com/jei.waizzu" target="_blank" class="social-link" title="Facebook">FB</a>
+      <a href="https://www.instagram.com/jei.waizzu" target="_blank" class="social-link" title="Instagram">IG</a>
     </div>
   </div>
 </section>
