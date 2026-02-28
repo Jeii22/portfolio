@@ -1326,11 +1326,11 @@ body.loaded .testimonial-card {
       <span class="skill-name">Laravel</span>
     </div>
     
-    <div class="skill-item" data-level="intermediate" style="--percentage: 60;">
+    <div class="skill-item" data-level="advanced" style="--percentage: 60;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
           <span class="skill-percentage">60%</span>
-          <span class="skill-level">Intermediate</span>
+          <span class="skill-level">advanced</span>
         </div>
       </div>
       <span class="skill-name">PHP</span>
@@ -1366,11 +1366,11 @@ body.loaded .testimonial-card {
       <span class="skill-name">MySQL</span>
     </div>
     
-    <div class="skill-item" data-level="beginner" style="--percentage: 38;">
+    <div class="skill-item" data-level="intermediate" style="--percentage: 41;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
-          <span class="skill-percentage">38%</span>
-          <span class="skill-level">Beginner</span>
+          <span class="skill-percentage">41%</span>
+          <span class="skill-level">intermediate</span>
         </div>
       </div>
       <span class="skill-name">JavaScript</span>
