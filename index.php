@@ -691,6 +691,36 @@
                 #ffcccc 20px
             );
         }
+
+        /* Music Button */
+        .music-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #ff6b9d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-family: 'Patrick Hand';
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .music-btn.playing {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 157, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(255, 107, 157, 0); }
+        }
     </style>
 </head>
 <body>
@@ -767,7 +797,7 @@
                         <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXI2YzZiY3J5ZzRzeTJpdDJ0cWNxZzF3eXJ1aXJ5aXJ5aXJ5aXJ5ZiZjdD1n/l378eovFdLNcb8J8Y/giphy.gif" alt="Cute hello">
                     </div>
                 </div>
-                <br><br><br>
+                
                 <div class="page-number">- 1 -</div>
                 <div class="page-corner"></div>
             </div>
@@ -984,32 +1014,118 @@
     
     <!-- Background Music -->
     <audio id="bgMusic" loop>
-    <source src="shael-palangga.mp3" type="audio/mpeg">
+        <source src="shael-palangga.mp3" type="audio/mpeg">
+        <!-- Fallback for browsers that don't support MP3 -->
+        <source src="shael-palangga.ogg" type="audio/ogg">
     </audio>
 
-
-        <button onclick="document.getElementById('bgMusic').play()" 
-            style="position: fixed; top: 20px; right: 20px; z-index: 1000;
-                  background: #ff6b9d; color: white; border: none; 
-                  padding: 10px 20px; border-radius: 20px; font-family: 'Patrick Hand';">
+    <!-- Music Control Button -->
+    <button id="musicBtn" class="music-btn" onclick="toggleMusic()">
         🎵 Play Music
-        </button>
+    </button>
 
     <script>
         let currentPage = 1;
         const totalPages = 5;
+        let isMusicPlaying = false;
+        
+        // Music control function
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const btn = document.getElementById('musicBtn');
+            
+            if (isMusicPlaying) {
+                music.pause();
+                btn.textContent = '🎵 Play Music';
+                btn.classList.remove('playing');
+            } else {
+                music.volume = 0.4;
+                music.play().then(() => {
+                    btn.textContent = '🔊 Pause Music';
+                    btn.classList.add('playing');
+                }).catch(e => {
+                    console.log('Playback failed:', e);
+                    btn.textContent = '🎵 Click to Play';
+                });
+            }
+            isMusicPlaying = !isMusicPlaying;
+        }
+        
+        // Aggressive autoplay function - tries multiple methods
+        function attemptAutoplay() {
+            const music = document.getElementById('bgMusic');
+            const btn = document.getElementById('musicBtn');
+            
+            music.volume = 0.4;
+            
+            // Method 1: Direct play
+            const playPromise = music.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    // Success!
+                    isMusicPlaying = true;
+                    btn.textContent = '🔊 Pause Music';
+                    btn.classList.add('playing');
+                    console.log('Autoplay successful!');
+                }).catch(error => {
+                    // Autoplay blocked - try fallback methods
+                    console.log('Autoplay blocked, trying alternatives...');
+                    
+                    // Method 2: Try playing on any user interaction
+                    const events = ['click', 'touchstart', 'scroll', 'keydown', 'mousemove'];
+                    
+                    function tryPlayOnInteraction() {
+                        music.play().then(() => {
+                            isMusicPlaying = true;
+                            btn.textContent = '🔊 Pause Music';
+                            btn.classList.add('playing');
+                            // Remove all event listeners once successful
+                            events.forEach(evt => {
+                                document.removeEventListener(evt, tryPlayOnInteraction);
+                            });
+                        }).catch(e => {
+                            console.log('Still blocked:', e);
+                        });
+                    }
+                    
+                    // Add listeners to all possible interaction events
+                    events.forEach(evt => {
+                        document.addEventListener(evt, tryPlayOnInteraction, { once: true });
+                    });
+                    
+                    // Method 3: Show a subtle hint that music is available
+                    setTimeout(() => {
+                        if (!isMusicPlaying) {
+                            btn.style.animation = 'pulse 1s infinite';
+                        }
+                    }, 1000);
+                });
+            }
+        }
         
         // Launch sequence
         setTimeout(() => {
             document.getElementById('launch-overlay').style.opacity = '0';
             setTimeout(() => {
                 document.getElementById('launch-overlay').style.display = 'none';
-                // Try to play music
-                const music = document.getElementById('bgMusic');
-                music.volume = 0.4;
-                music.play().catch(e => console.log('Autoplay blocked'));
+                // Attempt autoplay when notebook opens
+                attemptAutoplay();
             }, 500);
         }, 3500);
+        
+        // Also try autoplay immediately on page load (for browsers that allow it)
+        window.addEventListener('load', () => {
+            // Small delay to ensure audio is loaded
+            setTimeout(attemptAutoplay, 100);
+        });
+        
+        // Try autoplay on visibility change (when user returns to tab)
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && !isMusicPlaying) {
+                attemptAutoplay();
+            }
+        });
         
         function updatePage() {
             // Hide all pages
@@ -1039,6 +1155,8 @@
             if (currentPage < totalPages) {
                 currentPage++;
                 updatePage();
+                // Try to play music on page turn if not already playing
+                if (!isMusicPlaying) attemptAutoplay();
             }
         }
         
@@ -1046,6 +1164,8 @@
             if (currentPage > 1) {
                 currentPage--;
                 updatePage();
+                // Try to play music on page turn if not already playing
+                if (!isMusicPlaying) attemptAutoplay();
             }
         }
         
