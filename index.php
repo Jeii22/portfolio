@@ -1050,9 +1050,9 @@
                     btn.textContent = '🔊 Pause Music';
                     btn.classList.add('playing');
                 }).catch(e => {
-                    console.log('Playback failed:', e);
-                    btn.textContent = '❌ Error - Check Console';
-                    alert('Music file failed to load. Google Drive links may be blocked. Try hosting the file elsewhere (Dropbox, GitHub, etc.)');
+                    console.log('Music Kunohay:', e);
+                    btn.textContent = '🎵 Play Music';
+                    alert('E play ko ni');
                 });
             }
         }
