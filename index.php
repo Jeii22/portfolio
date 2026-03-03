@@ -984,8 +984,10 @@
     
     <!-- Background Music -->
     <audio id="bgMusic" loop>
-        <source src="https://drive.google.com/file/d/1cMKe51lJpNxRqn-7dTdwTSg7rnnM6t1r/view?usp=drive_link" type="audio/mpeg">
+    <source src="shael-palangga.mp3" type="audio/mpeg">
     </audio>
+
+
         <button onclick="document.getElementById('bgMusic').play()" 
             style="position: fixed; top: 20px; right: 20px; z-index: 1000;
                   background: #ff6b9d; color: white; border: none; 
