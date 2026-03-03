@@ -793,9 +793,7 @@
                         <span class="marker">Intro kunohay</span>
                     </div>
                     
-                    <div class="gif-sticker" style="position: absolute; right: 20px; top: 100px;">
-                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXI2YzZiY3J5ZzRzeTJpdDJ0cWNxZzF3eXJ1aXJ5aXJ5aXJ5aXJ5ZiZjdD1n/l378eovFdLNcb8J8Y/giphy.gif" alt="Cute hello">
-                    </div>
+
                 </div>
                 
                 <div class="page-number">- 1 -</div>
