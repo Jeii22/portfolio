@@ -962,12 +962,12 @@
                               <div id="qrcode"></div>
                               
                               <div class="handwritten-url">
-                                  facebook.com/jei.waizzu
+                                  www.facebook.com/jei.waizzu
                               </div>
                               
                               <!-- Clickable Facebook Link -->
                               <a href="https://www.facebook.com/jei.waizzu" target="_blank" class="facebook-link" onclick="handleFacebookClick(event)">
-                                  👆 Visit My Facebook
+                                  👆 PM lako hahahaha
                               </a>
                               
                               <div class="tap-hint">Tap edges or use buttons to navigate</div>
