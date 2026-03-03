@@ -760,7 +760,7 @@
                     </div>
                     
                     <div style="margin-top: 30px; font-size: 1.3rem;">
-                        <span class="marker">A Personal Introduction</span>
+                        <span class="marker">Intro kunohay</span>
                     </div>
                     
                     <div class="gif-sticker" style="position: absolute; right: 20px; top: 100px;">
@@ -984,8 +984,14 @@
     
     <!-- Background Music -->
     <audio id="bgMusic" loop>
-        <source src="https://raw.githubusercontent.com/Jeii22/portfolio/raw/refs/heads/main/Shael%20-%20Palangga.mp3" type="audio/mpeg">
+        <source src="https://drive.google.com/file/d/1cMKe51lJpNxRqn-7dTdwTSg7rnnM6t1r/view?usp=drive_link" type="audio/mpeg">
     </audio>
+        <button onclick="document.getElementById('bgMusic').play()" 
+            style="position: fixed; top: 20px; right: 20px; z-index: 1000;
+                  background: #ff6b9d; color: white; border: none; 
+                  padding: 10px 20px; border-radius: 20px; font-family: 'Patrick Hand';">
+        🎵 Play Music
+        </button>
 
     <script>
         let currentPage = 1;
