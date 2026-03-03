@@ -1014,9 +1014,7 @@
     
     <!-- Background Music -->
     <audio id="bgMusic" loop>
-        <source src="shael-palangga.mp3" type="audio/mpeg">
-        <!-- Fallback for browsers that don't support MP3 -->
-        <source src="shael-palangga.ogg" type="audio/ogg">
+    <source src="https://drive.google.com/file/d/1cMKe51lJpNxRqn-7dTdwTSg7rnnM6t1r/view" type="audio/mpeg">
     </audio>
 
     <!-- Music Control Button -->
