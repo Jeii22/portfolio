@@ -839,20 +839,20 @@
             <div class="page" data-page="3">
                 <div class="date-stamp">The Good Stuff</div>
                 
-                <h2>Why Dating Me Rocks ★</h2>
+                <h2>Nganong Nindot Ko Kauban ★</h2>
                 
                 <div class="sticky-note blue">
                     <strong>Adaptive Boyfriend Technology™</strong><br>
-                    I automatically adjust to your needs. Bad day? I'm in therapist mode. Bored? Adventure activated. Hungry? Chef hat on.
+                    Automatically mu-adjust sa imohang needs. Bad day? Therapist mode yan. Bored? Aw laag ta sa wala pa na adto. Gutom? Asang kusina? HAHAHA
                 </div>
                 
                 <ul class="checklist">
-                    <li class="checked"><span class="marker">Multi-tasking master</span> - Can cuddle while coding</li>
-                    <li class="checked"><span class="marker">Zero lag response time</span> - I reply faster than your internet</li>
-                    <li class="checked"><span class="marker">Unlimited patience</span> - Debugged my own code, I can handle anything</li>
-                    <li class="checked"><span class="marker">Built-in entertainment</span> - Voice actor + film actor = never boring</li>
-                    <li class="checked"><span class="marker">Free tech support for life</span> - Save money on repairs, spend it on dates</li>
-                    <li class="checked"><span class="marker">Personal trainer included</span> - Summer body ready, together</li>
+                    <li class="checked"><span class="marker">Multi-tasking master</span> - makacuddle bisag ga coding</li>
+                    <li class="checked"><span class="marker">Zero lag response time</span> - Paspas mu reply kay ikaw akong kalipay</li>
+                    <li class="checked"><span class="marker">Unlimited patience</span> - handled ang own code, unsa pa kaha ikaw </li>
+                    <li class="checked"><span class="marker">Built-in entertainment</span> - Voice actor + Author = personal Storyteller</li>
+                    <li class="checked"><span class="marker">Free tech support for life</span> - Tipid sa technical issues, gastu sa laag</li>
+                    <li class="checked"><span class="marker">Personal trainer included</span> - Workout together, para mag work out ta sa future</li>
                 </ul>
                 
                 <div style="display: flex; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
@@ -882,34 +882,35 @@
                 
                 <div class="sticky-note">
                     <strong>The Truth:</strong><br>
-                    I'm not perfect. I have bugs. Sometimes I forget where I put my keys. But I promise you this...
+                    Di ko perfect. Daghan kog problema. Sometimes I forget where I put my keys. Pero kani akong maikahatag...
                 </div>
                 
                 <div style="text-align: center; margin: 30px 0; padding: 30px; border: 3px double var(--ink-color); background: rgba(255,255,255,0.5); transform: rotate(-1deg);">
                     <p style="font-family: 'Caveat', cursive; font-size: 2rem; line-height: 1.4;">
                         "I am designed to be<br>
-                        <span style="color: #e74c3c; font-size: 2.3rem;">whoever she wants</span><br>
+                        <span style="color: #e74c3c; font-size: 2.3rem;">whoever you want</span><br>
                         —not by changing myself,<br>
                         but by revealing the perfect version<br>
-                        of me that already exists for her."
+                        of me that already exists for you.<br>
+                        Because I am everything you need"
                     </p>
                 </div>
                 
                 <div class="sketch-grid" style="margin-top: 30px;">
                     <div class="sketch-item" style="background: var(--highlight-pink);">
                         <div class="sketch-title">Compatibility</div>
-                        <div>Programmer + Creative + Athlete + Caregiver = I speak all your love languages</div>
+                        <div>Programmer + Designer + Caregiver + Lover + your Future = I speak all your love languages</div>
                     </div>
                     <div class="sketch-item" style="background: var(--highlight-blue);">
                         <div class="sketch-title">Reliability</div>
-                        <div>99.9% uptime. I'm there for the good commits and the bad debugs.</div>
+                        <div>Murag SafeGuard na sabon, kay naa rako permi 99.99%.</div>
                     </div>
                 </div>
                 
                 <div class="quote-box">
                     Dili ko perfect,<br>
-                    pero promise, unique kaayo ang bugs nako.<br>
-                    <div class="translation">I'm not perfect, but I promise my bugs are one of a kind.</div>
+                    pero promise, unique kaayo ang hugs nako.<br>
+                    <div class="translation">Este, bugs diay.</div>
                 </div>
                 
                 <div class="gif-sticker" style="position: absolute; right: 10px; bottom: 80px;">
@@ -932,17 +933,23 @@
                         Or type the link below...
                     </div>
                     
-                    <div class="qr-wrapper">
-                        <div class="qr-note">
-                            <div style="width: 150px; height: 150px; background: 
-                                repeating-linear-gradient(0deg, #000 0px, #000 8px, transparent 8px, transparent 16px),
-                                repeating-linear-gradient(90deg, #000 0px, #000 8px, transparent 8px, transparent 16px);">
-                            </div>
-                            <div class="handwritten-url">
-                                facebook.com/jei.waizzu
-                            </div>
-                        </div>
-                    </div>
+                      <div class="qr-wrapper">
+                          <div class="qr-note">
+                              <!-- QR Code will be generated here -->
+                              <div id="qrcode"></div>
+                              
+                              <div class="handwritten-url">
+                                  facebook.com/jei.waizzu
+                              </div>
+                              
+                              <!-- Clickable Facebook Link -->
+                              <a href="https://www.facebook.com/jei.waizzu" target="_blank" class="facebook-link" onclick="handleFacebookClick(event)">
+                                  👆 Visit My Facebook
+                              </a>
+                              
+                              <div class="tap-hint">Tap edges or use buttons to navigate</div>
+                          </div>
+                      </div>
                     
                     <div class="gif-sticker" style="margin: 20px auto;">
                         <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXI2YzZiY3J5ZzRzeTJpdDJ0cWNxZzF3eXJ1aXJ5aXJ5aXJ5aXJ5ZiZjdD1n/l378eovFdLNcb8J8Y/giphy.gif" alt="Waiting">
