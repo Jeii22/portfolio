@@ -914,8 +914,8 @@
                         <span style="color: #e74c3c; font-size: 2.3rem;">whoever you want</span><br>
                         —not by changing myself,<br>
                         but by revealing the perfect version
-                        of me that already exists for you.
-                        Because <br> 
+                        of me that already<br>
+                        exists for you. Because <br> 
                         <span style="color: #e74c3c; font-size: 2.3rem;">I am everything you need"</span>
                     </p>
                 </div>
