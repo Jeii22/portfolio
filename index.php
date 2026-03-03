@@ -956,9 +956,9 @@
                     </div>
                     
                     <div class="quote-box" style="background: var(--highlight-yellow); max-width: 400px; margin: 30px auto;">
-                        Ahong gugma nimo,<br>
+                        Akong gugma nimo,<br>
                         dili na ma-debug.<br>
-                        <div class="translation">My love for you has no bugs to fix.</div>
+                        <div class="translation">Unsa pa may gipaabot nimo?</div>
                     </div>
                     
                     <div style="margin-top: 40px; font-family: 'Caveat', cursive; font-size: 1.8rem; color: var(--pencil-gray);">
