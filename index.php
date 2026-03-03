@@ -771,7 +771,7 @@
                 
                 <div style="text-align: center; margin-top: 40px;">
                     <div class="washi-tape tape-1"></div>
-                    <h1>Dear Future GF HAHAHA,</h1>
+                    <h1>Dear Future Girlfriend HAHAHA,</h1>
                     
                     <div class="polaroid-container">
                         <div class="polaroid">
