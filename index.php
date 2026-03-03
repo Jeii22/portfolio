@@ -937,7 +937,7 @@
                     <div class="translation">Este, bugs diay.</div>
                 </div>
                 
-                <div class="gif-sticker" style="position: absolute; right: 10px; bottom: 150px;">
+                <div class="gif-sticker" style="position: absolute; right: 10px; bottom: 300px;">
                     <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDkzZjY0ZmtnNmh0dWk1YmMzaXp2cGd5OHVyZGQ0bzQwdTNtNm82ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/PZqWOOE2QyeZi/giphy.gif" alt="Heart">
                 </div>
                 
