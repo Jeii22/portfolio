@@ -880,10 +880,10 @@
                 
                 <div style="display: flex; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
                     <div class="gif-sticker">
-                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXI2YzZiY3J5ZzRzeTJpdDJ0cWNxZzF3eXJ1aXJ5aXJ5aXJ5aXJ5ZiZjdD1n/l0HlNQ03J5JxX6lva/giphy.gif" alt="Love">
+                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDkzZjY0ZmtnNmh0dWk1YmMzaXp2cGd5OHVyZGQ0bzQwdTNtNm82ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xGpediftFxJf2/giphy.gif" alt="Love">
                     </div>
                     <div class="gif-sticker">
-                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXI2YzZiY3J5ZzRzeTJpdDJ0cWNxZzF3eXJ1aXJ5aXJ5aXJ5aXJ5ZiZjdD1n/3o7TKU8RvQuomFfUUU/giphy.gif" alt="Happy">
+                        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXVwYWxzazNpenpudm1yNG5vaGo2YWJnbTFoNHNvOW5jamU5cGNmciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zgSWpnMeK7dCM/giphy.gif" alt="Happy">
                     </div>
                 </div>
                 
