@@ -1015,7 +1015,7 @@
     <!-- Background Music -->
     <audio id="bgMusic" loop preload="auto">
         <!-- Try Google Drive direct link first -->
-        <source src="https://drive.google.com/uc?export=download&id=1cMKe51lJpNxRqn-7dTdwTSg7rnnM6t1r" type="audio/mpeg">
+        <source src="https://www.dropbox.com/scl/fi/92ggqiq7fmjd9nimdu6im/Shael-Palangga.mp3?rlkey=7nwvf8z2xtq774rplplgy2vy8&st=jqi64jd7&dl=1" type="audio/mpeg">
         <!-- Fallback to a reliable hosted file if you have one -->
         <!-- <source src="https://your-backup-url.com/shael-palangga.mp3" type="audio/mpeg"> -->
     </audio>
