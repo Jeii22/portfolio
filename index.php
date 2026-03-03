@@ -883,7 +883,7 @@
                         <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDkzZjY0ZmtnNmh0dWk1YmMzaXp2cGd5OHVyZGQ0bzQwdTNtNm82ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xGpediftFxJf2/giphy.gif" alt="Love">
                     </div>
                     <div class="gif-sticker">
-                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWNoYnVwNDZuMnI1cTVjMXVvdWNuOHljMWR5aDkxaWhuNmJ5bXp3eiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HAWjicwYVRUY5Llcli/giphy.gif" alt="Happy">
+                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWNoYnVwNDZuMnI1cTVjMXVvdWNuOHljMWR5aDkxaWhuNmJ5bXp3eiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5uXrmPUCHgo53YahAr/giphy.gif" alt="Happy">
                     </div>
                 </div>
                 
@@ -937,7 +937,7 @@
                 </div>
                 
                 <div class="gif-sticker" style="position: absolute; right: 10px; bottom: 80px;">
-                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXI2YzZiY3J5ZzRzeTJpdDJ0cWNxZzF3eXJ1aXJ5aXJ5aXJ5aXJ5ZiZjdD1n/26FLdmIp98wC8ol44/giphy.gif" alt="Heart">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDkzZjY0ZmtnNmh0dWk1YmMzaXp2cGd5OHVyZGQ0bzQwdTNtNm82ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/PZqWOOE2QyeZi/giphy.gif" alt="Heart">
                 </div>
                 
                 <div class="page-number">- 4 -</div>
@@ -975,7 +975,7 @@
                       </div>
                     
                     <div class="gif-sticker" style="margin: 20px auto;">
-                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXI2YzZiY3J5ZzRzeTJpdDJ0cWNxZzF3eXJ1aXJ5aXJ5aXJ5aXJ5ZiZjdD1n/l378eovFdLNcb8J8Y/giphy.gif" alt="Waiting">
+                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODN4MXZxNnRldWk3MWVhMzFqamRsemdtbTFnZGRma2U5aGM4aWJveSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/4Dnj86V9MVM25Orgp4/giphy.gif" alt="Waiting">
                     </div>
                     
                     <div class="quote-box" style="background: var(--highlight-yellow); max-width: 400px; margin: 30px auto;">
