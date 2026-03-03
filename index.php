@@ -952,8 +952,8 @@
                 
                 <div style="text-align: center; margin: 40px 0;">
                     <div class="sticky-note pink" style="display: inline-block; transform: rotate(2deg); max-width: 350px;">
-                        <strong>Sige na ba</strong><br>
-                        Di nina maayu imo
+                        <strong>Sige na ba 🥺</strong><br>
+                        Di nina maayu imo.....
                     </div>
                     
                       <div class="qr-wrapper">
