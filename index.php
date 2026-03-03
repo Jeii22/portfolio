@@ -610,8 +610,8 @@
                 <img src="jake.png" alt="Jake Rodriguez" class="profile-img" onerror="this.src='https://via.placeholder.com/300/0a0a0f/00f5ff?text=JAKE'">
             </div>
             <div class="pickup-container" style="max-width: 600px; margin-top: 30px;">
-                <div class="pickup-line">"Way klaro ang bitoon, pero klaro kaayo ko nga gusto tika."</div>
-                <div class="pickup-translation">"The stars aren't clear, but I'm clearly into you."</div>
+                <div class="pickup-line">Way klaro ang bitoon</div>
+                <div class="pickup-translation"> pero klaro kaayo ko nga gusto tika</div>
             </div>
             <p style="margin-top: 20px; color: var(--neon-amber); font-size: 1.2rem; letter-spacing: 0.2em;">NEXT-GEN COMPANION INTERFACE v2.0</p>
         </div>
