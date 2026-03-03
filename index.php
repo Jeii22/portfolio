@@ -984,7 +984,7 @@
     
     <!-- Background Music -->
     <audio id="bgMusic" loop>
-        <source src="https://github.com/Jeii22/portfolio/raw/refs/heads/main/Shael%20-%20Palangga.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/Jeii22/portfolio/raw/refs/heads/main/Shael%20-%20Palangga.mp3" type="audio/mpeg">
     </audio>
 
     <script>
