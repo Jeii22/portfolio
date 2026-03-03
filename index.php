@@ -1013,10 +1013,11 @@
     </div>
     
     <!-- Background Music -->
-    <audio id="bgMusic" loop>
-        <source src="shael-palangga.mp3" type="audio/mpeg">
-        <!-- Fallback for browsers that don't support MP3 -->
-        <source src="shael-palangga.ogg" type="audio/ogg">
+    <audio id="bgMusic" loop preload="auto">
+        <!-- Try Google Drive direct link first -->
+        <source src="ID3" type="audio/mpeg">
+        <!-- Fallback to a reliable hosted file if you have one -->
+        <!-- <source src="https://your-backup-url.com/shael-palangga.mp3" type="audio/mpeg"> -->
     </audio>
 
     <!-- Music Control Button -->
@@ -1029,7 +1030,7 @@
         const totalPages = 5;
         let isMusicPlaying = false;
         
-        // Music control function
+        // Music control function with better error handling
         function toggleMusic() {
             const music = document.getElementById('bgMusic');
             const btn = document.getElementById('musicBtn');
@@ -1038,17 +1039,22 @@
                 music.pause();
                 btn.textContent = '🎵 Play Music';
                 btn.classList.remove('playing');
+                isMusicPlaying = false;
             } else {
+                // Reset the audio to handle Google Drive streaming issues
+                music.load();
                 music.volume = 0.4;
+                
                 music.play().then(() => {
+                    isMusicPlaying = true;
                     btn.textContent = '🔊 Pause Music';
                     btn.classList.add('playing');
                 }).catch(e => {
                     console.log('Playback failed:', e);
-                    btn.textContent = '🎵 Click to Play';
+                    btn.textContent = '❌ Error - Check Console';
+                    alert('Music file failed to load. Google Drive links may be blocked. Try hosting the file elsewhere (Dropbox, GitHub, etc.)');
                 });
             }
-            isMusicPlaying = !isMusicPlaying;
         }
         
         // Aggressive autoplay function - tries multiple methods
