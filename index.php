@@ -776,7 +776,7 @@
                     <div class="polaroid-container">
                         <div class="polaroid">
                             <img src="jake.png" alt="Jake" class="polaroid-img" onerror="this.src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXI2YzZiY3J5ZzRzeTJpdDJ0cWNxZzF3eXJ1aXJ5aXJ5aXJ5aXJ5ZiZjdD1n/3o7TKTDn976rzVgky4/giphy.gif'">
-                            <div class="polaroid-caption">Jake Rodriguez ♥</div>
+                            <div class="polaroid-caption">Jake Ballano Rodriguez ♥</div>
                         </div>
                     </div>
                     
