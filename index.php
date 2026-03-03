@@ -989,7 +989,7 @@
                     </div>
                     
                     <div style="margin-top: 20px; font-size: 1.2rem;">
-                        P.S. - <span class="marker">Swipe right on life with me?</span>
+                        P.S. - <span class="marker">May promo na ma HUG taka nonstop</span>
                     </div>
                 </div>
                 
