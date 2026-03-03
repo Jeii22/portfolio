@@ -953,7 +953,7 @@
                 <div style="text-align: center; margin: 40px 0;">
                     <div class="sticky-note pink" style="display: inline-block; transform: rotate(2deg); max-width: 350px;">
                         <strong>Sige na ba 🥺</strong><br>
-                        Di nina maayu imo.....
+                        Di nana maayu imo.....
                     </div>
                     
                       <div class="qr-wrapper">
@@ -962,15 +962,15 @@
                               <div id="qrcode"></div>
                               
                               <div class="handwritten-url">
-                                  www.facebook.com/jei.waizzu
+                                  PM lako hahahaha
                               </div>
                               
                               <!-- Clickable Facebook Link -->
                               <a href="https://www.facebook.com/jei.waizzu" target="_blank" class="facebook-link" onclick="handleFacebookClick(event)">
-                                  👆 PM lako hahahaha
+                                  👉 www.facebook.com/jei.waizzu 👈
                               </a>
                               
-                              <div class="tap-hint">Tap edges or use buttons to navigate</div>
+                              <div class="tap-hint">1 Slot left HAHAHAHA</div>
                           </div>
                       </div>
                     
