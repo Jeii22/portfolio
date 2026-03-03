@@ -809,42 +809,37 @@
                 <div class="sketch-grid">
                     <div class="sketch-item">
                         <div class="sketch-icon">💻</div>
-                        <div class="sketch-title">Code Wizard</div>
-                        <div>I build apps, websites, and digital dreams. Your personal tech support for life.</div>
+                        <div class="sketch-title">Coderist</div>
+                        <div>I build apps, websites, and digital dreams. Your personal loverboy kunohay.</div>
                     </div>
                     <div class="sketch-item">
                         <div class="sketch-icon">💪</div>
                         <div class="sketch-title">Gym Buddy</div>
-                        <div>Certified fitness trainer. I'll spot you in the gym and in life.</div>
+                        <div>Fitness trainer kunohay. Support you in the gym and in life.</div>
                     </div>
                     <div class="sketch-item">
                         <div class="sketch-icon">🎙️</div>
-                        <div class="sketch-title">Voice Actor</div>
-                        <div>I can read you bedtime stories with 20 different voices. Choose your adventure!</div>
+                        <div class="sketch-title">Author</div>
+                        <div>I can read you bedtime stories with 20 different accent. Choose your accent!</div>
                     </div>
                     <div class="sketch-item">
                         <div class="sketch-icon">🎬</div>
                         <div class="sketch-title">Film Actor</div>
-                        <div>Drama? Comedy? Action? I perform all genres of romance.</div>
+                        <div>Drama? Comedy? Action? Kahit ano basta tayo hahaha.</div>
                     </div>
                     <div class="sketch-item">
                         <div class="sketch-icon">🏔️</div>
-                        <div class="sketch-title">Adventure Planner</div>
-                        <div>Spontaneous road trips? Secret beaches? I'm the map and the compass.</div>
-                    </div>
-                    <div class="sketch-item">
-                        <div class="sketch-icon">🔧</div>
-                        <div class="sketch-title">Tech Fixer</div>
-                        <div>Phone broken? WiFi down? Consider it done before you finish complaining.</div>
+                        <div class="sketch-title">Adventurist</div>
+                        <div>Spontaneous road trips? Secret beaches? I'm the map, i mean Google map naa ta.</div>
                     </div>
                     <div class="sketch-item">
                         <div class="sketch-icon">👨‍🍳</div>
-                        <div class="sketch-title">Chef Mode</div>
+                        <div class="sketch-title">Cookerist</div>
                         <div>I cook, you eat. From breakfast in bed to midnight snacks.</div>
                     </div>
                     <div class="sketch-item">
                         <div class="sketch-icon">🧠</div>
-                        <div class="sketch-title">Therapist Jake</div>
+                        <div class="sketch-title">Therapist Kunohay</div>
                         <div>24/7 emotional support. Good listener, advice giver, hug dealer.</div>
                     </div>
                 </div>
@@ -856,7 +851,7 @@
                 </div>
                 
                 <div class="gif-sticker" style="float: right; margin-top: -50px;">
-                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXI2YzZiY3J5ZzRzeTJpdDJ0cWNxZzF3eXJ1aXJ5aXJ5aXJ5aXJ5ZiZjdD1n/26FLdmIp98wC8ol44/giphy.gif" alt="Skills">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDkzZjY0ZmtnNmh0dWk1YmMzaXp2cGd5OHVyZGQ0bzQwdTNtNm82ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xGpediftFxJf2/giphy.gif" alt="Skills">
                 </div>
                 
                 <div class="page-number">- 2 -</div>
