@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <!-- FAVICON - Gradient J Monogram -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234f8ef7'/%3E%3Cstop offset='100%25' style='stop-color:%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%230e0e1c'/%3E%3Ctext x='50' y='75' font-family='Arial Black, sans-serif' font-size='70' font-weight='900' text-anchor='middle' fill='url(%23g)'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/developers" href="images/developers/favicon.png">
 
 <style>
 
@@ -119,12 +119,14 @@ body.loaded .nav {
   position: relative;
   padding: 100px 40px;
   overflow: hidden;
+  padding: 100px 20px 60px;
 }
 
 .hero-content {
   text-align: center;
   max-width: 900px;
   z-index: 10;
+  width: 100%;
 }
 
 .hero-badge {
@@ -198,6 +200,8 @@ body.loaded .hero-subtitle {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
+  flex-direction: column;
+  width: 100%;
 }
 
 body.loaded .hero-cta {
@@ -216,6 +220,8 @@ body.loaded .hero-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  width: 100%;
+  justify-content: center;
 }
 
 .btn-primary {
@@ -524,6 +530,7 @@ body.loaded .experience-card:nth-child(1) { transition-delay: 0.1s; }
 body.loaded .experience-card:nth-child(2) { transition-delay: 0.2s; }
 body.loaded .experience-card:nth-child(3) { transition-delay: 0.3s; }
 body.loaded .experience-card:nth-child(4) { transition-delay: 0.4s; }
+body.loaded .experience-card:nth-child(5) { transition-delay: 0.5s; }
 
 .experience-card:hover {
   transform: translateY(-10px);
@@ -634,6 +641,46 @@ body.loaded .experience-card:nth-child(4) { transition-delay: 0.4s; }
   gap: 12px;
 }
 
+/* AI BADGE */
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(132,204,22,0.2));
+  border: 1px solid rgba(34,197,94,0.4);
+  color: #22c55e;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-left: 8px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+}
+
+/* MOBILE APP BADGE */
+.mobile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, rgba(79,142,247,0.2), rgba(167,139,250,0.2));
+  border: 1px solid rgba(79,142,247,0.4);
+  color: #4f8ef7;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-left: 8px;
+}
+
 /* MODAL STYLES */
 .modal-overlay {
   position: fixed;
@@ -707,6 +754,7 @@ body.loaded .experience-card:nth-child(4) { transition-delay: 0.4s; }
   display: inline-flex;
   gap: 10px;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .modal-year {
@@ -726,6 +774,40 @@ body.loaded .experience-card:nth-child(4) { transition-delay: 0.4s; }
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.modal-ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(132,204,22,0.15));
+  border: 1px solid rgba(34,197,94,0.4);
+  color: #22c55e;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.modal-ai-badge::before {
+  content: '✨';
+}
+
+.modal-mobile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(79,142,247,0.15), rgba(167,139,250,0.15));
+  border: 1px solid rgba(79,142,247,0.4);
+  color: #4f8ef7;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.modal-mobile-badge::before {
+  content: '📱';
 }
 
 .modal-title {
@@ -1041,6 +1123,7 @@ body.loaded .testimonial-card {
   display: flex;
   justify-content: center;
   gap: 20px;
+  align-items: center;
 }
 
 .social-link {
@@ -1049,20 +1132,44 @@ body.loaded .testimonial-card {
   border-radius: 50%;
   background: rgba(79,142,247,0.1);
   border: 1px solid rgba(79,142,247,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #4f8ef7;
+
   text-decoration: none;
   font-size: 1.2rem;
   transition: all 0.3s ease;
+
+  color: #333;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-link:hover {
   background: #4f8ef7;
-  color: #fff;
-  transform: translateY(-5px);
+  color: #0077b5;
+  transform: translateY(-2px);
+  
 }
+
+  .social-link[title="GitHub"]:hover {
+    color: #333;
+  }
+  
+  .social-link[title="LinkedIn"]:hover {
+    color: #0077b5;
+  }
+  
+  .social-link[title="Twitter"]:hover {
+    color: #000;
+  }
+  
+  .social-link[title="Facebook"]:hover {
+    color: #1877f2;
+  }
+  
+  .social-link[title="Instagram"]:hover {
+    color: #e4405f;
+  }
 
 /* FOOTER */
 .footer {
@@ -1150,7 +1257,7 @@ body.loaded .testimonial-card {
 
 <!-- NAVIGATION -->
 <nav class="nav">
-  <div class="nav-logo">JAKE.</div>
+  <div class="nav-logo">Jeiku</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -1169,14 +1276,14 @@ body.loaded .testimonial-card {
   </div>
   
   <div class="hero-content">
-    <div class="hero-badge">Available for Freelance Work</div>
+    <div class="hero-badge">Available for Development, IT & Office Work — Remote or On-Site</div>
     <h1 class="hero-title">
-      Creative<br>
-      <span>Developer</span>
+      Office Assistant<br>
+      <span>Digital Creator</span>
     </h1>
     <p class="hero-subtitle">
-      I craft immersive digital experiences with modern web technologies. 
-      Specializing in Laravel, PHP, and full-stack development.
+      I build websites, apps, and handle office work — remote or on-site. 
+      Coding, computers, and paperwork — whatever you need
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -1212,19 +1319,18 @@ body.loaded .testimonial-card {
         efficiently build and refine interactive, user-friendly interfaces, ensuring 
         seamless integration with robust backend architectures.
       </p>
-      
       <div class="stats-grid">
         <div class="stat-item">
           <span class="stat-number">3+</span>
-          <div class="stat-label">Years Experience</div>
+          <div class="stat-label">Years Learning</div>
         </div>
         <div class="stat-item">
           <span class="stat-number">10+</span>
-          <div class="stat-label">Projects Completed</div>
+          <div class="stat-label">Projects Built</div>
         </div>
         <div class="stat-item">
           <span class="stat-number">5+</span>
-          <div class="stat-label">Happy Clients</div>
+          <div class="stat-label">Technologies Mastered</div>
         </div>
       </div>
     </div>
@@ -1239,37 +1345,91 @@ body.loaded .testimonial-card {
     <p class="section-desc">Battery-level indicators showing my proficiency</p>
   </div>
   
+  
   <div class="skills-grid">
-    <div class="skill-item" data-level="advanced" style="--percentage: 69;">
+    <div class="skill-item" data-level="expert" style="--percentage: 81;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
-          <span class="skill-percentage">69%</span>
-          <span class="skill-level">Advanced</span>
+          <span class="skill-percentage">81%</span>
+          <span class="skill-level">advanced</span>
         </div>
       </div>
       <span class="skill-name">Laravel</span>
     </div>
     
-    <div class="skill-item" data-level="intermediate" style="--percentage: 48;">
+    <div class="skill-item" data-level="advanced" style="--percentage: 60;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
-          <span class="skill-percentage">48%</span>
-          <span class="skill-level">Intermediate</span>
+          <span class="skill-percentage">60%</span>
+          <span class="skill-level">advanced</span>
         </div>
       </div>
       <span class="skill-name">PHP</span>
     </div>
     
-    <div class="skill-item" data-level="intermediate" style="--percentage: 57;">
+    <div class="skill-item" data-level="advanced" style="--percentage: 68;">
       <div class="skill-circle">
         <div class="skill-circle-inner">
-          <span class="skill-percentage">57%</span>
-          <span class="skill-level">Intermediate</span>
+          <span class="skill-percentage">68%</span>
+          <span class="skill-level">advanced</span>
         </div>
       </div>
       <span class="skill-name">C#</span>
     </div>
+    
+    <div class="skill-item" data-level="intermediate" style="--percentage: 45;">
+      <div class="skill-circle">
+        <div class="skill-circle-inner">
+          <span class="skill-percentage">45%</span>
+          <span class="skill-level">Intermediate</span>
+        </div>
+      </div>
+      <span class="skill-name">React Native</span>
+    </div>
+    
+    <div class="skill-item" data-level="intermediate" style="--percentage: 58;">
+      <div class="skill-circle">
+        <div class="skill-circle-inner">
+          <span class="skill-percentage">58%</span>
+          <span class="skill-level">Intermediate</span>
+        </div>
+      </div>
+      <span class="skill-name">MySQL</span>
+    </div>
+    
+    <div class="skill-item" data-level="intermediate" style="--percentage: 41;">
+      <div class="skill-circle">
+        <div class="skill-circle-inner">
+          <span class="skill-percentage">41%</span>
+          <span class="skill-level">intermediate</span>
+        </div>
+      </div>
+      <span class="skill-name">JavaScript</span>
+    </div>
+    
+    <div class="skill-item" data-level="beginner" style="--percentage: 35;">
+      <div class="skill-circle">
+        <div class="skill-circle-inner">
+          <span class="skill-percentage">35%</span>
+          <span class="skill-level">Beginner</span>
+        </div>
+      </div>
+      <span class="skill-name">Firebase</span>
+    </div>
+    
+    <div class="skill-item" data-level="advanced" style="--percentage: 68;">
+      <div class="skill-circle">
+        <div class="skill-circle-inner">
+          <span class="skill-percentage">68%</span>
+          <span class="skill-level">advanced</span>
+        </div>
+      </div>
+      <span class="skill-name">HTML/CSS</span>
+    </div>
   </div>
+
+
+
 </section>
 
 <!-- PROJECTS SECTION -->
@@ -1281,6 +1441,26 @@ body.loaded .testimonial-card {
   </div>
   
   <div class="projects-grid">
+    <!-- Burn Bai Mobile App -->
+    <div class="experience-card" data-project="burnbai">
+      <div class="project-image">🔥</div>
+      <div class="project-content">
+        <div class="project-header">
+          <span class="project-year">2024</span>
+          <span class="project-type">Mobile App</span>
+        </div>
+        <h3 class="project-title">
+          Burn Bai
+          <span class="mobile-badge">📱 Mobile</span>
+        </h3>
+        <p class="project-desc">
+          A fat burner fitness app with easy, medium, and intense workouts. 
+          No fancy equipment needed—work out anywhere, even on Bantayan Island or any island paradise.
+        </p>
+        <span class="project-link">View Details →</span>
+      </div>
+    </div>
+    
     <!-- PSA Internship -->
     <div class="experience-card" data-project="psa">
       <div class="project-image">PSA</div>
@@ -1314,18 +1494,21 @@ body.loaded .testimonial-card {
       </div>
     </div>
     
-    <!-- Gym PHP -->
+    <!-- Gym PHP with AI -->
     <div class="experience-card" data-project="gym-php">
-      <div class="project-image">GM</div>
+      <div class="project-image">GM+AI</div>
       <div class="project-content">
         <div class="project-header">
           <span class="project-year">2024</span>
           <span class="project-type">3rd Year</span>
         </div>
-        <h3 class="project-title">Gym Monitoring System (PHP)</h3>
+        <h3 class="project-title">
+          Gym Monitoring System (PHP)
+          <span class="ai-badge">AI Powered</span>
+        </h3>
         <p class="project-desc">
-          Built a comprehensive monitoring system for Fettle Hut Fitness Gym with member 
-          management and attendance tracking.
+          Full-featured gym management with AI assistant for member support, workout 
+          recommendations, and smart scheduling.
         </p>
         <span class="project-link">View Details →</span>
       </div>
@@ -1369,11 +1552,11 @@ body.loaded .testimonial-card {
     </div>
     
     <div class="service-card">
-      <div class="service-icon">🎨</div>
-      <h3 class="service-title">UI/UX Design</h3>
+      <div class="service-icon">📱</div>
+      <h3 class="service-title">Mobile Development</h3>
       <p class="service-desc">
-        Creating intuitive and visually appealing interfaces that provide exceptional 
-        user experiences across all devices.
+        Cross-platform mobile applications that work seamlessly on both iOS and Android, 
+        designed for real-world usability.
       </p>
     </div>
     
@@ -1389,7 +1572,7 @@ body.loaded .testimonial-card {
 </section>
 
 <!-- TESTIMONIALS SECTION -->
-<section class="section">
+<!-- <section class="section">
   <div class="section-header">
     <div class="section-label">Testimonials</div>
     <h2 class="section-title">What People Say</h2>
@@ -1424,16 +1607,17 @@ body.loaded .testimonial-card {
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- CONTACT SECTION -->
 <section class="section contact-section" id="contact">
   <div class="contact-content">
     <div class="section-label">Get In Touch</div>
-    <h2 class="contact-title">Let's Work Together</h2>
+    <h2 class="contact-title">Let's connect</h2>
     <p class="contact-desc">
-      Have a project in mind? I'm always open to discussing new opportunities 
-      and interesting collaborations.
+      Whether you need a website, app, tech support, or just someone 
+      to handle office work — I'm here to help. Open to freelance, 
+      remote, or on-site opportunities. 
     </p>
     
     <a href="mailto:jeikur42@gmail.com" class="contact-email">
@@ -1441,12 +1625,35 @@ body.loaded .testimonial-card {
     </a>
     
     <div class="social-links">
-      <a href="https://github.com/Jeii22" target="_blank" class="social-link" title="GitHub">GH</a>
-      <a href="#" class="social-link" title="LinkedIn">LI</a>
-      <a href="#" class="social-link" title="Twitter">TW</a>
+      <a href="https://github.com/Jeii22" target="_blank" class="social-link" title="GitHub">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <a href="#" class="social-link" title="LinkedIn">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a>
+      <a href="#" class="social-link" title="Twitter">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <a href="#" class="social-link" title="Facebook">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+      <a href="#" class="social-link" title="Instagram">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
+
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -1462,6 +1669,8 @@ body.loaded .testimonial-card {
       <div class="modal-badge">
         <span class="modal-year" id="modalYear">2025</span>
         <span class="modal-type" id="modalType">Capstone</span>
+        <span class="modal-ai-badge" id="modalAiBadge" style="display: none;">AI Powered</span>
+        <span class="modal-mobile-badge" id="modalMobileBadge" style="display: none;">Mobile App</span>
       </div>
       <h2 class="modal-title" id="modalTitle">Project Title</h2>
       <p class="modal-subtitle" id="modalSubtitle">Brief description</p>
@@ -1499,6 +1708,27 @@ body.loaded .testimonial-card {
 <script>
 // Project data for modals
 const projectData = {
+  burnbai: {
+    year: '2024',
+    type: 'Mobile Application',
+    title: 'Burn Bai',
+    subtitle: 'Island-Ready Fitness Companion',
+    overview: 'Burn Bai is a mobile fitness application designed specifically for people who want to stay fit without access to gym equipment or fancy facilities. Whether you\'re on Bantayan Island, Malapascua, or any remote island paradise, this app delivers effective fat-burning workouts that require zero equipment—just your body and determination. The app features three intensity levels (Easy, Medium, Intense) to accommodate beginners to advanced users, making fitness accessible to everyone, everywhere.',
+    tech: ['React Native', 'Firebase', 'Node.js', 'Expo', 'AsyncStorage', 'Push Notifications'],
+    features: [
+      'Three workout intensity levels: Easy, Medium, and Intense',
+      'Zero equipment required—bodyweight exercises only',
+      'Works offline—perfect for island locations with poor connectivity',
+      'Progress tracking and workout history',
+      'Customizable workout reminders and schedules',
+      'Calorie counter and fitness goal setting',
+      'Video demonstrations for all exercises',
+      'Bantayan Island-inspired tropical UI theme'
+    ],
+    link: null,
+    hasAI: false,
+    isMobile: true
+  },
   psa: {
     year: 'Jan - Apr 2026',
     type: 'On the Job Training',
@@ -1513,45 +1743,52 @@ const projectData = {
       'Participated in training sessions and workshops',
       'Learned government compliance and documentation standards'
     ],
-    link: null
+    link: null,
+    hasAI: false,
+    isMobile: false
   },
   baltbep: {
-    year: 'Apr - Nov 2025',
+    year: '2025',
     type: 'Capstone Project',
-    title: 'BaltBep Ticketing System (Developer/Programmer)',
-    subtitle: 'Smart Online Booking for Ferry Passengers',
+    title: 'BaltBep Ticketing System',
+    subtitle: 'Ship Ticketing & Reservation Platform',
     overview: 'A comprehensive web-based ship ticketing system developed as my 4th year Capstone project. The system features real-time booking management, passenger tracking, automated ticket generation, and a robust admin dashboard for fleet management. Built with scalability in mind to handle peak season traffic.',
     tech: ['Laravel', 'PHP', 'MySQL', 'JavaScript', 'Bootstrap', 'HTML/CSS'],
     features: [
       'Real-time seat availability and booking system',
-      'Admin dashboard with analytics and reporting',
       'Automated ticket generation',
+      'Admin dashboard with analytics and reporting',
       'Passenger management',
-      'Online Payment integration',
+      'Payment integration and invoice generation',
       'Mobile-responsive design for on-the-go booking',
       'Mobile Application for easy booking'
+
     ],
-    link: 'https://baltbep.net'
+    link: 'https://baltbep.net',
+    hasAI: false,
+    isMobile: false
   },
   'gym-php': {
-    year: 'Mar - May 2025',
+    year: 'OCt 2024 - Mar 2025',
     type: '3rd Year Final Project',
-    title: 'Gym Monitoring System (PHP)',
-    subtitle: 'Fitness Center Management Platform',
-    overview: 'A full-featured gym management system built specifically for Fettle Hut Fitness Gym. The web application handles member registrations, attendance tracking, payment processing, and workout plan assignments. Features an intuitive interface designed with a built in AI assistant for gym staff with varying technical skills.',
-    tech: ['PHP', 'MySQL', 'JavaScript', 'jQuery', 'Bootstrap', 'HTML/CSS'],
+    title: 'Gym Management System (PHP)',
+    subtitle: 'AI-Powered Fitness Center Management Platform',
+    overview: 'A full-featured gym management system built specifically for Fettle Hut Fitness Gym, enhanced with an integrated AI assistant. The web application handles member registrations, attendance tracking, payment processing, and workout plan assignments. The AI assistant provides personalized workout recommendations, answers member queries, and assists with scheduling—making this a cutting-edge solution for modern fitness centers.',
+    tech: ['PHP', 'MySQL', 'JavaScript', 'jQuery', 'Bootstrap', 'HTML/CSS', 'OpenAI API', 'AJAX'],
     features: [
-      'Financial reporting and analytics dashboard',
+      'Integrated AI assistant for member support and workout recommendations',
+      'Smart scheduling system with AI-optimized trainer appointments',
       'Member registration and profile management',
-      'Supplement management',
-      'Payment processing with automated Identification Card',
-      'Built in AI assistant',
-      'Trainer scheduling and session booking'   
+      'Payment processing and invoice generation',
+      'AI-generated personalized workout plans based on member goals',
+      'Financial reporting and analytics dashboard'
     ],
-    link: null
+    link: null,
+    hasAI: true,
+    isMobile: false
   },
   'gym-csharp': {
-    year: '2024',
+    year: 'Mar - May 2024',
     type: '2nd Year Final Project',
     title: 'Gym Monitoring System (C#)',
     subtitle: 'Desktop Application for Gym Management',
@@ -1565,7 +1802,9 @@ const projectData = {
       'Backup and restore functionality',
       'Offline operation capability'
     ],
-    link: null
+    link: null,
+    hasAI: false,
+    isMobile: false
   }
 };
 
@@ -1580,6 +1819,22 @@ function openModal(projectId) {
   document.getElementById('modalTitle').textContent = project.title;
   document.getElementById('modalSubtitle').textContent = project.subtitle;
   document.getElementById('modalOverview').textContent = project.overview;
+  
+  // Show/hide AI badge
+  const aiBadge = document.getElementById('modalAiBadge');
+  if (project.hasAI) {
+    aiBadge.style.display = 'inline-flex';
+  } else {
+    aiBadge.style.display = 'none';
+  }
+  
+  // Show/hide Mobile badge
+  const mobileBadge = document.getElementById('modalMobileBadge');
+  if (project.isMobile) {
+    mobileBadge.style.display = 'inline-flex';
+  } else {
+    mobileBadge.style.display = 'none';
+  }
   
   // Populate tech stack
   const techContainer = document.getElementById('modalTech');
