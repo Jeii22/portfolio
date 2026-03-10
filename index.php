@@ -1279,11 +1279,11 @@ body.loaded .testimonial-card {
     <div class="hero-badge">Available for Development, IT & Office Work — Remote or On-Site</div>
     <h1 class="hero-title">
       Online?<br>
-      <span>On-Site</span>
+      <span>On-Site?</span>
     </h1>
     <p class="hero-subtitle">
-      I build websites, apps, and handle office work — remote or on-site. 
-      Coding, computers, and paperwork — whatever you need
+      Websites, apps, and office support — available remote or on-site. 
+      Coding, tech, and paperwork — done efficiently.
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -1303,7 +1303,7 @@ body.loaded .testimonial-card {
     <div class="about-image">
       <div class="about-image-wrapper">
         <div class="about-image-glow"></div>
-        <img src="images/developers/jake.jpg" alt="Jake Rodriguez" class="about-img">
+        <img src="jake.png" alt="Jake Rodriguez" class="about-img">
       </div>
     </div>
     
