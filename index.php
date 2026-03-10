@@ -1303,7 +1303,7 @@ body.loaded .testimonial-card {
     <div class="about-image">
       <div class="about-image-wrapper">
         <div class="about-image-glow"></div>
-        <img src="jake.png" alt="Jake Rodriguez" class="about-img">
+        <img src="images/developers/jake.jpg" alt="Jake Rodriguez" class="about-img">
       </div>
     </div>
     
