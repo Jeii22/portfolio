@@ -1278,8 +1278,8 @@ body.loaded .testimonial-card {
   <div class="hero-content">
     <div class="hero-badge">Available for Development, IT & Office Work — Remote or On-Site</div>
     <h1 class="hero-title">
-      Office Assistant<br>
-      <span>Digital Creator</span>
+      Online?<br>
+      <span>On-Site</span>
     </h1>
     <p class="hero-subtitle">
       I build websites, apps, and handle office work — remote or on-site. 
