@@ -465,7 +465,7 @@
       .body-text { font-size: 16px; }
     }
 
-    .music-player {
+   .music-player {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -819,28 +819,7 @@ body.tap-feedback::before {
       'Sige ra. Salamat sa pagbasa hangtod dinhi. Amigo ta gihapon. 🕊';
   }
 
-  // Tap ripple visual feedback
-document.addEventListener('click', (e) => {
-  if (!musicPlaying) {
-    document.body.style.setProperty('--tap-x', `${e.clientX}px`);
-    document.body.style.setProperty('--tap-y', `${e.clientY}px`);
-    document.body.classList.add('tap-feedback');
-    setTimeout(() => document.body.classList.remove('tap-feedback'), 600);
-  }
-}, true);
-
-document.addEventListener('touchstart', (e) => {
-  const touch = e.touches[0];
-  if (!musicPlaying) {
-    document.body.style.setProperty('--tap-x', `${touch.clientX}px`);
-    document.body.style.setProperty('--tap-y', `${touch.clientY}px`);
-    document.body.classList.add('tap-feedback');
-    setTimeout(() => document.body.classList.remove('tap-feedback'), 600);
-  }
-}, true);
-
-
-// Music Player - AUTO-PLAY ON SCROLL (NO PAUSE)
+  // Music Player - AUTO-PLAY ON SCROLL (NO PAUSE)
 let musicPlaying = false;
 const music = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
@@ -932,6 +911,8 @@ const interactiveSelectors = [
   '.pickup-card', '.btn-yes', '.btn-maybe', '.acc-q', 
   'a', 'button', 'input', 'select'
 ].join(', ');
+
+
 
 </script>
 </body>
