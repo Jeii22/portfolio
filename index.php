@@ -652,14 +652,6 @@
   </div>
 </div>
 
-<!-- Background Music -->
-    <audio id="bgMusic" loop preload="auto">
-        <!-- Try Google Drive direct link first -->
-        <source src="https://www.dropbox.com/scl/fi/92ggqiq7fmjd9nimdu6im/Shael-Palangga.mp3?rlkey=7nwvf8z2xtq774rplplgy2vy8&st=jqi64jd7&dl=1" type="audio/mpeg">
-        <!-- Fallback to a reliable hosted file if you have one -->
-        <!-- <source src="https://your-backup-url.com/shael-palangga.mp3" type="audio/mpeg"> -->
-    </audio>
-
 <div class="divider-ornament">⁂ ❦ ⁂</div>
 
 <!-- ===== SOCIAL MEDIA ===== -->
@@ -696,6 +688,11 @@
   </div>
 </div>
 
+<!-- Background Music -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://dl.dropboxusercontent.com/scl/fi/92ggqiq7fmjd9nimdu6im/Shael-Palangga.mp3" type="audio/mpeg">
+</audio>
+
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="ornament-f">❧ ✦ ❧</div>
@@ -708,97 +705,20 @@
 </footer>
 
 <script>
-
-  let isMusicPlaying = false;
-        
-        // Music control function with better error handling
-        function toggleMusic() {
-            const music = document.getElementById('bgMusic');
-            const btn = document.getElementById('musicBtn');
-            
-            if (isMusicPlaying) {
-                music.pause();
-                btn.textContent = '🎵 Play Music';
-                btn.classList.remove('playing');
-                isMusicPlaying = false;
-            } else {
-                // Reset the audio to handle Google Drive streaming issues
-                music.load();
-                music.volume = 0.4;
-                
-                music.play().then(() => {
-                    isMusicPlaying = true;
-                    btn.textContent = '🔊 Pause Music';
-                    btn.classList.add('playing');
-                }).catch(e => {
-                    console.log('Music Kunohay:', e);
-                    btn.textContent = '🎵 Play Music';
-                    alert('E play ko ni');
-                });
-            }
-        }
-        
-        // Aggressive autoplay function - tries multiple methods
-        function attemptAutoplay() {
-            const music = document.getElementById('bgMusic');
-            const btn = document.getElementById('musicBtn');
-            
-            music.volume = 0.4;
-            
-            // Method 1: Direct play
-            const playPromise = music.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    // Success!
-                    isMusicPlaying = true;
-                    btn.textContent = '🔊 Pause Music';
-                    btn.classList.add('playing');
-                    console.log('Autoplay successful!');
-                }).catch(error => {
-                    // Autoplay blocked - try fallback methods
-                    console.log('Autoplay blocked, trying alternatives...');
-                    
-                    // Method 2: Try playing on any user interaction
-                    const events = ['click', 'touchstart', 'scroll', 'keydown', 'mousemove'];
-                    
-                    function tryPlayOnInteraction() {
-                        music.play().then(() => {
-                            isMusicPlaying = true;
-                            btn.textContent = '🔊 Pause Music';
-                            btn.classList.add('playing');
-                            // Remove all event listeners once successful
-                            events.forEach(evt => {
-                                document.removeEventListener(evt, tryPlayOnInteraction);
-                            });
-                        }).catch(e => {
-                            console.log('Still blocked:', e);
-                        });
-                    }
-                    
-                    // Add listeners to all possible interaction events
-                    events.forEach(evt => {
-                        document.addEventListener(evt, tryPlayOnInteraction, { once: true });
-                    });
-                    
-                    // Method 3: Show a subtle hint that music is available
-                    setTimeout(() => {
-                        if (!isMusicPlaying) {
-                            btn.style.animation = 'pulse 1s infinite';
-                        }
-                    }, 1000);
-                });
-            }
-        }
-        
+  // ==============================
   // Scroll reveal
+  // ==============================
   const sections = document.querySelectorAll('.section');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    entries.forEach(e => { 
+      if (e.isIntersecting) e.target.classList.add('visible'); 
+    });
   }, { threshold: 0.1 });
   sections.forEach(s => observer.observe(s));
 
+  // ==============================
   // Pickup card flip
+  // ==============================
   function flipCard(el) {
     const trans = el.querySelector('.pickup-trans');
     const bisaya = el.querySelector('.pickup-bisaya');
@@ -810,12 +730,16 @@
     }
   }
 
+  // ==============================
   // Accordion
+  // ==============================
   function toggleAcc(item) {
     item.classList.toggle('open');
   }
 
+  // ==============================
   // No button dodge
+  // ==============================
   let nudges = 0;
   function nudgeNo() {
     nudges++;
@@ -836,6 +760,52 @@
     document.getElementById('reply').innerHTML =
       'Sige ra. Salamat sa pagbasa hangtod dinhi. Amigo ta gihapon. 🕊';
   }
+
+  // ==============================
+  // 🎵 BACKGROUND MUSIC SYSTEM
+  // ==============================
+  const bgMusic = document.getElementById('bgMusic');
+
+  // Start silent (for fade-in effect)
+  bgMusic.volume = 0;
+
+  function fadeInMusic() {
+    let volume = 0;
+    const fade = setInterval(() => {
+      if (volume < 0.3) {
+        volume += 0.02;
+        bgMusic.volume = volume;
+      } else {
+        clearInterval(fade);
+      }
+    }, 200);
+  }
+
+  // Try autoplay
+  window.addEventListener('load', () => {
+    bgMusic.play().then(() => {
+      fadeInMusic();
+    }).catch(() => {
+      enableMusicOnInteraction();
+    });
+  });
+
+  // Fallback if autoplay blocked
+  function enableMusicOnInteraction() {
+    const startMusic = () => {
+      bgMusic.play();
+      fadeInMusic();
+
+      document.removeEventListener('click', startMusic);
+      document.removeEventListener('scroll', startMusic);
+      document.removeEventListener('keydown', startMusic);
+    };
+
+    document.addEventListener('click', startMusic);
+    document.addEventListener('scroll', startMusic);
+    document.addEventListener('keydown', startMusic);
+  }
 </script>
+
 </body>
 </html>
