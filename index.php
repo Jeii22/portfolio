@@ -465,7 +465,8 @@
       .body-text { font-size: 16px; }
     }
 
-   .music-player {
+    /* ========= MUSIC PLAYER ========= */
+.music-player {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -477,27 +478,60 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: default; /* No pointer since no toggle */
+  cursor: pointer;
   z-index: 10000;
-  opacity: 0.9;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  opacity: 0.9;
 }
 
 .music-player:hover {
   transform: scale(1.1);
   background: var(--parchment-dark);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 .music-player.playing {
-  background: linear-gradient(135deg, var(--rust), var(--gold));
+  background: var(--rust);
   color: var(--parchment);
   animation: musicPulse 2s ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(139, 58, 26, 0.4);
+}
+
+@keyframes musicPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
 .music-player .icon {
   font-size: 20px;
+  transition: transform 0.2s;
+}
+
+.music-player:hover .icon {
+  transform: scale(1.2);
+}
+
+.music-status {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  background: var(--parchment);
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  border: 1px solid var(--parchment-deep);
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+  white-space: nowrap;
+}
+
+.music-status.show {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media (max-width: 600px) {
@@ -522,7 +556,6 @@ body.tap-feedback::before {
   0% { opacity: 1; transform: scale(0); }
   100% { opacity: 0; transform: scale(4); }
 }
-
 
   </style>
 </head>
@@ -819,7 +852,28 @@ body.tap-feedback::before {
       'Sige ra. Salamat sa pagbasa hangtod dinhi. Amigo ta gihapon. 🕊';
   }
 
-  // Music Player - AUTO-PLAY ON SCROLL (NO PAUSE)
+  // Tap ripple visual feedback
+document.addEventListener('click', (e) => {
+  if (!musicPlaying) {
+    document.body.style.setProperty('--tap-x', `${e.clientX}px`);
+    document.body.style.setProperty('--tap-y', `${e.clientY}px`);
+    document.body.classList.add('tap-feedback');
+    setTimeout(() => document.body.classList.remove('tap-feedback'), 600);
+  }
+}, true);
+
+document.addEventListener('touchstart', (e) => {
+  const touch = e.touches[0];
+  if (!musicPlaying) {
+    document.body.style.setProperty('--tap-x', `${touch.clientX}px`);
+    document.body.style.setProperty('--tap-y', `${touch.clientY}px`);
+    document.body.classList.add('tap-feedback');
+    setTimeout(() => document.body.classList.remove('tap-feedback'), 600);
+  }
+}, true);
+
+
+// Music Player - AUTO-PLAY ON SCROLL (NO PAUSE)
 let musicPlaying = false;
 const music = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
@@ -911,9 +965,6 @@ const interactiveSelectors = [
   '.pickup-card', '.btn-yes', '.btn-maybe', '.acc-q', 
   'a', 'button', 'input', 'select'
 ].join(', ');
-
-
-
 </script>
 </body>
 </html>
