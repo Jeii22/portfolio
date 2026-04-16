@@ -465,8 +465,7 @@
       .body-text { font-size: 16px; }
     }
 
-    /* ========= MUSIC PLAYER ========= */
-.music-player {
+    .music-player {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -478,100 +477,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: default; /* No pointer since no toggle */
   z-index: 10000;
+  opacity: 0.9;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  opacity: 0.9;
 }
 
 .music-player:hover {
   transform: scale(1.1);
   background: var(--parchment-dark);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 .music-player.playing {
-  background: var(--rust);
+  background: linear-gradient(135deg, var(--rust), var(--gold));
   color: var(--parchment);
   animation: musicPulse 2s ease-in-out infinite;
-}
-
-@keyframes musicPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
+  box-shadow: 0 0 20px rgba(139, 58, 26, 0.4);
 }
 
 .music-player .icon {
   font-size: 20px;
-  transition: transform 0.2s;
-}
-
-.music-player:hover .icon {
-  transform: scale(1.2);
-}
-
-.music-status {
-  position: fixed;
-  top: 90px;
-  right: 20px;
-  background: var(--parchment);
-  color: var(--ink);
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-family: 'Caveat', cursive;
-  font-size: 13px;
-  border: 1px solid var(--parchment-deep);
-  opacity: 0;
-  transform: translateX(100px);
-  transition: all 0.3s ease;
-  z-index: 9999;
-  white-space: nowrap;
-}
-
-.music-status.show {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 @media (max-width: 600px) {
   .music-player { top: 15px; right: 15px; width: 55px; height: 55px; }
   .music-player .icon { font-size: 18px; }
 }
-
-/* Visual feedback for tap-anywhere */
-body.tap-feedback::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at var(--tap-x, 50%) var(--tap-y, 50%), 
-               rgba(255,220,150,0.15) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 9998;
-  animation: tapRipple 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-@keyframes tapRipple {
-  0% { opacity: 1; transform: scale(0); }
-  100% { opacity: 0; transform: scale(4); }
-}
-
   </style>
 </head>
 <body>
-
-<!-- Background Music Player -->
-<div class="music-player" id="musicToggle" onclick="toggleMusic()">
-  <span class="icon">🎵</span>
-</div>
-<div class="music-status" id="musicStatus"></div>
-
-<!-- Background Music -->
-<audio id="bgMusic" loop preload="auto">
-  <source src="https://www.dropbox.com/scl/fi/92ggqiq7fmjd9nimdu6im/Shael-Palangga.mp3?rlkey=7nwvf8z2xtq774rplplgy2vy8&st=jqi64jd7&dl=1" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
@@ -805,7 +740,6 @@ body.tap-feedback::before {
 </footer>
 
 <script>
-
   // Scroll reveal
   const sections = document.querySelectorAll('.section');
   const observer = new IntersectionObserver((entries) => {
@@ -852,28 +786,7 @@ body.tap-feedback::before {
       'Sige ra. Salamat sa pagbasa hangtod dinhi. Amigo ta gihapon. 🕊';
   }
 
-  // Tap ripple visual feedback
-document.addEventListener('click', (e) => {
-  if (!musicPlaying) {
-    document.body.style.setProperty('--tap-x', `${e.clientX}px`);
-    document.body.style.setProperty('--tap-y', `${e.clientY}px`);
-    document.body.classList.add('tap-feedback');
-    setTimeout(() => document.body.classList.remove('tap-feedback'), 600);
-  }
-}, true);
-
-document.addEventListener('touchstart', (e) => {
-  const touch = e.touches[0];
-  if (!musicPlaying) {
-    document.body.style.setProperty('--tap-x', `${touch.clientX}px`);
-    document.body.style.setProperty('--tap-y', `${touch.clientY}px`);
-    document.body.classList.add('tap-feedback');
-    setTimeout(() => document.body.classList.remove('tap-feedback'), 600);
-  }
-}, true);
-
-
-// Music Player - AUTO-PLAY ON SCROLL (NO PAUSE)
+  // Music Player - AUTO-PLAY ON SCROLL (NO PAUSE)
 let musicPlaying = false;
 const music = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
