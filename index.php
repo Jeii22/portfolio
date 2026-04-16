@@ -927,12 +927,16 @@ function askMusicPermission() {
   hasAsked = true;
 
   Swal.fire({
-    title: '🎵 A Gift for Your Heart',
+    title: '🎵Before you start scrolling',
     html: `
       <div style="text-align: center; font-family: 'Cormorant Garamond', serif;">
         <p style="font-size: 18px; color: #f2e8d5; margin-bottom: 1rem;">
-          Would you like to hear the song that reminds me of you?
-        </p>        
+          Would you like to hear the song that's going to be our theme?
+        </p>   
+        <p style="font-size: 16px; color: #d4b896; font-style: italic;">
+          <strong>Palangga</strong><br/>
+          <small>(A nickname for you, because ako'y mu pangga nimo ♡)</small>
+        </p>     
       </div>
     `,
     icon: 'heart',
@@ -961,9 +965,9 @@ function askMusicPermission() {
     playMusicAnyway();
     
     if (result.isConfirmed) {
-      showStatus('You said yes! ♡ Palangga playing...');
+      showStatus('Palangga, you said yes! ♡ ...');
     } else {
-      showStatus('Secretly playing anyway... shhh! 😘');
+      showStatus('Anyways, akong e play bahala ka... shhh! 😘');
       setTimeout(() => {
         showStatus('Beautiful music for everyone 💕');
       }, 2000);
