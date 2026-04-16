@@ -621,7 +621,7 @@ body.tap-feedback::before {
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="wax-seal-top">❧</div>
-  <div class="hero-ribbon">Poblacion Madridejos, Cebu · Est. Since Birth</div>
+  <div class="hero-ribbon">Single ka ba karun?</div>
   <h1 class="hero-title">Jake Ballano Rodriguez</h1>
   <p class="hero-sub">— a man of many talents, one honest heart —</p>
   <div class="ornament-line">✦ ✦ ✦</div>
@@ -860,8 +860,8 @@ body.tap-feedback::before {
 <footer>
   <div class="ornament-f">❧ ✦ ❧</div>
   <p>
-    &copy; <?php echo date('Y'); ?> Jake Ballano Rodriguez · Poblacion Madridejos, Cebu, Philippines<br/>
-    All Rights Reserved · All Feelings Genuine · All Pickup Lines Original<br/>
+    &copy; <?php echo date('Y'); ?> Jake Ballano Rodriguez<br/>
+    All Rights Reserved · All Feelings Genuine<br/>
     <em>No hearts were harmed in the making of this page.</em><br/>
     Crafted with sincerity, a sprinkle of humor, and way too much coffee. ☕
   </p>
