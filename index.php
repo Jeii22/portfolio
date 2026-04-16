@@ -750,7 +750,7 @@ body.tap-feedback::before {
     </div>
     <br/>
     <p class="body-text" style="font-style:italic;text-align:center;font-size:16px;color:var(--sepia);">
-      "Seriously — just tell me what you like, and I'll be into it by next week."<br/>
+      "Seryuso ba — just tell me what you like, and I'll be into it."<br/>
       <span style="font-family:'Caveat',cursive;font-size:15px;">— Jake, probably already practicing</span>
     </p>
   </div>
@@ -762,19 +762,19 @@ body.tap-feedback::before {
 <div class="section" id="s4">
   <div class="parchment-card">
     <div class="card-seal">?</div>
-    <h2 class="sec-header">Mga Pangutana (Q&A)</h2>
-    <p class="sec-subhead">Chapter IV — Honest Answers, Bisaya Edition</p>
+    <h2 class="sec-header">Mga Pangutana (Questions)</h2>
+    <p class="sec-subhead">Chapter IV — Honest Answers</p>
     <div class="accordion">
       <div class="acc-item">
-        <div class="acc-q" onclick="toggleAcc(this.parentElement)">Nganong ikaw? <span class="arr">▶</span></div>
-        <div class="acc-a">Kay dili ko magpanday-panday. Muingon ko og tinuod, mag-effort ko og tinuod, ug makigkita ko nimo og tinuod. Sa Madridejos, gitudloan mi nga ang gugma dili drama — aksyon 'to.</div>
+        <div class="acc-q" onclick="toggleAcc(this.parentElement)">Nganong ako? <span class="arr">▶</span></div>
+        <div class="acc-a">Kay dili ko magpanday-panday. Muingon ko og tinuod, mag-effort ko og tinuod, ug makigkita ko nimo og tinuod. Anywhere (kunohay), gitudloan mi nga ang gugma dili drama — but aksyon.</div>
       </div>
       <div class="acc-item">
         <div class="acc-q" onclick="toggleAcc(this.parentElement)">Weird ba ni? <span class="arr">▶</span></div>
-        <div class="acc-a">Oo, gamay. Pero mas maayo pa'ng weird ug memorable kaysa boring ug kalimtan. At least mahinumduman nimo ko sa imong kinabuhi, right? 😄</div>
+        <div class="acc-a">Oo, gamay. Pero mas maayo pa'ng weird ug memorable kaysa boring ug kalimtan. At least mahinumduman nimo ko sa imong kinabuhi, diba? HAHAHA</div>
       </div>
       <div class="acc-item">
-        <div class="acc-q" onclick="toggleAcc(this.parentElement)">Unsa ang imong red flag? <span class="arr">▶</span></div>
+        <div class="acc-q" onclick="toggleAcc(this.parentElement)">Unsa akong red flag? <span class="arr">▶</span></div>
         <div class="acc-a">Usahay layo ang isip nako. Ug makalimot ko og reply kung nag-code na ko. Pero kung naay concern ka, siguradong maminaw ko. Scout's honor (bisan dili ko scout).</div>
       </div>
       <div class="acc-item">
@@ -782,8 +782,8 @@ body.tap-feedback::before {
         <div class="acc-a">Maminaw ko. Genuine ko. Dili ko magpahimugso og drama. Ug kung moingon ko og "sige, uban ta," uban gyud ko — walay palsikat.</div>
       </div>
       <div class="acc-item">
-        <div class="acc-q" onclick="toggleAcc(this.parentElement)">Kung dili mangawat, okay ra ba? <span class="arr">▶</span></div>
-        <div class="acc-a">Siyempre okay ra. Zero pressure. Hari gihapon ta'g amigo, ug dili ko ma-awkward. Promise — dili ko ghost nimo bisan mapahawa ko. 🕊</div>
+        <div class="acc-q" onclick="toggleAcc(this.parentElement)">Unsay benefit nimo sa akoa? <span class="arr">▶</span></div>
+        <div class="acc-a">Benefit? Naay mo care nimo genuinely, mo support nimo, ug mo stay—dili lang kung sayon, pero apil na pud kung lisod. <br> Kung ako imong pili-on, I’ll be someone nga mo bring og peace and effort sa imo life. I’ll be serious when needed, funny when you’re stressed, and always consistent.🕊</div>
       </div>
     </div>
   </div>
