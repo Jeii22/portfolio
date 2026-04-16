@@ -635,7 +635,7 @@ body.tap-feedback::before {
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="wax-seal-top">❧</div>
-  <div class="hero-ribbon">Single ka ba karun?</div>
+  <div class="hero-ribbon">Wanna start your journey with me?</div>
   <h1 class="hero-title">Jake Ballano Rodriguez</h1>
   <p class="hero-sub">— a man of many talents, one honest heart —</p>
   <div class="ornament-line">✦ ✦ ✦</div>
