@@ -464,6 +464,80 @@
       .parchment-card { padding: 2rem 1.5rem; }
       .body-text { font-size: 16px; }
     }
+
+    /* ========= MUSIC PLAYER ========= */
+.music-player {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: var(--parchment);
+  border: 2px solid var(--parchment-deep);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  opacity: 0.9;
+}
+
+.music-player:hover {
+  transform: scale(1.1);
+  background: var(--parchment-dark);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.music-player.playing {
+  background: var(--rust);
+  color: var(--parchment);
+  animation: musicPulse 2s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.music-player .icon {
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+
+.music-player:hover .icon {
+  transform: scale(1.2);
+}
+
+.music-status {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  background: var(--parchment);
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-family: 'Caveat', cursive;
+  font-size: 13px;
+  border: 1px solid var(--parchment-deep);
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+  white-space: nowrap;
+}
+
+.music-status.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+  .music-player { top: 15px; right: 15px; width: 55px; height: 55px; }
+  .music-player .icon { font-size: 18px; }
+}
     /* Visual feedback for tap-anywhere */
 body.tap-feedback::before {
   content: '';
@@ -484,6 +558,18 @@ body.tap-feedback::before {
   </style>
 </head>
 <body>
+
+<!-- Background Music Player -->
+<div class="music-player" id="musicToggle" onclick="toggleMusic()">
+  <span class="icon">🎵</span>
+</div>
+<div class="music-status" id="musicStatus"></div>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://www.dropbox.com/scl/fi/92ggqiq7fmjd9nimdu6im/Shael-Palangga.mp3?rlkey=7nwvf8z2xtq774rplplgy2vy8&st=jqi64jd7&dl=1" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
