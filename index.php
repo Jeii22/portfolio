@@ -932,11 +932,7 @@ function askMusicPermission() {
       <div style="text-align: center; font-family: 'Cormorant Garamond', serif;">
         <p style="font-size: 18px; color: #f2e8d5; margin-bottom: 1rem;">
           Would you like to hear the song that reminds me of you?
-        </p>
-        <p style="font-size: 16px; color: #d4b896; font-style: italic;">
-          <strong>"Palangga" by Shael</strong><br/>
-          <small>(A Bisdak love song from Cebu ♡)</small>
-        </p>
+        </p>        
       </div>
     `,
     icon: 'heart',
