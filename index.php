@@ -465,8 +465,7 @@
       .body-text { font-size: 16px; }
     }
 
-    /* ========= MUSIC PLAYER ========= */
-.music-player {
+    .music-player {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -478,60 +477,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: default; /* No pointer since no toggle */
   z-index: 10000;
+  opacity: 0.9;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  opacity: 0.9;
 }
 
 .music-player:hover {
   transform: scale(1.1);
   background: var(--parchment-dark);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 .music-player.playing {
-  background: var(--rust);
+  background: linear-gradient(135deg, var(--rust), var(--gold));
   color: var(--parchment);
   animation: musicPulse 2s ease-in-out infinite;
-}
-
-@keyframes musicPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
+  box-shadow: 0 0 20px rgba(139, 58, 26, 0.4);
 }
 
 .music-player .icon {
   font-size: 20px;
-  transition: transform 0.2s;
-}
-
-.music-player:hover .icon {
-  transform: scale(1.2);
-}
-
-.music-status {
-  position: fixed;
-  top: 90px;
-  right: 20px;
-  background: var(--parchment);
-  color: var(--ink);
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-family: 'Caveat', cursive;
-  font-size: 13px;
-  border: 1px solid var(--parchment-deep);
-  opacity: 0;
-  transform: translateX(100px);
-  transition: all 0.3s ease;
-  z-index: 9999;
-  white-space: nowrap;
-}
-
-.music-status.show {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 @media (max-width: 600px) {
@@ -556,6 +522,7 @@ body.tap-feedback::before {
   0% { opacity: 1; transform: scale(0); }
   100% { opacity: 0; transform: scale(4); }
 }
+
 
   </style>
 </head>
@@ -806,81 +773,6 @@ body.tap-feedback::before {
 
 <script>
 
-  // Music Player - TAP ANYWHERE TO PLAY/PAUSE
-let musicPlaying = false;
-const music = document.getElementById('bgMusic');
-const musicToggle = document.getElementById('musicToggle');
-const musicStatus = document.getElementById('musicStatus');
-
-// TAP ANYWHERE to toggle music
-function toggleMusicAnywhere(e) {
-  e.stopPropagation(); // Prevent double-triggering on button
-  
-  if (musicPlaying) {
-    music.pause();
-    musicPlaying = false;
-    musicToggle.innerHTML = '🎵';
-    musicToggle.classList.remove('playing');
-    showStatus('Music paused ♪');
-  } else {
-    music.play().then(() => {
-      musicPlaying = true;
-      musicToggle.innerHTML = '⏸️';
-      musicToggle.classList.add('playing');
-      showStatus('Shael - Palangga ♫ Playing...');
-    }).catch(() => {
-      // First tap might fail due to browser policy, try again on next tap
-      showStatus('Tap anywhere again to play music 🎵');
-    });
-  }
-}
-
-function showStatus(text) {
-  musicStatus.textContent = text;
-  musicStatus.classList.add('show');
-  setTimeout(() => {
-    musicStatus.classList.remove('show');
-  }, 2500);
-}
-
-// Make the entire page clickable for music toggle
-document.addEventListener('click', toggleMusicAnywhere, true); // Capture phase
-document.addEventListener('touchstart', toggleMusicAnywhere, true); // Mobile taps
-
-// Also keep the button working
-musicToggle.addEventListener('click', toggleMusicAnywhere);
-
-// Scroll also triggers (bonus)
-window.addEventListener('scroll', () => {
-  if (!musicPlaying) {
-    showStatus('Tap anywhere to play Palangga 🎵');
-  }
-}, { once: true });
-
-// Fade in music volume smoothly
-music.volume = 0.4;
-music.addEventListener('play', () => {
-  music.volume = 0;
-  const fadeIn = setInterval(() => {
-    if (music.volume < 0.4) {
-      music.volume += 0.02;
-    } else {
-      clearInterval(fadeIn);
-    }
-  }, 80);
-});
-
-// Prevent music toggle on interactive elements (buttons, links, cards)
-const interactiveSelectors = [
-  '.pickup-card', '.btn-yes', '.btn-maybe', '.acc-q', 
-  'a', 'button', 'input', 'select'
-].join(', ');
-
-document.querySelectorAll(interactiveSelectors).forEach(el => {
-  el.addEventListener('click', (e) => e.stopPropagation(), true);
-  el.addEventListener('touchstart', (e) => e.stopPropagation(), true);
-});
-
   // Scroll reveal
   const sections = document.querySelectorAll('.section');
   const observer = new IntersectionObserver((entries) => {
@@ -946,6 +838,101 @@ document.addEventListener('touchstart', (e) => {
     setTimeout(() => document.body.classList.remove('tap-feedback'), 600);
   }
 }, true);
+
+
+// Music Player - AUTO-PLAY ON SCROLL (NO PAUSE)
+let musicPlaying = false;
+const music = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+const musicStatus = document.getElementById('musicStatus');
+
+// Auto-play on FIRST scroll (mobile + desktop)
+let hasScrolled = false;
+function autoPlayOnScroll() {
+  if (!hasScrolled && !musicPlaying) {
+    hasScrolled = true;
+    
+    // User gesture simulation for mobile/desktop
+    const event = new MouseEvent('click', { bubbles: true });
+    document.dispatchEvent(event);
+    
+    music.play().then(() => {
+      musicPlaying = true;
+      musicToggle.innerHTML = '🔊';
+      musicToggle.classList.add('playing');
+      showStatus('Shael - Palangga ♫ (auto-playing)');
+      setTimeout(() => showStatus('Beautiful music for your scroll ❤️'), 2500);
+    }).catch(() => {
+      // Fallback: try again after short delay
+      setTimeout(() => {
+        music.play();
+      }, 500);
+    });
+  }
+}
+
+// Listen for scroll on both mobile + desktop
+window.addEventListener('scroll', autoPlayOnScroll, { once: true });
+document.addEventListener('touchmove', autoPlayOnScroll, { once: true });
+
+// NO PAUSE FUNCTIONALITY - music keeps playing forever
+function showStatus(text) {
+  musicStatus.textContent = text;
+  musicStatus.classList.add('show');
+  setTimeout(() => {
+    musicStatus.classList.remove('show');
+  }, 3000);
+}
+
+// Button shows status only (no toggle)
+musicToggle.onclick = () => {
+  showStatus('🎵 Shael - Palangga (playing automatically)');
+};
+
+// Smooth fade-in volume
+music.volume = 0.35; // Slightly lower for ambient feel
+music.addEventListener('play', () => {
+  music.volume = 0;
+  const fadeIn = setInterval(() => {
+    if (music.volume < 0.35) {
+      music.volume += 0.015;
+    } else {
+      clearInterval(fadeIn);
+    }
+  }, 100);
+});
+
+// Prevent page unload from stopping music
+window.addEventListener('beforeunload', () => {
+  music.currentTime = 0; // Restart from beginning if they come back
+});
+
+// Tap ripple feedback (visual only, no music toggle)
+document.addEventListener('click', (e) => {
+  if (!musicPlaying) {
+    document.body.style.setProperty('--tap-x', `${e.clientX}px`);
+    document.body.style.setProperty('--tap-y', `${e.clientY}px`);
+    document.body.classList.add('tap-feedback');
+    setTimeout(() => document.body.classList.remove('tap-feedback'), 600);
+  }
+}, true);
+
+document.addEventListener('touchstart', (e) => {
+  const touch = e.touches[0];
+  if (!musicPlaying) {
+    document.body.style.setProperty('--tap-x', `${touch.clientX}px`);
+    document.body.style.setProperty('--tap-y', `${touch.clientY}px`);
+    document.body.classList.add('tap-feedback');
+    setTimeout(() => document.body.classList.remove('tap-feedback'), 600);
+  }
+}, true);
+
+// Protect interactive elements from scroll interference
+const interactiveSelectors = [
+  '.pickup-card', '.btn-yes', '.btn-maybe', '.acc-q', 
+  'a', 'button', 'input', 'select'
+].join(', ');
+
 </script>
 </body>
 </html>
