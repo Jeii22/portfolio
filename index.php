@@ -828,7 +828,7 @@ body.tap-feedback::before {
       </p>
       <br/>
       <button class="btn-yes" onclick="sayYes()">Sige na ba ☕</button>
-      <button class="btn-maybe" id="noBtn" onmouseover="nudgeNo()" onclick="sayNo()">Ambot pa...</button>
+      <button class="btn-maybe" id="noBtn" onmouseover="nudgeNo()" onclick="sayNo()">NOT ANYMORE!</button>
       <div id="reply"></div>
     </div>
   </div>
@@ -1025,7 +1025,7 @@ function sayNo() {
       <span style="font-family: 'Caveat', cursive; font-size: 18px;">Sige nalang! 👫</span>
     `,
     cancelButtonText: `
-      <span style="font-family: 'Caveat', cursive;">Dili gyud... 😢</span>
+      <span style="font-family: 'Caveat', cursive;">NO!</span>
     `,
     confirmButtonColor: '#c4922a',
     cancelButtonColor: '#5c3d1e',
