@@ -681,7 +681,7 @@ body.tap-feedback::before {
   <div class="parchment-card">
     <div class="card-seal">💌</div>
     <h2 class="sec-header">Mga Linya sa Akong Dughan</h2>
-    <p class="sec-subhead">Chapter II — Bisaya Pickup Lines (Tap to Reveal)</p>
+    <p class="sec-subhead">Chapter II — Kung sakoa lang ha</p>
     <p class="tooltip-hint">— tap a card to see the translation —</p>
     <div class="pickup-grid" id="pickupGrid">
 
@@ -691,13 +691,13 @@ body.tap-feedback::before {
       </div>
 
       <div class="pickup-card" onclick="flipCard(this)">
-        <div class="pickup-bisaya">Kung ikaw usa ka baul sa isda, gusto ko ikaw ang akong sardinas — forever naa sa akong puso.</div>
-        <div class="pickup-trans" style="display:none;">(Yes, this is a Cebu joke.) If you were a can of fish, I'd want you to be my sardines — always in my heart.</div>
+        <div class="pickup-bisaya">Ang gugma bisag way pwesto sa imong wallet, nay dakong pwesto sa imong kasingkasing.</div>
+        <div class="pickup-trans" style="display:none;">Love may not have a place in your wallet, but it has a big place in your heart.</div>
       </div>
 
       <div class="pickup-card" onclick="flipCard(this)">
-        <div class="pickup-bisaya">Nag-Google ko og "pinakamagandang tawo sa kalibutan" — ug nagpakita imong litrato.</div>
-        <div class="pickup-trans" style="display:none;">I Googled "most beautiful person in the world" — and your photo came up. (The Wi-Fi here is clearly very smart.)</div>
+        <div class="pickup-bisaya">Nag-Google ko og "pinakamagandang tawo sa kalibutan" — Lisud daw ka pangitaon kay walay pareha nimo.</div>
+        <div class="pickup-trans" style="display:none;">I Googled "most beautiful person in the world" — Looking for you is hard cuz no one can match you.</div>
       </div>
 
       <div class="pickup-card" onclick="flipCard(this)">
@@ -711,8 +711,8 @@ body.tap-feedback::before {
       </div>
 
       <div class="pickup-card" onclick="flipCard(this)">
-        <div class="pickup-bisaya">Kung ang gugma usa ka barangay, gusto ko maging imong kapitbahay — palapit palapit lang.</div>
-        <div class="pickup-trans" style="display:none;">If love were a barangay, I'd want to be your neighbor — slowly getting closer, day by day.</div>
+        <div class="pickup-bisaya">Bisan unsaon nimo pag-lane sa imong destiny, kung dili siya, mag-uban ra gihapon mo sa line sa LTO.</div>
+        <div class="pickup-trans" style="display:none;">No matter how much you line up for your destiny, if it’s not meant to be, you’ll still end up in line at the LTO together.</div>
       </div>
 
     </div>
