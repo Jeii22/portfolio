@@ -652,6 +652,14 @@
   </div>
 </div>
 
+<!-- Background Music -->
+    <audio id="bgMusic" loop preload="auto">
+        <!-- Try Google Drive direct link first -->
+        <source src="https://www.dropbox.com/scl/fi/92ggqiq7fmjd9nimdu6im/Shael-Palangga.mp3?rlkey=7nwvf8z2xtq774rplplgy2vy8&st=jqi64jd7&dl=1" type="audio/mpeg">
+        <!-- Fallback to a reliable hosted file if you have one -->
+        <!-- <source src="https://your-backup-url.com/shael-palangga.mp3" type="audio/mpeg"> -->
+    </audio>
+
 <div class="divider-ornament">⁂ ❦ ⁂</div>
 
 <!-- ===== SOCIAL MEDIA ===== -->
@@ -700,6 +708,89 @@
 </footer>
 
 <script>
+
+  let isMusicPlaying = false;
+        
+        // Music control function with better error handling
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const btn = document.getElementById('musicBtn');
+            
+            if (isMusicPlaying) {
+                music.pause();
+                btn.textContent = '🎵 Play Music';
+                btn.classList.remove('playing');
+                isMusicPlaying = false;
+            } else {
+                // Reset the audio to handle Google Drive streaming issues
+                music.load();
+                music.volume = 0.4;
+                
+                music.play().then(() => {
+                    isMusicPlaying = true;
+                    btn.textContent = '🔊 Pause Music';
+                    btn.classList.add('playing');
+                }).catch(e => {
+                    console.log('Music Kunohay:', e);
+                    btn.textContent = '🎵 Play Music';
+                    alert('E play ko ni');
+                });
+            }
+        }
+        
+        // Aggressive autoplay function - tries multiple methods
+        function attemptAutoplay() {
+            const music = document.getElementById('bgMusic');
+            const btn = document.getElementById('musicBtn');
+            
+            music.volume = 0.4;
+            
+            // Method 1: Direct play
+            const playPromise = music.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    // Success!
+                    isMusicPlaying = true;
+                    btn.textContent = '🔊 Pause Music';
+                    btn.classList.add('playing');
+                    console.log('Autoplay successful!');
+                }).catch(error => {
+                    // Autoplay blocked - try fallback methods
+                    console.log('Autoplay blocked, trying alternatives...');
+                    
+                    // Method 2: Try playing on any user interaction
+                    const events = ['click', 'touchstart', 'scroll', 'keydown', 'mousemove'];
+                    
+                    function tryPlayOnInteraction() {
+                        music.play().then(() => {
+                            isMusicPlaying = true;
+                            btn.textContent = '🔊 Pause Music';
+                            btn.classList.add('playing');
+                            // Remove all event listeners once successful
+                            events.forEach(evt => {
+                                document.removeEventListener(evt, tryPlayOnInteraction);
+                            });
+                        }).catch(e => {
+                            console.log('Still blocked:', e);
+                        });
+                    }
+                    
+                    // Add listeners to all possible interaction events
+                    events.forEach(evt => {
+                        document.addEventListener(evt, tryPlayOnInteraction, { once: true });
+                    });
+                    
+                    // Method 3: Show a subtle hint that music is available
+                    setTimeout(() => {
+                        if (!isMusicPlaying) {
+                            btn.style.animation = 'pulse 1s infinite';
+                        }
+                    }, 1000);
+                });
+            }
+        }
+        
   // Scroll reveal
   const sections = document.querySelectorAll('.section');
   const observer = new IntersectionObserver((entries) => {
