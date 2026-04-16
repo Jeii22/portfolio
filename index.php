@@ -906,17 +906,6 @@ body.tap-feedback::before {
     item.classList.toggle('open');
   }
 
-  // No button dodge
-  let nudges = 0;
-  function nudgeNo() {
-    nudges++;
-    const btn = document.getElementById('noBtn');
-    const x = (Math.random() - 0.5) * 220;
-    const y = (Math.random() - 0.5) * 100;
-    btn.style.transform = `translate(${x}px, ${y}px)`;
-    btn.style.transition = 'transform 0.3s';
-    if (nudges > 4) btn.style.opacity = '0.15';
-  }
 
   // EmailJS Configuration - REPLACE THESE WITH YOUR ACTUAL CREDENTIALS
 // Get these from https://www.emailjs.com/
