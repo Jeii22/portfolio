@@ -827,7 +827,7 @@ body.tap-feedback::before {
         (Joke lang ang pangutana sa ubos — pero tinuod ang feelings.)
       </p>
       <br/>
-      <button class="btn-yes" onclick="sayYes()">Sige, hatagan tika og higayon ☕</button>
+      <button class="btn-yes" onclick="sayYes()">Sige na ba ☕</button>
       <button class="btn-maybe" id="noBtn" onmouseover="nudgeNo()" onclick="sayNo()">Ambot pa...</button>
       <div id="reply"></div>
     </div>
@@ -918,11 +918,11 @@ emailjs.init(EMAILJS_PUBLIC_KEY);
 
 function sayYes() {
   Swal.fire({
-    title: '✦ Mao na gyud! Ganahan ko kaayo! ☕💕',
+    title: '✦ YEHEY! KANA BA! ☕💕',
     html: `
       <div style="text-align: center; font-family: 'Cormorant Garamond', serif; color: #f2e8d5;">
         <p style="font-size: 20px; margin-bottom: 1.5rem;">
-          Salamat sa paghatag og higayon! 🎉<br/>
+          Salamat sa Chance, unta tinuod imong ge ingon! 🎉<br/>
           <small style="font-size: 16px; opacity: 0.9;">Palihug pun-i para ma-text ko nimo dayon!</small>
         </p>
         
@@ -994,7 +994,7 @@ function nudgeNo() {
   btn.style.transform = `translate(${x}px, ${y}px)`;
   btn.style.transition = 'transform 0.3s';
   if (nudges > 4) {
-    btn.textContent = 'Okay lang... pero at least i-message ko nimo? 🥺';
+    btn.textContent = 'Okay lang...  🥺';
     btn.style.opacity = '1';
   }
 }
@@ -1005,7 +1005,7 @@ function sayNo() {
     html: `
       <div style="text-align: center; font-family: 'Cormorant Garamond', serif; color: #f2e8d5;">
         <p style="font-size: 20px; margin-bottom: 1.5rem;">
-          Fair enough! Pero para safe ra, at least i-add ko nimo sa Facebook? 
+          Fair enough! Pero para safe ra, can I atleast add you sa Facebook? 
           <br/><small style="font-size: 16px; opacity: 0.9;">Promise, dili ko spamming. Just friends muna. 😇</small>
         </p>
         
@@ -1022,7 +1022,7 @@ function sayNo() {
     icon: 'question',
     showCancelButton: true,
     confirmButtonText: `
-      <span style="font-family: 'Caveat', cursive; font-size: 18px;">Sige, i-add ko nimo! 👫</span>
+      <span style="font-family: 'Caveat', cursive; font-size: 18px;">Sige nalang! 👫</span>
     `,
     cancelButtonText: `
       <span style="font-family: 'Caveat', cursive;">Dili gyud... 😢</span>
