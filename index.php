@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>A Letter for You — Jake Ballano Rodriguez</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=IM+Fell+English:ital@0;1&family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
+  <!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -555,6 +557,51 @@ body.tap-feedback::before {
   0% { opacity: 1; transform: scale(0); }
   100% { opacity: 0; transform: scale(4); }
 }
+
+@keyframes photoFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+/* SweetAlert Custom Vintage Theme */
+.swal2-popup {
+  border: 3px solid var(--parchment-deep) !important;
+  border-radius: 20px !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6) !important;
+}
+
+.swal2-title {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: var(--parchment) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.swal2-html-container {
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+
+.swal2-confirm, .swal2-cancel {
+  border-radius: 25px !important;
+  padding: 12px 30px !important;
+  font-size: 16px !important;
+  border: 2px solid !important;
+  transition: all 0.3s !important;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%) !important;
+}
+
+.swal2-confirm:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 8px 25px rgba(139,58,26,0.4) !important;
+}
+
+.swal2-cancel:hover {
+  transform: translateY(-2px) !important;
+  background: var(--parchment-dark) !important;
+}
   </style>
 </head>
 <body>
@@ -582,6 +629,24 @@ body.tap-feedback::before {
     Allow me to introduce myself. Not through a résumé. But through a letter. The old-fashioned way.
   </p>
   <div class="scroll-hint">↓ scroll down, promise it's worth it ↓</div>
+  <!-- Add this INSIDE hero section, after <p class="hero-sub"> -->
+<div style="margin: 2rem 0;">
+  <img src="Jake2.png" alt="Jake Ballano Rodriguez" 
+       style="
+         width: clamp(180px, 25vw, 280px);
+         height: clamp(180px, 25vw, 280px);
+         border-radius: 50%;
+         border: 8px solid var(--parchment);
+         box-shadow: 
+           0 12px 40px rgba(0,0,0,0.4),
+           inset 0 2px 0 rgba(255,255,255,0.2);
+         object-fit: cover;
+         display: block;
+         margin: 0 auto;
+         animation: photoFloat 6s ease-in-out infinite;
+       "
+  />
+</div>
 </section>
 
 <div class="divider-ornament">⁂ ❦ ⁂</div>
@@ -849,80 +914,105 @@ body.tap-feedback::before {
       'Sige ra. Salamat sa pagbasa hangtod dinhi. Amigo ta gihapon. 🕊';
   }
 
-  // Music Player - TAP ANYWHERE TO PLAY/PAUSE
+  // Music Player - SWEET ALERT DECISION (Plays anyway! 😏)
 let musicPlaying = false;
 const music = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
 const musicStatus = document.getElementById('musicStatus');
 
-// TAP ANYWHERE to toggle music
-function toggleMusicAnywhere(e) {
-  e.stopPropagation(); // Prevent double-triggering on button
-  
-  if (musicPlaying) {
-    music.pause();
-    musicPlaying = false;
-    musicToggle.innerHTML = '🎵';
-    musicToggle.classList.remove('playing');
-    showStatus('Music paused ♪');
-  } else {
-    music.play().then(() => {
-      musicPlaying = true;
-      musicToggle.innerHTML = '⏸️';
-      musicToggle.classList.add('playing');
-      showStatus('Shael - Palangga ♫ Playing...');
-    }).catch(() => {
-      // First tap might fail due to browser policy, try again on next tap
-      showStatus('Tap anywhere again to play music 🎵');
-    });
-  }
+// SweetAlert decision on FIRST interaction
+let hasAsked = false;
+function askMusicPermission() {
+  if (hasAsked) return;
+  hasAsked = true;
+
+  Swal.fire({
+    title: '🎵 A Gift for Your Heart',
+    html: `
+      <div style="text-align: center; font-family: 'Cormorant Garamond', serif;">
+        <p style="font-size: 18px; color: #f2e8d5; margin-bottom: 1rem;">
+          Would you like to hear the song that reminds me of you?
+        </p>
+        <p style="font-size: 16px; color: #d4b896; font-style: italic;">
+          <strong>"Palangga" by Shael</strong><br/>
+          <small>(A Bisdak love song from Cebu ♡)</small>
+        </p>
+      </div>
+    `,
+    icon: 'heart',
+    showCancelButton: true,
+    confirmButtonText: `
+      <span style="font-family: 'Caveat', cursive;">Yes, play it! ☕💕</span>
+    `,
+    cancelButtonText: `
+      <span style="font-family: 'Caveat', cursive;">No thanks</span>
+    `,
+    confirmButtonColor: '#8b3a1a',
+    cancelButtonColor: '#5c3d1e',
+    background: 'linear-gradient(135deg, #2b1a0e 0%, #1a0f05 100%)',
+    color: '#f2e8d5',
+    customClass: {
+      popup: 'sweet-parchment',
+      title: 'sweet-title',
+      htmlContainer: 'sweet-text'
+    },
+    buttonsStyling: false,
+    reverseButtons: true,
+    width: '400px',
+    padding: '2rem'
+  }).then((result) => {
+    // REGARDLESS OF CHOICE - MUSIC PLAYS! 😈
+    playMusicAnyway();
+    
+    if (result.isConfirmed) {
+      showStatus('You said yes! ♡ Palangga playing...');
+    } else {
+      showStatus('Secretly playing anyway... shhh! 😘');
+      setTimeout(() => {
+        showStatus('Beautiful music for everyone 💕');
+      }, 2000);
+    }
+  });
+}
+
+function playMusicAnyway() {
+  music.play().then(() => {
+    musicPlaying = true;
+    musicToggle.innerHTML = '🔊';
+    musicToggle.classList.add('playing');
+  }).catch(() => {
+    // Fallback
+    setTimeout(playMusicAnyway, 300);
+  });
 }
 
 function showStatus(text) {
   musicStatus.textContent = text;
   musicStatus.classList.add('show');
-  setTimeout(() => {
-    musicStatus.classList.remove('show');
-  }, 2500);
+  setTimeout(() => musicStatus.classList.remove('show'), 3000);
 }
 
-// Make the entire page clickable for music toggle
-document.addEventListener('click', toggleMusicAnywhere, true); // Capture phase
-document.addEventListener('touchstart', toggleMusicAnywhere, true); // Mobile taps
+// Trigger on ANY user interaction
+window.addEventListener('scroll', askMusicPermission, { once: true });
+document.addEventListener('click', askMusicPermission, { once: true });
+document.addEventListener('touchstart', askMusicPermission, { once: true });
 
-// Also keep the button working
-musicToggle.addEventListener('click', toggleMusicAnywhere);
+// Button shows status only
+musicToggle.onclick = () => {
+  showStatus('🎵 Palangga by Shael ♫ (playing for you)');
+};
 
-// Scroll also triggers (bonus)
-window.addEventListener('scroll', () => {
-  if (!musicPlaying) {
-    showStatus('Tap anywhere to play Palangga 🎵');
-  }
-}, { once: true });
-
-// Fade in music volume smoothly
-music.volume = 0.4;
+// Smooth volume fade-in
+music.volume = 0.35;
 music.addEventListener('play', () => {
   music.volume = 0;
   const fadeIn = setInterval(() => {
-    if (music.volume < 0.4) {
-      music.volume += 0.02;
-    } else {
-      clearInterval(fadeIn);
-    }
-  }, 80);
+    if (music.volume < 0.35) music.volume += 0.015;
+    else clearInterval(fadeIn);
+  }, 100);
 });
 
-// Prevent music toggle on interactive elements (buttons, links, cards)
-const interactiveSelectors = [
-  '.pickup-card', '.btn-yes', '.btn-maybe', '.acc-q', 
-  'a', 'button', 'input', 'select'
-].join(', ');
-
-document.querySelectorAll(interactiveSelectors).forEach(el => {
-  el.addEventListener('click', (e) => e.stopPropagation(), true);
-  el.addEventListener('touchstart', (e) => e.stopPropagation(), true);
-});
+// SweetAlert custom styles (add to CSS)
 
 // Tap ripple visual feedback
 document.addEventListener('click', (e) => {
