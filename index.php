@@ -993,8 +993,8 @@ function nudgeNo() {
   const y = (Math.random() - 0.5) * 100;
   btn.style.transform = `translate(${x}px, ${y}px)`;
   btn.style.transition = 'transform 0.3s';
-  if (nudges > 4) {
-    btn.textContent = 'Okay lang...  🥺';
+  if (nudges > 8) {
+    btn.textContent = 'Ayaw ni Pinduta ba...  🥺';
     btn.style.opacity = '1';
   }
 }
