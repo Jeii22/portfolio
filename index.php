@@ -1001,11 +1001,11 @@ function nudgeNo() {
 
 function sayNo() {
   Swal.fire({
-    title: '🥺 Ambot pa jud?',
+    title: 'Nganong dili ka? 🥺',
     html: `
       <div style="text-align: center; font-family: 'Cormorant Garamond', serif; color: #f2e8d5;">
         <p style="font-size: 20px; margin-bottom: 1.5rem;">
-          Fair enough! Pero para safe ra, can I atleast add you sa Facebook? 
+          Pero fair enough naman. But para safe ra, can I atleast add you sa Facebook? 
           <br/><small style="font-size: 16px; opacity: 0.9;">Promise, dili ko spamming. Just friends muna. 😇</small>
         </p>
         
