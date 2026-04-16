@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=IM+Fell+English:ital@0;1&family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
   <!-- SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -602,6 +604,18 @@ body.tap-feedback::before {
   transform: translateY(-2px) !important;
   background: var(--parchment-dark) !important;
 }
+
+.swal2-input {
+  background: rgba(255,255,255,0.1) !important;
+  border: 2px solid rgba(255,255,255,0.3) !important;
+  color: #f2e8d5 !important;
+  font-family: 'Caveat', cursive !important;
+}
+
+.swal2-input::placeholder {
+  color: rgba(255,255,255,0.6) !important;
+}
+
   </style>
 </head>
 <body>
@@ -805,9 +819,9 @@ body.tap-feedback::before {
         nga dili ko boring — bisag bag-o ka pang nakaila nako.
       </p>
       <p class="rsvp-intro">
-        Give a simple man from Madridejos a chance.<br/>
+        Give this man a chance naman.<br/>
         The tides have been kinder to those who are brave enough to sail.<br/>
-        — and I promise, I row very well. 🚣
+        — and I promise, I row very well. (Charot, nakita rani nako sa TV)🚣
       </p>
       <p class="rsvp-bisaya" style="font-size:18px;color:var(--sepia);">
         (Joke lang ang pangutana sa ubos — pero tinuod ang feelings.)
@@ -904,10 +918,82 @@ body.tap-feedback::before {
     if (nudges > 4) btn.style.opacity = '0.15';
   }
 
-  function sayYes() {
-    document.getElementById('reply').innerHTML =
-      '✦ Mao na! Ganahan ko kaayo nimo nag-click ana. Text ko nimo — para tinuod na! 🎉';
-  }
+  // EmailJS Configuration - REPLACE THESE WITH YOUR ACTUAL CREDENTIALS
+// Get these from https://www.emailjs.com/
+const EMAILJS_SERVICE_ID = 'service_pot4w5f';        // service_xxxxx
+const EMAILJS_TEMPLATE_ID = 'template_efxpzuo';      // template_xxxxx  
+const EMAILJS_PUBLIC_KEY = 'DRilxWVQt1REClZ1h';        // user_xxxxx
+
+// Initialize EmailJS
+emailjs.init(EMAILJS_PUBLIC_KEY);
+
+function sayYes() {
+  Swal.fire({
+    title: '✦ Mao na gyud! Ganahan ko kaayo! ☕💕',
+    html: `
+      <div style="text-align: center; font-family: 'Cormorant Garamond', serif; color: #f2e8d5;">
+        <p style="font-size: 20px; margin-bottom: 1.5rem;">
+          Salamat sa paghatag og higayon! 🎉<br/>
+          <small style="font-size: 16px; opacity: 0.9;">Palihug pun-i para ma-text ko nimo dayon!</small>
+        </p>
+        
+        <div style="background: rgba(242,232,213,0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); margin: 1rem 0;">
+          <input type="text" id="fbName" placeholder="Imong Facebook Name" style="width: 100%; padding: 12px; margin-bottom: 12px; border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; background: rgba(255,255,255,0.1); color: #f2e8d5; font-size: 16px; font-family: 'Caveat', cursive;" required>
+          <input type="text" id="fbUrl" placeholder="Facebook Profile URL (optional)" style="width: 100%; padding: 12px; margin-bottom: 12px; border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; background: rgba(255,255,255,0.1); color: #f2e8d5; font-size: 16px; font-family: 'Caveat', cursive;">
+          <input type="tel" id="phone" placeholder="Number para ma-text ko (optional)" style="width: 100%; padding: 12px; border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; background: rgba(255,255,255,0.1); color: #f2e8d5; font-size: 16px; font-family: 'Caveat', cursive;">
+        </div>
+      </div>
+    `,
+    icon: 'heart',
+    showCancelButton: true,
+    confirmButtonText: `
+      <span style="font-family: 'Caveat', cursive; font-size: 18px;">Send ko nimo message dayon! 💌</span>
+    `,
+    cancelButtonText: `
+      <span style="font-family: 'Caveat', cursive;">Balik lang ko sa "Ambot pa..."</span>
+    `,
+    confirmButtonColor: '#8b3a1a',
+    cancelButtonColor: '#5c3d1e',
+    background: 'linear-gradient(135deg, #2b1a0e 0%, #1a0f05 100%)',
+    width: '450px',
+    padding: '2rem',
+    preConfirm: () => {
+      const fbName = document.getElementById('fbName').value;
+      const fbUrl = document.getElementById('fbUrl').value;
+      const phone = document.getElementById('phone').value;
+      
+      if (!fbName) {
+        Swal.showValidationMessage('Palihug butang imong Facebook name!');
+        return false;
+      }
+
+      // Send email via EmailJS
+      const templateParams = {
+        from_name: fbName,
+        fb_url: fbUrl || 'Not provided',
+        phone: phone || 'Not provided',
+        message: `${fbName} said YES! 🎉 Ready for coffee date ☕💕`,
+        timestamp: new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' })
+      };
+
+      return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+        .then(() => {
+          document.getElementById('reply').innerHTML = 
+            `✦ ${fbName}! Naay na ko imong details. Text ko nimo dayon sa imong Facebook! 🎉💕<br/>
+             <small style="color: var(--sepia); font-size: 14px;">(Na-receive na nako ang imong message sa email!)</small>`;
+          
+          // Play celebration sound (optional)
+          const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAo');
+          audio.play().catch(() => {});
+          
+        })
+        .catch((error) => {
+          console.error('EmailJS Error:', error);
+          Swal.showValidationMessage('Something went wrong. Try again or message me directly!');
+        });
+    }
+  });
+}
 
   function sayNo() {
     document.getElementById('reply').innerHTML =
