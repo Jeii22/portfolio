@@ -922,7 +922,7 @@ function sayYes() {
     html: `
       <div style="text-align: center; font-family: 'Cormorant Garamond', serif; color: #f2e8d5;">
         <p style="font-size: 20px; margin-bottom: 1.5rem;">
-          Salamat sa Chance, unta tinuod imong ge ingon! 🎉<br/>
+          Salamat, unta tinuod imong ge ingon! 🎉<br/>
           <small style="font-size: 16px; opacity: 0.9;">Palihug pun-i para ma-text ko nimo dayon!</small>
         </p>
         
