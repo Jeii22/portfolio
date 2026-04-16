@@ -995,86 +995,10 @@ function sayYes() {
   });
 }
 
-  // No button dodge (now collects info too!)
-let nudges = 0;
-function nudgeNo() {
-  nudges++;
-  const btn = document.getElementById('noBtn');
-  const x = (Math.random() - 0.5) * 220;
-  const y = (Math.random() - 0.5) * 100;
-  btn.style.transform = `translate(${x}px, ${y}px)`;
-  btn.style.transition = 'transform 0.3s';
-  if (nudges > 4) {
-    btn.textContent = 'Okay lang... pero at least i-message ko nimo? 🥺';
-    btn.style.opacity = '1';
+  function sayNo() {
+    document.getElementById('reply').innerHTML =
+      'Sige ra. Salamat sa pagbasa hangtod dinhi. Amigo ta gihapon. 🕊';
   }
-}
-
-function sayNo() {
-  Swal.fire({
-    title: '🥺 Ambot pa jud?',
-    html: `
-      <div style="text-align: center; font-family: 'Cormorant Garamond', serif; color: #f2e8d5;">
-        <p style="font-size: 20px; margin-bottom: 1.5rem;">
-          Fair enough! Pero para safe ra, at least i-add ko nimo sa Facebook? 
-          <br/><small style="font-size: 16px; opacity: 0.9;">Promise, dili ko spamming. Just friends muna. 😇</small>
-        </p>
-        
-        <div style="background: rgba(242,232,213,0.1); padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); margin: 1rem 0;">
-          <input type="text" id="fbNameNo" placeholder="Imong Facebook Name" style="width: 100%; padding: 12px; margin-bottom: 12px; border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; background: rgba(255,255,255,0.1); color: #f2e8d5; font-size: 16px; font-family: 'Caveat', cursive;" required>
-          <input type="text" id="fbUrlNo" placeholder="Facebook Profile URL (optional)" style="width: 100%; padding: 12px; margin-bottom: 12px; border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; background: rgba(255,255,255,0.1); color: #f2e8d5; font-size: 16px; font-family: 'Caveat', cursive;">
-        </div>
-        
-        <p style="font-size: 14px; opacity: 0.8; font-style: italic;">
-          "Ambot pa" doesn't mean "no forever" ra ba? 😅
-        </p>
-      </div>
-    `,
-    icon: 'question',
-    showCancelButton: true,
-    confirmButtonText: `
-      <span style="font-family: 'Caveat', cursive; font-size: 18px;">Sige, i-add ko nimo! 👫</span>
-    `,
-    cancelButtonText: `
-      <span style="font-family: 'Caveat', cursive;">Dili gyud... 😢</span>
-    `,
-    confirmButtonColor: '#c4922a',
-    cancelButtonColor: '#5c3d1e',
-    background: 'linear-gradient(135deg, #2b1a0e 0%, #1a0f05 100%)',
-    width: '450px',
-    padding: '2rem',
-    preConfirm: () => {
-      const fbName = document.getElementById('fbNameNo').value;
-      const fbUrl = document.getElementById('fbUrlNo').value;
-      
-      if (!fbName) {
-        Swal.showValidationMessage('At least imong Facebook name lang? 🥺');
-        return false;
-      }
-
-      // Send email via EmailJS (AMBOT PA version)
-      const templateParams = {
-        from_name: fbName,
-        fb_url: fbUrl || 'Not provided',
-        phone: 'Not provided',
-        message: `${fbName} clicked "Ambot pa..." but still gave Facebook! 😎 Maybe later?`,
-        status: 'AMBOT_PA',
-        timestamp: new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' })
-      };
-
-      return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-        .then(() => {
-          document.getElementById('reply').innerHTML = 
-            `✦ ${fbName}! Okay ra, i-add ko nimo sa Facebook. Watch out for my friend request! 👋💛<br/>
-             <small style="color: var(--sepia); font-size: 14px;">(Na-receive na nako ang imong details!)</small>`;
-        })
-        .catch((error) => {
-          console.error('EmailJS Error:', error);
-          Swal.showValidationMessage('Something went wrong. Message me directly sa Facebook!');
-        });
-    }
-  });
-}
 
   // Music Player - SWEET ALERT DECISION (Plays anyway! 😏)
 let musicPlaying = false;
