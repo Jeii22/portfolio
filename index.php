@@ -736,7 +736,7 @@
           <a href="#contact" class="btn btn-ghost">Get In Touch</a>
         </div>
       </div>
-      <img src="jake.png" alt="Jake Rodriguez" class="hero-photo">
+      <img src="jake.jpg" alt="Jake Rodriguez" class="hero-photo">
     </div>
   </div>
 </section>
