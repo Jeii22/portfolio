@@ -1,5 +1,5 @@
 <?php
-// Jake Ballano Rodriguez — Vintage Courtship Page
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
