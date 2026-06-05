@@ -727,9 +727,9 @@
     <div class="hero-inner">
       <div>
         <div class="hero-tag">Available for Remote & On-Site Work</div>
-        <h1>Hi, I'm Jake.<br><em>Developer & IT Support.</em></h1>
+        <h1>Jake Rodriguez<br><em>Developer & IT Support.</em></h1>
         <p class="hero-sub">
-          I build websites, apps, and internal tools — and I can help with office and tech support too. Available remote or on-site in Cebu.
+          I build websites, apps, and internal tools — can help with office and tech support too. Available remote or on-site in Manila or Cebu.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -748,7 +748,7 @@
     <h2 class="section-title">Who I Am</h2>
     <div class="about-grid reveal">
       <div class="about-text">
-        <p>I'm Jake Rodriguez, a developer based in Cebu, Philippines. I build web applications, mobile apps, and desktop tools — with a focus on clean interfaces and practical functionality.</p>
+        <p>Jake Rodriguez, a developer based in Cebu, Philippines. I build web applications, mobile apps, and desktop tools — with a focus on clean interfaces and practical functionality.</p>
         <p>I use modern development frameworks alongside AI tools to work efficiently and deliver polished results. Whether it's a full web system, a mobile app, or IT and office support, I get things done.</p>
         <p>Currently open to freelance, full-time, or internship opportunities — both remote and on-site.</p>
       </div>
@@ -1092,5 +1092,22 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+
+<p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<p>
+  <a href="/privacy" style="color:#fff; text-decoration:none;">Privacy Policy</a> | 
+  <a href="/contact" style="color:#fff; text-decoration:none;">Contact</a>
+</p>
+
+
+<footer style="background-color:#222; color:#fff; text-align:center; padding:15px 0; font-size:14px;">
+  <p>&copy; All rights reserved.</p>
+  <p>Owner Jake Rodriguez</p>
+</footer>
+
 </body>
 </html>
