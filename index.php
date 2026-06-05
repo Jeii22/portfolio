@@ -1093,21 +1093,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
-<p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-<p>
-  <a href="/privacy" style="color:#fff; text-decoration:none;">Privacy Policy</a> | 
-  <a href="/contact" style="color:#fff; text-decoration:none;">Contact</a>
-</p>
-
-
-<footer style="background-color:#222; color:#fff; text-align:center; padding:15px 0; font-size:14px;">
-  <p>&copy; All rights reserved.</p>
-  <p>Owner Jake Rodriguez</p>
-</footer>
 
 </body>
 </html>
