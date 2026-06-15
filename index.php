@@ -727,9 +727,9 @@
     <div class="hero-inner">
       <div>
         <div class="hero-tag">Available for Remote & On-Site Work</div>
-        <h1>Jake Rodriguez<br><em>Developer & IT Support.</em></h1>
+        <h1>Jake Rodriguez<br><em>Developer & Tech Support</em></h1>
         <p class="hero-sub">
-          I build websites, apps, and internal tools — can help with office and tech support too. Available remote or on-site in Manila or Cebu.
+          I build websites, apps, and internal tools — can help with office tools, encode documents, and tech support too.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -748,9 +748,9 @@
     <h2 class="section-title">Who I Am</h2>
     <div class="about-grid reveal">
       <div class="about-text">
-        <p>Jake Rodriguez, a developer based in Cebu, Philippines. I build web applications, mobile apps, and desktop tools — with a focus on clean interfaces and practical functionality.</p>
+        <p>Jake Rodriguez, a Fresh Graduate with the Course of BSIT based in Cebu, Philippines. I build web applications, mobile apps, and desktop tools — with a focus on clean interfaces and practical functionality.</p>
         <p>I use modern development frameworks alongside AI tools to work efficiently and deliver polished results. Whether it's a full web system, a mobile app, or IT and office support, I get things done.</p>
-        <p>Currently open to freelance, full-time, or internship opportunities — both remote and on-site.</p>
+        <p>Currently open to freelance, full-time, or internship opportunities — Remotely</p>
       </div>
       <div class="stats">
         <div class="stat">
@@ -835,6 +835,8 @@
     </div>
   </div>
 </section>
+
+
 
 <!-- PROJECTS -->
 <section id="projects">
