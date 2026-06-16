@@ -1013,7 +1013,7 @@ const projects = {
     title: 'Philippine Statistics Authority', sub: 'HR Department Internship',
     overview: 'Served as an intern under the Human Resources department at the Philippine Statistics Authority. Responsible for managing personnel records, assisting in recruitment, and developing internal tools to streamline HR workflows.',
     tech: ['Microsoft Office', 'HR Information Systems', 'Data Entry', 'Record Management'],
-    features: ['Managed personnel records for 100+ employees','Assisted in recruitment and onboarding','Built Excel tools for HR analytics','Participated in training sessions','Learned government compliance standards'],
+    features: ['Managed personnel records for 30+ employees','Assisted in recruitment and onboarding','Assisted in Excel tools for HR analytics','Participated in training sessions','Learned government compliance standards'],
     link: null
   },
   baltbep: {
@@ -1021,7 +1021,7 @@ const projects = {
     title: 'BaltBep Ticketing System', sub: 'Ship Ticketing & Reservation Platform',
     overview: 'A comprehensive web-based ship ticketing system developed as a 4th year Capstone project. Features real-time booking management, passenger tracking, automated ticket generation, and a full admin dashboard.',
     tech: ['Laravel', 'PHP', 'MySQL', 'JavaScript', 'Bootstrap', 'HTML/CSS'],
-    features: ['Real-time seat availability and booking','Automated ticket generation','Admin dashboard with analytics','Passenger management','Payment integration and invoicing','Mobile-responsive design','Mobile app for easy booking'],
+    features: ['Automated ticket generation','Admin dashboard with analytics','Passenger management','Payment integration and invoicing','Mobile-responsive design','Mobile app for easy booking'],
     link: 'https://baltbep.net'
   },
   'gym-php': {
