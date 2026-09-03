@@ -636,7 +636,7 @@ body.tap-feedback::before {
 <section class="hero">
   <div class="wax-seal-top">❧</div>
   <div class="hero-ribbon">Wanna start your journey with me?</div>
-  <h1 class="hero-title">Jake Ballano Rodriguez</h1>
+  <h1 class="hero-title">Jeiku</h1>
   <p class="hero-sub">— a man of many talents, one honest heart —</p>
   <div class="ornament-line">✦ ✦ ✦</div>
   <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:#d4b896;max-width:480px;line-height:1.8;">
