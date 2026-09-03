@@ -101,7 +101,7 @@
     }
 
     .hero-title {
-      font-family: 'Rustic Roadway - Personal use', serif;
+      font-family: 'Armelie', serif;
       font-size: clamp(2.8rem, 8vw, 5.5rem);
       font-weight: 700;
       font-style: italic;
