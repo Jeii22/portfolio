@@ -680,7 +680,7 @@ body.tap-feedback::before {
     <p class="body-text">
       I am not a perfect man. But I am an <em>honest</em> one. I believe in long conversations,
       genuine laughter, and showing up — not just when it is convenient, but when it matters.
-      I come here today with no pretense, only sincerity... and a few Bisaya pickup lines I have been
+      I come here today with no pretense, only sincerity... and a few Bisaya sayings that I have been
       saving for the right occasion.
     </p>
     <br/>
@@ -761,11 +761,14 @@ body.tap-feedback::before {
       <span class="hobby-tag">🏋 Gym (minsan)</span>
       <span class="hobby-tag">🌃 Late Night Talks</span>
       <span class="hobby-tag">🍳 Cooking (para nimo)</span>
+      <span class="hobby-tag">🤝Holding Hands</span>
+      <span class="hobby-tag">🙌Yakapsule</span>
+      <span class="hobby-tag">📲Video Calls</span>
     </div>
     <br/>
     <p class="body-text" style="font-style:italic;text-align:center;font-size:16px;color:var(--sepia);">
       "Seryuso ba — just tell me what you like, and I'll be into it."<br/>
-      <span style="font-family:'Caveat',cursive;font-size:15px;">— Jake, probably already practicing</span>
+      <span style="font-family:'Caveat',cursive;font-size:15px;">— I'm probably already practicing to something you'd like</span>
     </p>
   </div>
 </div>
@@ -816,12 +819,12 @@ body.tap-feedback::before {
         Dili ko maingon nga perpekto ko.<br/>
         Pero maingon ko nga <em>sigurado ko sa akong intensyon</em>.<br/>
         Usa ra ko ka kape ang gikinahanglan nimo para mahibal-an<br/>
-        nga dili ko boring — bisag bag-o ka pang nakaila nako.
+        altho boring ko — but I'll do my best. I swear.
       </p>
       <p class="rsvp-intro">
         Give this man a chance naman.<br/>
         The tides have been kinder to those who are brave enough to sail.<br/>
-        — and I promise, I row very well. (Charot, nakita rani nako sa TV)🚣
+        — and I promise, I row very well. (Charot, nakita rani nako sa IG)🚣
       </p>
       <p class="rsvp-bisaya" style="font-size:18px;color:var(--sepia);">
         (Joke lang ang pangutana sa ubos — pero tinuod ang feelings.)
