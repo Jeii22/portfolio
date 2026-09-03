@@ -101,7 +101,7 @@
     }
 
     .hero-title {
-      font-family: 'Rosehot', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(2.8rem, 8vw, 5.5rem);
       font-weight: 700;
       font-style: italic;
