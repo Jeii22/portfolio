@@ -1052,7 +1052,7 @@ const projects = {
     features: ['Windows Forms with modern UI','Local SQL Server database','Crystal Reports integration','Member photo capture and ID printing','Backup and restore','Offline operation'],
     link: null
   }
-  EPX: {
+  'EPX': {
     year: 'September 2026 - Present', type: 'Currently on training', ai: false, mobile: false,
     title: 'Eperformax', sub: 'Cebu City Call Center',
     overview: 'Wala pakoy mabutang',
