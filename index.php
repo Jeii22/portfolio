@@ -910,6 +910,20 @@
         </div>
       </div>
 
+      <div class="project-card reveal" data-project="EPX">
+        <div class="project-icon">EPX</div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="tag tag-year">September 2026 - Present</span>
+            <span class="tag tag-type">Working</span>
+            <span class="tag tag-ai">BPO</span>
+          </div>
+          <div class="project-title">Call Center Agent</div>
+          <p class="project-desc">Wala pay ma butang</p>
+          <span class="project-cta">View details →</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
