@@ -915,7 +915,7 @@
         <div class="project-body">
           <div class="project-meta">
             <span class="tag tag-year">September 2026 - Present</span>
-            <span class="tag tag-type">Working</span>
+            <span class="tag tag-type">Current training</span>
             <span class="tag tag-ai">BPO</span>
           </div>
           <div class="project-title">Call Center Agent</div>
@@ -1050,6 +1050,14 @@ const projects = {
     overview: 'A Windows desktop application for gym management built with C# and .NET Framework. My first major project — focused on desktop UI and database integration, with comprehensive reporting tools.',
     tech: ['C#', '.NET Framework', 'Windows Forms', 'SQL Server', 'Crystal Reports'],
     features: ['Windows Forms with modern UI','Local SQL Server database','Crystal Reports integration','Member photo capture and ID printing','Backup and restore','Offline operation'],
+    link: null
+  }
+  EPX: {
+    year: 'September 2026 - Present', type: 'Currently on training', ai: false, mobile: false,
+    title: 'Eperformax', sub: 'Cebu City Call Center',
+    overview: 'Wala pakoy mabutang',
+    tech: ['C'],
+    features: ['As in Wala pa gyud'],
     link: null
   }
 };
