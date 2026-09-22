@@ -840,6 +840,10 @@
 <section id="projects">
   <div class="container">
 
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+
   <div class="project-card reveal" data-project="EPX">
         <div class="project-icon">EPX</div>
         <div class="project-body">
@@ -855,9 +859,6 @@
       </div>
 
 
-    <div class="section-label">Portfolio</div>
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="projects-grid">
 
       <div class="project-card reveal" data-project="burnbai">
         <div class="project-icon">🔥 Burn Bai</div>
