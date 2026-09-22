@@ -839,6 +839,22 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container">
+
+  <div class="project-card reveal" data-project="EPX">
+        <div class="project-icon">EPX</div>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="tag tag-year">September 2026 - Present</span>
+            <span class="tag tag-type">Current training</span>
+            <span class="tag tag-ai">BPO</span>
+          </div>
+          <div class="project-title">Call Center Agent</div>
+          <p class="project-desc">Wala pay ma butang</p>
+          <span class="project-cta">View details →</span>
+        </div>
+      </div>
+
+
     <div class="section-label">Portfolio</div>
     <h2 class="section-title">Featured Projects</h2>
     <div class="projects-grid">
@@ -910,19 +926,7 @@
         </div>
       </div>
 
-      <div class="project-card reveal" data-project="EPX">
-        <div class="project-icon">EPX</div>
-        <div class="project-body">
-          <div class="project-meta">
-            <span class="tag tag-year">September 2026 - Present</span>
-            <span class="tag tag-type">Current training</span>
-            <span class="tag tag-ai">BPO</span>
-          </div>
-          <div class="project-title">Call Center Agent</div>
-          <p class="project-desc">Wala pay ma butang</p>
-          <span class="project-cta">View details →</span>
-        </div>
-      </div>
+      
 
     </div>
   </div>
