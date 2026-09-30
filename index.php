@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Who is Jake Rodriguez</title>
+<title>Jake Rodriguez from Bantayan Island</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -748,7 +748,7 @@
     <h2 class="section-title">Who I Am</h2>
     <div class="about-grid reveal">
       <div class="about-text">
-        <p>I'm Jake Rodriguez, a developer based in Cebu, Philippines. I build web applications, mobile apps, and desktop tools — with a focus on clean interfaces and practical functionality.</p>
+        <p>I'm Jake Rodriguez from Bantayan Island, a developer based in Cebu, Philippines. I build web applications, mobile apps, and desktop tools — with a focus on clean interfaces and practical functionality.</p>
         <p>I use modern development frameworks alongside AI tools to work efficiently and deliver polished results. Whether it's a full web system, a mobile app, or IT and office support, I get things done.</p>
         <p>Currently open to freelance, full-time, or internship opportunities — both remote and on-site.</p>
       </div>
