@@ -1143,6 +1143,8 @@ footer{
         animation:none!important;
     }
 }
+
+
 </style>
 </head>
 
@@ -1247,11 +1249,11 @@ footer{
 
 <h1>
     Hi! I'm Jake<br>
-    <h3>
+    <h2>
     <span class="accent">
         I build useful digital products.
     </span>
-    </h3>
+</h2>
 </h1>
 
 <p class="hero-copy">
