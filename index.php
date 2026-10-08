@@ -963,7 +963,7 @@ footer{
 }
 
 .modal-label{
-    font-size:.7rem;
+    font-size:.5rem;
 
     text-transform:uppercase;
 
@@ -1246,7 +1246,7 @@ footer{
 </div>
 
 <h1>
-    Jake Rodriguez.<br>
+    Hi! I'm Jake<br>
     <span class="accent">
         I build useful digital products.
     </span>
