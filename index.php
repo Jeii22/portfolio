@@ -1238,13 +1238,13 @@ footer{
 
 <div class="container hero-grid">
 
-<div>
+
 
 <div class="eyebrow">
     <span class="dot"></span>
     Available for opportunities
 </div>
-
+<div>
 <h1>
     Hi! I'm Jake<br>
     <span class="accent">
