@@ -10,7 +10,7 @@ content="Jake Rodriguez — IT Graduate, Web Developer and IT Support Specialist
 <title>Jake Rodriguez — From Madridejos</title>
 
 <!-- Favicon -->
-<link rel="icon" type="image/jpeg" href="jake.jpg">
+<link rel="icon" type="image/developers" href="images/developers/favicon.png">
 
 <style>
 :root{
@@ -1284,7 +1284,7 @@ footer{
 <div class="avatar">
 
 <img
-    src="jake.jpg"
+    src="jakedp.jpg"
     alt="Jake Rodriguez">
 
 </div>
