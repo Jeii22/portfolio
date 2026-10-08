@@ -1602,34 +1602,38 @@ footer{
 
 <div class="timeline">
 
-
 <article class="experience reveal">
-
 <div class="experience-date">
-    Jan — Apr 2026
+Sep 2026 — Present
 </div>
-
 <div>
-
 <h3>
-    HR Department Intern
+Call Center Agent Training
 </h3>
-
 <div class="company">
-    Philippine Statistics Authority
+BPO / Customer Service
 </div>
-
 <p>
-    Supported personnel records, recruitment-related
-    tasks, data entry, office workflows, and internal
-    tools while learning professional documentation
-    and compliance practices.
+Currently developing customer communication, problem-solving, process discipline, and professional workplace skills through training.
 </p>
-
 </div>
-
 </article>
-
+<article class="experience reveal">
+<div class="experience-date">
+Jan — Apr 2026
+</div>
+<div>
+<h3>
+HR Department Intern
+</h3>
+<div class="company">
+Philippine Statistics Authority
+</div>
+<p>
+Supported personnel records, recruitment-related tasks, data entry, office workflows, and internal tools while learning professional documentation and compliance practices.
+</p>
+</div>
+</article>
 
 </div>
 
@@ -1704,45 +1708,6 @@ footer{
 <span class="tag">2024</span>
 <span class="tag">React Native</span>
 <span class="tag">Firebase</span>
-
-</div>
-
-</article>
-
-
-<!-- PSA -->
-
-<article
-    class="project reveal"
-    data-project="psa">
-
-<div class="project-top">
-
-<div class="project-icon">
-    PSA
-</div>
-
-<span class="arrow">
-    ↗
-</span>
-
-</div>
-
-<h3>
-    Philippine Statistics Authority
-</h3>
-
-<p>
-    HR internship focused on personnel records,
-    office workflows, recruitment support,
-    and internal productivity tools.
-</p>
-
-<div class="tags">
-
-<span class="tag">2026</span>
-<span class="tag">Internship</span>
-<span class="tag">Office Tools</span>
 
 </div>
 
