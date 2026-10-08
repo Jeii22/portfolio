@@ -1608,7 +1608,7 @@ Sep 2026 — Present
 </div>
 <div>
 <h3>
-Call Center Agent Training
+Call Center Agent
 </h3>
 <div class="company">
 BPO / Customer Service
