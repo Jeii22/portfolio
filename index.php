@@ -271,7 +271,7 @@ button{
 }
 
 h1{
-    font-size:clamp(3rem,7vw,5.6rem);
+    font-size:clamp(2rem,6vw,5.6rem);
 
     line-height:.98;
     letter-spacing:-.065em;
@@ -1238,13 +1238,13 @@ footer{
 
 <div class="container hero-grid">
 
-
+<div>
 
 <div class="eyebrow">
     <span class="dot"></span>
     Available for opportunities
 </div>
-<div>
+
 <h1>
     Hi! I'm Jake<br>
     <span class="accent">
