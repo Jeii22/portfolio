@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
   :root {
     --bg: #fafaf8;
     --surface: #fff;
@@ -22,9 +21,7 @@
     --green-bg: #edf7f2;
     --radius: 10px;
   }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'IBM Plex Sans', sans-serif;
     background: var(--bg);
@@ -32,7 +29,6 @@
     line-height: 1.6;
     font-size: 16px;
   }
-
   /* NAV */
   nav {
     position: sticky;
@@ -43,7 +39,6 @@
     z-index: 100;
     padding: 0 40px;
   }
-
   .nav-inner {
     max-width: 900px;
     margin: 0 auto;
@@ -52,7 +47,6 @@
     align-items: center;
     height: 60px;
   }
-
   .nav-logo {
     font-family: 'Lora', serif;
     font-weight: 700;
@@ -60,13 +54,11 @@
     color: var(--text);
     text-decoration: none;
   }
-
   .nav-links {
     display: flex;
     gap: 28px;
     list-style: none;
   }
-
   .nav-links a {
     font-size: 0.875rem;
     color: var(--muted);
@@ -74,35 +66,28 @@
     font-weight: 500;
     transition: color 0.2s;
   }
-
   .nav-links a:hover { color: var(--accent); }
-
   /* LAYOUT */
   .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 40px;
   }
-
   section {
     padding: 72px 0;
     border-bottom: 1px solid var(--border);
   }
-
   section:last-of-type { border-bottom: none; }
-
   /* HERO */
   .hero {
     padding: 80px 0 64px;
   }
-
   .hero-inner {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 48px;
     align-items: center;
   }
-
   .hero-tag {
     display: inline-flex;
     align-items: center;
@@ -117,7 +102,6 @@
     margin-bottom: 20px;
     letter-spacing: 0.02em;
   }
-
   .hero-tag::before {
     content: '';
     width: 7px;
@@ -126,12 +110,10 @@
     border-radius: 50%;
     animation: blink 2s ease-in-out infinite;
   }
-
   @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.3; }
   }
-
   .hero h1 {
     font-family: 'Lora', serif;
     font-size: clamp(2.2rem, 5vw, 3.2rem);
@@ -140,12 +122,10 @@
     margin-bottom: 16px;
     color: var(--text);
   }
-
   .hero h1 em {
     font-style: italic;
     color: var(--accent);
   }
-
   .hero-sub {
     font-size: 1.05rem;
     color: var(--muted);
@@ -153,13 +133,11 @@
     margin-bottom: 32px;
     line-height: 1.7;
   }
-
   .hero-actions {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
   }
-
   .btn {
     padding: 11px 24px;
     border-radius: var(--radius);
@@ -171,30 +149,25 @@
     align-items: center;
     gap: 6px;
   }
-
   .btn-primary {
     background: var(--accent);
     color: #fff;
     border: 2px solid var(--accent);
   }
-
   .btn-primary:hover {
     background: #1e4ac7;
     border-color: #1e4ac7;
     transform: translateY(-1px);
   }
-
   .btn-ghost {
     background: transparent;
     color: var(--text);
     border: 2px solid var(--border);
   }
-
   .btn-ghost:hover {
     border-color: #c0bdb7;
     background: var(--tag-bg);
   }
-
   .hero-photo {
     width: 160px;
     height: 160px;
@@ -211,7 +184,6 @@
     color: var(--accent);
     flex-shrink: 0;
   }
-
   /* SECTION HEADINGS */
   .section-label {
     font-size: 0.75rem;
@@ -221,7 +193,6 @@
     color: var(--accent);
     margin-bottom: 8px;
   }
-
   .section-title {
     font-family: 'Lora', serif;
     font-size: 1.75rem;
@@ -229,7 +200,6 @@
     color: var(--text);
     margin-bottom: 32px;
   }
-
   /* ABOUT */
   .about-grid {
     display: grid;
@@ -237,20 +207,17 @@
     gap: 48px;
     align-items: start;
   }
-
   .about-text p {
     color: var(--muted);
     margin-bottom: 16px;
     line-height: 1.75;
     font-size: 0.975rem;
   }
-
   .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
-
   .stat {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -258,7 +225,6 @@
     padding: 20px 16px;
     text-align: center;
   }
-
   .stat-num {
     font-family: 'Lora', serif;
     font-size: 1.75rem;
@@ -266,54 +232,46 @@
     color: var(--accent);
     display: block;
   }
-
   .stat-label {
     font-size: 0.78rem;
     color: var(--muted);
     margin-top: 4px;
     line-height: 1.4;
   }
-
   /* SKILLS */
   .skills-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
-
   .skill-row {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 16px 18px;
   }
-
   .skill-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
   }
-
   .skill-name-text {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text);
   }
-
   .skill-pct {
     font-size: 0.8rem;
     color: var(--muted);
     font-weight: 500;
   }
-
   .skill-bar {
     height: 6px;
     background: var(--tag-bg);
     border-radius: 6px;
     overflow: hidden;
   }
-
   .skill-fill {
     height: 100%;
     background: var(--accent);
@@ -321,21 +279,17 @@
     width: 0;
     transition: width 1s ease;
   }
-
   .skill-fill.animate { width: var(--w); }
-
   .skill-fill.advanced { background: #2d5be3; }
   .skill-fill.expert   { background: #1a7a4a; }
   .skill-fill.intermediate { background: #c08a00; }
   .skill-fill.beginner { background: #b04020; }
-
   /* PROJECTS */
   .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
-
   .project-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -344,13 +298,11 @@
     cursor: pointer;
     transition: all 0.2s;
   }
-
   .project-card:hover {
     border-color: var(--accent);
     box-shadow: 0 4px 20px rgba(45,91,227,0.1);
     transform: translateY(-2px);
   }
-
   .project-icon {
     background: var(--accent-light);
     height: 90px;
@@ -364,9 +316,7 @@
     letter-spacing: 0.02em;
     border-bottom: 1px solid var(--border);
   }
-
   .project-body { padding: 20px; }
-
   .project-meta {
     display: flex;
     gap: 8px;
@@ -374,7 +324,6 @@
     flex-wrap: wrap;
     align-items: center;
   }
-
   .tag {
     font-size: 0.72rem;
     font-weight: 600;
@@ -382,30 +331,25 @@
     border-radius: 20px;
     letter-spacing: 0.02em;
   }
-
   .tag-year {
     background: var(--accent-light);
     color: var(--accent);
     border: 1px solid #c5d0f7;
   }
-
   .tag-type {
     background: var(--tag-bg);
     color: var(--tag-text);
   }
-
   .tag-ai {
     background: var(--green-bg);
     color: var(--green);
     border: 1px solid #b6ddc8;
   }
-
   .tag-mobile {
     background: #edf2ff;
     color: #3b5bdb;
     border: 1px solid #bac8ff;
   }
-
   .project-title {
     font-family: 'Lora', serif;
     font-size: 1.05rem;
@@ -413,13 +357,11 @@
     margin-bottom: 7px;
     color: var(--text);
   }
-
   .project-desc {
     font-size: 0.855rem;
     color: var(--muted);
     line-height: 1.6;
   }
-
   .project-cta {
     display: inline-flex;
     align-items: center;
@@ -431,16 +373,13 @@
     text-decoration: none;
     transition: gap 0.2s;
   }
-
   .project-card:hover .project-cta { gap: 8px; }
-
   /* SERVICES */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
   }
-
   .service-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -448,15 +387,12 @@
     padding: 28px 24px;
     transition: border-color 0.2s;
   }
-
   .service-card:hover { border-color: var(--accent); }
-
   .service-icon {
     font-size: 1.6rem;
     margin-bottom: 14px;
     display: block;
   }
-
   .service-name {
     font-family: 'Lora', serif;
     font-weight: 700;
@@ -464,13 +400,11 @@
     margin-bottom: 8px;
     color: var(--text);
   }
-
   .service-desc {
     font-size: 0.86rem;
     color: var(--muted);
     line-height: 1.6;
   }
-
   /* CONTACT */
   .contact-box {
     background: var(--surface);
@@ -479,7 +413,6 @@
     padding: 48px;
     text-align: center;
   }
-
   .contact-box p {
     color: var(--muted);
     max-width: 480px;
@@ -487,7 +420,6 @@
     line-height: 1.7;
     font-size: 0.975rem;
   }
-
   .contact-email {
     display: inline-flex;
     align-items: center;
@@ -501,15 +433,12 @@
     transition: color 0.2s;
     margin-bottom: 32px;
   }
-
   .contact-email:hover { color: var(--accent); }
-
   .socials {
     display: flex;
     justify-content: center;
     gap: 12px;
   }
-
   .social-btn {
     width: 42px;
     height: 42px;
@@ -523,14 +452,12 @@
     text-decoration: none;
     transition: all 0.2s;
   }
-
   .social-btn:hover {
     background: var(--accent);
     border-color: var(--accent);
     color: #fff;
     transform: translateY(-2px);
   }
-
   /* FOOTER */
   footer {
     text-align: center;
@@ -539,7 +466,6 @@
     color: var(--muted);
     border-top: 1px solid var(--border);
   }
-
   /* MODAL */
   .modal-bg {
     position: fixed;
@@ -554,12 +480,10 @@
     visibility: hidden;
     transition: all 0.25s;
   }
-
   .modal-bg.open {
     opacity: 1;
     visibility: visible;
   }
-
   .modal {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -571,15 +495,12 @@
     transform: translateY(16px);
     transition: transform 0.25s;
   }
-
   .modal-bg.open .modal { transform: translateY(0); }
-
   .modal-head {
     padding: 28px 28px 20px;
     border-bottom: 1px solid var(--border);
     position: relative;
   }
-
   .modal-close {
     position: absolute;
     top: 20px;
@@ -597,29 +518,22 @@
     justify-content: center;
     transition: all 0.2s;
   }
-
   .modal-close:hover { background: var(--border); color: var(--text); }
-
   .modal-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 12px;
   }
-
   .modal-title {
     font-family: 'Lora', serif;
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 6px;
   }
-
   .modal-sub { font-size: 0.9rem; color: var(--muted); }
-
   .modal-body { padding: 24px 28px; }
-
   .modal-section { margin-bottom: 24px; }
-
   .modal-section-title {
     font-size: 0.75rem;
     font-weight: 700;
@@ -628,15 +542,12 @@
     color: var(--accent);
     margin-bottom: 10px;
   }
-
   .modal-text {
     font-size: 0.9rem;
     color: var(--muted);
     line-height: 1.75;
   }
-
   .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-
   .tech-tag {
     font-size: 0.8rem;
     padding: 5px 12px;
@@ -646,9 +557,7 @@
     color: var(--tag-text);
     font-weight: 500;
   }
-
   .feature-list { list-style: none; }
-
   .feature-list li {
     font-size: 0.875rem;
     color: var(--muted);
@@ -657,9 +566,7 @@
     position: relative;
     line-height: 1.5;
   }
-
   .feature-list li:last-child { border-bottom: none; }
-
   .feature-list li::before {
     content: '✓';
     position: absolute;
@@ -668,13 +575,11 @@
     font-weight: 700;
     font-size: 0.9rem;
   }
-
   .modal-foot {
     padding: 16px 28px 24px;
     display: flex;
     gap: 10px;
   }
-
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 0 20px; }
@@ -691,14 +596,12 @@
     .contact-box { padding: 32px 20px; }
     .modal-head, .modal-body, .modal-foot { padding-left: 20px; padding-right: 20px; }
   }
-
   /* Scroll animations */
   .reveal {
     opacity: 0;
     transform: translateY(18px);
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
-
   .reveal.visible {
     opacity: 1;
     transform: translateY(0);
@@ -706,7 +609,6 @@
 </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
@@ -720,7 +622,6 @@
     </ul>
   </div>
 </nav>
-
 <!-- HERO -->
 <section class="hero">
   <div class="container">
@@ -740,7 +641,6 @@
     </div>
   </div>
 </section>
-
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
@@ -769,7 +669,6 @@
     </div>
   </div>
 </section>
-
 <!-- SKILLS -->
 <section id="skills">
   <div class="container">
@@ -835,16 +734,12 @@
     </div>
   </div>
 </section>
-
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container">
-
     <div class="section-label">Portfolio</div>
-
     <h2 class="section-title">Work Experiences</2>
     <div class="projects-grid">
-
     <div class="project-card reveal" data-project="EPX">
         <div class="project-icon">EPX</div>
         <div class="project-body">
@@ -859,10 +754,8 @@
         </div>
       </div>
 </div>
-
     <h2 class="section-title">Featured Projects</h2>
     <div class="projects-grid">
-
       <div class="project-card reveal" data-project="burnbai">
         <div class="project-icon">🔥 Burn Bai</div>
         <div class="project-body">
@@ -876,7 +769,6 @@
           <span class="project-cta">View details →</span>
         </div>
       </div>
-
       <div class="project-card reveal" data-project="psa">
         <div class="project-icon">PSA</div>
         <div class="project-body">
@@ -889,7 +781,6 @@
           <span class="project-cta">View details →</span>
         </div>
       </div>
-
       <div class="project-card reveal" data-project="baltbep">
         <div class="project-icon">BaltBep</div>
         <div class="project-body">
@@ -902,7 +793,6 @@
           <span class="project-cta">View details →</span>
         </div>
       </div>
-
       <div class="project-card reveal" data-project="gym-php">
         <div class="project-icon">Gym + AI</div>
         <div class="project-body">
@@ -916,7 +806,6 @@
           <span class="project-cta">View details →</span>
         </div>
       </div>
-
       <div class="project-card reveal" data-project="gym-csharp">
         <div class="project-icon">Gym</div>
         <div class="project-body">
@@ -929,13 +818,9 @@
           <span class="project-cta">View details →</span>
         </div>
       </div>
-
-      
-
     </div>
   </div>
 </section>
-
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
@@ -960,7 +845,6 @@
     </div>
   </div>
 </section>
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -986,11 +870,9 @@
     </div>
   </div>
 </section>
-
 <footer>
-  <p>&copy; 2025 Jake Rodriguez · Cebu, Philippines</p>
+  <p>© 2025 Jake Rodriguez · Cebu, Philippines</p>
 </footer>
-
 <!-- MODAL -->
 <div class="modal-bg" id="modal">
   <div class="modal">
@@ -1017,7 +899,6 @@
     <div class="modal-foot" id="m-foot"></div>
   </div>
 </div>
-
 <script>
 const projects = {
   burnbai: {
@@ -1060,20 +941,16 @@ const projects = {
     features: ['Windows Forms with modern UI','Local SQL Server database','Crystal Reports integration','Member photo capture and ID printing','Backup and restore','Offline operation'],
     link: null
   }
-  
 };
-
 function openModal(id) {
   const p = projects[id];
   if (!p) return;
-
   const tags = [
     `<span class="tag tag-year">${p.year}</span>`,
     `<span class="tag tag-type">${p.type}</span>`,
     p.ai ? `<span class="tag tag-ai">✨ AI Powered</span>` : '',
     p.mobile ? `<span class="tag tag-mobile">📱 Mobile</span>` : ''
   ].join('');
-
   document.getElementById('m-tags').innerHTML = tags;
   document.getElementById('m-title').textContent = p.title;
   document.getElementById('m-sub').textContent = p.sub;
@@ -1083,26 +960,20 @@ function openModal(id) {
   document.getElementById('m-foot').innerHTML = p.link
     ? `<a href="${p.link}" target="_blank" class="btn btn-primary">Visit Live Site →</a><button class="btn btn-ghost" onclick="closeModal()">Close</button>`
     : `<button class="btn btn-ghost" onclick="closeModal()">Close</button>`;
-
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-
 function closeModal() {
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow = '';
 }
-
 document.getElementById('modal').addEventListener('click', e => {
   if (e.target === document.getElementById('modal')) closeModal();
 });
-
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('click', () => openModal(card.dataset.project));
 });
-
 // Skill bar animation on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -1112,7 +983,6 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.15 });
-
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
