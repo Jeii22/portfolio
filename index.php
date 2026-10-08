@@ -1250,7 +1250,7 @@ footer{
 <h1>
     Hi! I'm Jake<br>
     <h2>
-    <span class="accent">
+    <span class="accent" font-color="blue">
         I build useful digital products.
     </span>
 </h2>
