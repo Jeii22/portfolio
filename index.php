@@ -1317,12 +1317,12 @@ footer{
 
 <div class="mini-item">
     <span>Focus</span>
-    <strong>Web & Systems</strong>
+    <strong>Web, Admin & Document Organizing</strong>
 </div>
 
 <div class="mini-item">
     <span>Availability</span>
-    <strong>Remote / On-site</strong>
+    <strong>Remote</strong>
 </div>
 
 </div>
