@@ -1248,7 +1248,7 @@ footer{
 <h1>
     Jake Rodriguez.<br>
     <span class="accent">
-        I 
+        I build useful digital products.
     </span>
 </h1>
 
