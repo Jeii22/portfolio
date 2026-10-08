@@ -240,7 +240,7 @@ button{
 }
 
 .eyebrow{
-    display:inline-flex;
+    display:flex;
     align-items:center;
     gap:8px;
 
@@ -260,7 +260,7 @@ button{
 
 .dot{
     width:7px;
-    height:1px;
+    height:7px;
 
     border-radius:50%;
 
