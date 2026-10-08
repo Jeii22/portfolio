@@ -1247,9 +1247,11 @@ footer{
 
 <h1>
     Hi! I'm Jake<br>
+    <h3>
     <span class="accent">
         I build useful digital products.
     </span>
+    </h3>
 </h1>
 
 <p class="hero-copy">
@@ -1342,14 +1344,13 @@ footer{
 <h2 class="section-title">
     A practical builder, still growing.
 </h2>
+
+</div>
+
 <p class="section-note">
     I care about clean interfaces, useful functionality,
     and learning by building real projects.
 </p>
-
-</div>
-
-
 
 </div>
 
