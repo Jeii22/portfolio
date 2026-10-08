@@ -1317,7 +1317,7 @@ footer{
 
 <div class="mini-item">
     <span>Focus</span>
-    <strong>Web, Admin & Document Organizing</strong>
+    <strong>Web System & Data Analytics</strong>
 </div>
 
 <div class="mini-item">
