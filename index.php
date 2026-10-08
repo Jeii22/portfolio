@@ -260,7 +260,7 @@ button{
 
 .dot{
     width:7px;
-    height:7px;
+    height:1px;
 
     border-radius:50%;
 
@@ -1246,9 +1246,9 @@ footer{
 </div>
 
 <h1>
-    Hi, I'm Jake.<br>
+    Jake Rodriguez.<br>
     <span class="accent">
-        I build digital products and customized portfolio.
+        I 
     </span>
 </h1>
 
