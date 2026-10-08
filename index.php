@@ -1342,13 +1342,14 @@ footer{
 <h2 class="section-title">
     A practical builder, still growing.
 </h2>
-
-</div>
-
 <p class="section-note">
     I care about clean interfaces, useful functionality,
     and learning by building real projects.
 </p>
+
+</div>
+
+
 
 </div>
 
