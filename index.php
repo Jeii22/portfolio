@@ -963,7 +963,7 @@ footer{
 }
 
 .modal-label{
-    font-size:.5rem;
+    font-size:.7rem;
 
     text-transform:uppercase;
 
