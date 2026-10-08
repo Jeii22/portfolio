@@ -271,7 +271,7 @@ button{
 }
 
 h1{
-    font-size:clamp(2rem,6vw,5.6rem);
+    font-size:clamp(1rem,5vw,4.6rem);
 
     line-height:.98;
     letter-spacing:-.065em;
