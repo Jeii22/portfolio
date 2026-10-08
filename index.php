@@ -283,6 +283,13 @@ h1 .accent{
     color:var(--accent);
 }
 
+h2 .accent{
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .hero-copy{
     font-size:1.1rem;
 
@@ -1250,10 +1257,10 @@ footer{
 <h1>
     Hi! I'm Jake<br>
     <h2>
-    <span class="accent" color="blue">
-        I build useful digital products.
-    </span>
-</h2>
+        <span class="accent">
+            I build useful digital products.
+        </span>
+    </h2>
 </h1>
 
 <p class="hero-copy">
