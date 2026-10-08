@@ -1248,7 +1248,7 @@ footer{
 <h1>
     Hi, I'm Jake.<br>
     <span class="accent">
-        I build useful digital products.
+        I build digital products and customized portfolio.
     </span>
 </h1>
 
